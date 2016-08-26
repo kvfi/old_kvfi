@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'NYTCheltenham';
+  src: url('fonts/nyt-cheltenham-normal.eot'); /* IE9 Compat Modes */
+  src: url('fonts/nyt-cheltenham-normal.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/nyt-cheltenham-normal.woff') format('woff'), /* Modern Browsers */
+       url('fonts/nyt-cheltenham-normal.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/nyt-cheltenham-normal.svg#c89c43582f949ef7a5613063fd1e1898') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  200;
+}
+
+@font-face {
+  font-family: 'NYTCheltenham';
+  src: url('fonts/nyt-cheltenham-medium.eot'); /* IE9 Compat Modes */
+  src: url('fonts/nyt-cheltenham-medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/nyt-cheltenham-medium.woff') format('woff'), /* Modern Browsers */
+       url('fonts/nyt-cheltenham-medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/nyt-cheltenham-medium.svg#d35ef1182c5f0144799721c385282577') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+

@@ -1,0 +1,33 @@
+<div class="sideBlock">
+    <h4>About me</h4>
+
+    I'm a mathematician teaching financial theory, see <a href="/teaching">teaching page</a>
+
+</div>
+<div class="sideBlock">z
+    <h4>Popular this week</h4>
+    {% if data.popular_week %}
+    <ul>
+        {% for popular_week_article in data.popular_week %}
+        <li><a href="/read/{{ popular_week_article.id }}.html">{{ popular_week_article.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+    {% endif %}
+</div>
+<div class="sideBlock">
+    <h4>Search this blog</h4>
+    <form action="" method="get">
+        <input type="search" name="" id="" />
+    </form>
+</div>
+<div class="sideBlock">
+    <h4>All-time best reads</h4>
+    {% if data.popular_week %}
+    <ul>
+        {% for popular_week_article in data.popular_week %}
+        <li><a href="/read/{{ popular_week_article.id }}.html">{{ popular_week_article.title }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>

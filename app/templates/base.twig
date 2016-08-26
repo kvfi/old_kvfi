@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block head %}
+        <meta charset="utf-8"/>
+        <title>{{ headMeta.title }} &mdash; {{ config.site_name }}</title>
+        <link rel="shortcut icon" href="/static/images/xd.gif" type="image/x-icon">
+        <link rel="stylesheet" href="/static/stylesheets/screen.css" type="text/css" media="screen" charset="utf-8">
+        <script src="/static/js/ng.min.js"></script>
+        <script src="/static/js/showdown.min.js"></script>
+        <script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/d3.min.js"></script>
+        <script src="/static/js/script.js"></script>
+        <!-- <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+        <script type="text/javascript" async src="/static/js/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+        <!--[if lte IE 6]>
+        <link rel="stylesheet" href="/static/stylesheets/lib/ie.css" type="text/css" media="screen" charset="utf-8">
+        <![endif]-->
+    {% endblock %}
+</head>
+<body class="{{ css_class }}">
+<div class="notification-global"><p>08.19.2016 &mdash; I'm improving the website's search functionality and, as a
+        result, it was disabled to prevent search conflicts. You still can search this site on Google, just type
+        "site:scif.ml" followed by keywords.</p></div>
+<div class="bodyPage">
+    <!-- <div class="hdr"></div> -->
+    <div class="grid">
+        <div class="aside col-1-5">
+            <div class="container">
+                <a href="/" class="logo"></a>
+                {% block aside_description %}
+                {% endblock %}
+                <ul class="menu">
+                    <li><a href="/Me" title="About">About</a></li>
+                    <li><a href="/Archives" title="Archives">Archives</a></li>
+                    <li><a href="/Topics" title="Topics">Topics</a></li>
+                    <li><a href="/Hi" title="Contact">Contact</a></li>
+                </ul>
+                <br/>
+
+                <p><em>“Even in the most heinous act of gruesomeness I will be bound to glimpse beauty.<br/>Because
+                        beauty is everywhere.”</em></p>
+                <footer>
+                    <p><a href="https://creativecommons.org/publicdomain/zero/1.0/"><img
+                                    src="https://licensebuttons.net/p/zero/1.0/88x31.png"/></a></p>
+                </footer>
+            </div>
+        </div>
+        <div class="col-3-5">
+            {% block content %}
+            {% endblock %}
+            {% block pagination %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+<div class="index-intro">
+  <p>Howdy young Internet traveler,<br />
+  This is a <a href="/Me">semi-personal knowledge</a> base I've been building for the last 12 years. I mostly write about obsessive stuff.</p>
+  <p>Anyway, you're most welcome.</p>
+</div>
+<div class="home-articles">
+  <h5>recent posts</h5>
+  <ul id="post_{{ post.id }}" data-post-id="{{ post.id }}">
+    {% for post in data.posts %}
+    <li><a href="post/{{ post.slug }}">{{ post.title }}</a> <span>{{ post.created_on|date('m/j/Y') }}</span></li>
+    {% endfor %}
+  </ul>
+</div>
+  {% endblock %}
+  {% block pagination %}
+  {{ pagination }}
+  {% endblock %}

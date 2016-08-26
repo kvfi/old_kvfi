@@ -1,0 +1,47 @@
+{% extends "base.twig" %}
+
+{% block aside_description %}
+{% endblock %}
+
+{% block content %}
+
+<div class="post">
+  <article id="article_{{ data.article.id }}" data-article-id="{{ data.article.id }}">
+    <div class="article-head">
+        <h1>{{ data.article.title }}</h1>
+        {% if data.article.intro is not empty %}<h5>{{ data.article.intro }}</h5>{% endif %}
+        <p>published: <span>{{ data.article.created_on|date('M j') }}<sup>{{ data.article.created_on|date('S') }}</sup> {{ data.article.created_on|date('Y') }}</span>; in <a href="/Archives?category={{ data.article.category.slug }}"><span>{{ data.article.category.name }}</span></a>; last update: <span>{% if data.article.last_update != '0000-00-00 00:00:00' %}{{ data.article.created_on|date('M j') }}<sup>{{ data.article.created_on|date('S') }}</sup> {{ data.article.created_on|date('Y') }}{% else %}never{% endif %}</span>; progress: <span>{{ data.article.progress }}</span>; epistemic state: <span>{{ data.article.epistemic }}</span></p>
+    </div>
+      <!-- <div class="frd-image"><img src="{{ config.cdn_image }}{{ data.article.image | raw}}" /></div> -->
+      <div id="container"></div>
+      {% if data.article.category.slug == 'correlations' %}
+      <div class="subc">
+        <p>{{ data.article.category.description }} More <a href="/Archives?category={{ data.article.category.slug }}">here</a>.</p>
+        <p><strong>Correlating:</strong> {{ data.article.extras.correlation.question }} <strong>Result:</strong> {{ data.article.extras.correlation.result }}</p>
+      </div>
+      {% endif %}
+      <div class="article-body">
+          {% if data.article.toc %}<div class="table-of-contents"></div>{% endif %}
+          {{ data.article.content | raw}}
+      </div>
+      <div class="comments" id="comments">
+          {% if data.comments %}
+          <h5>Comments &mdash; {% if data.article.extras.comment_counter_start is not empty %}{{ data.article.extras.comment_counter_start + data.comment_count }}{% else %}{{ data.comment_count }}{% endif %} so far.</h5>
+          {% for data_comment in data.comments %}
+          <div class="comment" id="comment-{{ data_comment.id }}" data-comment-id="{{ data_comment.id }}">
+            {{ data_comment.content|raw }}
+            <div class="meta">
+              <p><a href="#comment-{{ data_comment.id }}" title="Direct link to this comment">by {{ data_comment.author }} on {{ data_comment.date|date('m/j/Y') }}</a></p>
+            </div>
+          </div>
+          {% endfor %}
+          {% else %}
+          <h5>No comment.</h5>
+          <div class="comment">
+            <p><a href="#" onclick="javascript(return false)">Be the first to comment.</a></p>
+          </div>
+          {% endif %}
+      </div>
+  </article>
+</div>
+{% endblock %}

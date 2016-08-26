@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+{% for article in data.articles %}
+<article id="article_{{ article.id }}" data-article-id="{{ article.id }}">
+    <div class="article-head">
+        <h6>{{ article.datetime|date("l jS M Y") }}</h6>
+        <h2><a href="/read/{{article.id}}.html">{{ article.title }}</a></h2>
+    </div>
+    <div class="article-body">
+        {{ article.content | raw}}
+    </div>
+    <div class="more"><a href="/read/{{article.id}}.html">Read further &raquo;</a></div>
+</article>
+{% endfor %}
+{% endblock %}

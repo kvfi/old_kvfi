@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+<div class="post">
+  <article id="article_{{ data.page.id }}" data-article-id="{{ data.page.id }}">
+      <div class="article-head">
+          <h1>{{ data.page.title }}</h1>
+          {% if data.page.intro is not empty %}<h5>{{ data.page.intro }}</h5>{% endif %}
+          <p>published: <span>{{ data.page.created_on|date('M j') }}<sup>{{ data.page.created_on|date('S') }}</sup> {{ data.page.created_on|date('Y') }}</span>; last update: <span>{% if data.page.last_update != '0000-00-00 00:00:00' %}{{ data.page.last_update|date('l jS M Y') }}{% else %}never{% endif %}</span>; progress: <span>{{ data.page.progress }}</span>; epistemic state: <span>{{ data.page.epistemic }}</span>
+      </div>
+      <div class="article-body">
+        {% if data.page.toc %}<div class="table-of-contents"></div>{% endif %}
+        {{ data.page.content | raw }}
+      </div>
+  </article>
+</div>
+{% endblock %}

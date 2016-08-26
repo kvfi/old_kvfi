@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+<div class="loginForm">
+    <h2>Admin login</h2>
+    <form method="post" action="{{ config.blog.url }}/admin/auth">
+        <input type="text" name="username" placeholder="Username" />
+        <input type="password" name="password" placeholder="Password" />
+        <input type="submit" value="Log now" />
+    </form>
+</div>
+{% endblock %}

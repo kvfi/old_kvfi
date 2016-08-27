@@ -15,7 +15,7 @@ class Home extends \App\Http\Controller
     return $this->ci->view->render($response, 'home.twig', [
       'config' => $this->ci->get('webconf'),
       'headMeta' => [
-        'title' => '',
+        'title' => 'Home',
       ],
       'data' => [
         'posts' => $home->getPosts(),

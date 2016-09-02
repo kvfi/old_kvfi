@@ -2,9 +2,8 @@
 
 namespace App\Factory;
 
-class PostFactory extends \App\Http\Controller\Post
+class Post extends \App\Http\Controller\Post
 {
-
     public function comments()
     {
         $query = $this->ci->query('SELECT * comments WHERE post = '.$this->slug.' ORDER BY created_on DESC');
@@ -22,18 +21,17 @@ class PostFactory extends \App\Http\Controller\Post
 
     public function getProperties($args)
     {
-      $this->args = $args;
-      $query = $this->ci->get('posts', '*', ['slug' => $args['slug']]);
-      $query['progress2'] = 'xD';
-      $query['epistemic2'] = 'xD';
+        $this->args = $args;
+        $query = $this->ci->get('posts', '*', ['slug' => $args['slug']]);
+        $query['progress2'] = 'xD';
+        $query['epistemic2'] = 'xD';
 
-      $query['category'] = $this->ci->get('categories', ['name', 'slug', 'description'], ['slug' => $query['category']]);
+        $query['category'] = $this->ci->get('categories', ['name', 'slug', 'description'], ['slug' => $query['category']]);
 
-      $query['extras'] = unserialize($query['extras']);
+        $query['extras'] = unserialize($query['extras']);
 
-      return $query;
+        return $query;
     }
-
 
     public function comment_count()
     {

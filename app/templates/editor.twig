@@ -1,0 +1,8 @@
+<form action="" method="post">
+<input type="text" name="email" value="{{ old_form_data.email }}" /><br />
+    {{ form_errors.email | first }}
+<input type="text" name="username" /><br />
+<input type="password" name="password" /><br />
+<input type="submit" name="Go" />
+{{ csrf.field | raw }}
+</form>

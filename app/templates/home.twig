@@ -10,9 +10,9 @@
 </div>
 <div class="home-articles">
   <h5>recent posts</h5>
-  <ul id="post_{{ post.id }}" data-post-id="{{ post.id }}">
+  <ul>
     {% for post in data.posts %}
-    <li><a href="post/{{ post.slug }}">{{ post.title }}</a> <span>{{ post.created_on|date('m/j/Y') }}</span></li>
+    <li><a href="{{ path_for('post', {'slug' : post.slug}) }}">{{ post.title }}</a> <span>{{ post.created_at|date('m/j/Y') }}</span></li>
     {% endfor %}
   </ul>
 </div>

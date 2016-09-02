@@ -23,17 +23,14 @@ return [
         ],
 
         'database' => [
-          'database_type' => 'mysql',
-          'database_name' => 'blog',
-          'server' => 'localhost',
+          'driver' => 'mysql',
+          'database' => 'blog',
+          'host' => 'localhost',
           'username' => 'root',
           'password' => 'oujda',
           'charset' => 'utf8',
-          'port' => 3306,
+          'collation' => 'utf8_unicode_ci',
           'prefix' => '',
-          'option' => [
-            PDO::ATTR_CASE => PDO::CASE_NATURAL,
-          ]
         ],
 
         'webconf' => [

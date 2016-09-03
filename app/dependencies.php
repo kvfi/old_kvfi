@@ -12,14 +12,13 @@ $container = $app->getContainer();
 
 
 $container['auth'] = function ($c) {
-    return new \App\Auth\Auth;
+    return new \App\Auth\Auth();
 };
 
 // Flash messages
 $container['flash'] = function () {
     return new \Slim\Flash\Messages();
 };
-
 
 // Twig
 $container['view'] = function ($c) {
@@ -32,7 +31,7 @@ $container['view'] = function ($c) {
 
     $view->getEnvironment()->addGlobal('auth', [
         'check' => $c->auth->check(),
-        'user' => $c->auth->user()
+        'user' => $c->auth->user(),
     ]);
 
     $view->getEnvironment()->addGlobal('flash', $c->flash);
@@ -49,12 +48,10 @@ $container['pagenotfound'] = function ($c) {
     ]);
 };
 
-$capsule = new \Illuminate\Database\Capsule\Manager;
+$capsule = new \Illuminate\Database\Capsule\Manager();
 $capsule->addConnection($container['settings']['database']);
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
-
-
 
 // -----------------------------------------------------------------------------
 // Service factories
@@ -66,6 +63,7 @@ $container['logger'] = function ($c) {
     $logger = new Monolog\Logger($settings['logger']['name']);
     $logger->pushProcessor(new Monolog\Processor\UidProcessor());
     $logger->pushHandler(new Monolog\Handler\StreamHandler($settings['logger']['path'], Monolog\Logger::DEBUG));
+
     return $logger;
 };
 
@@ -74,16 +72,16 @@ $container['db'] = function ($c) use ($capsule) {
 };
 
 $container['validator'] = function ($c) {
-    return new App\Core\Validation\Validator;
+    return new App\Core\Validation\Validator();
 };
 
 $container['csrf'] = function ($c) {
-    return new \Slim\Csrf\Guard;
+    return new \Slim\Csrf\Guard();
 };
-
 
 $container['webconf'] = function ($c) {
     $settings = $c->get('settings');
+
     return $settings['webconf'];
 };
 
@@ -97,12 +95,13 @@ $controllers = [
     'Editor\MainController',
     'HomeController',
     'PageController',
-    'PostController'
+    'PostController',
 ];
 
 foreach ($controllers as $controller) {
-    $container[$controller] = function ($c) use($controller) {
-        $controller = '\App\Controllers\\' . $controller;
+    $container[$controller] = function ($c) use ($controller) {
+        $controller = '\App\Controllers\\'.$controller;
+
         return new $controller($c);
     };
 }
@@ -119,7 +118,7 @@ $middlewares = [
 
 foreach ($middlewares as $middleware) {
     if (substr($middleware, 0, 1) !== '\\') {
-        $middleware = '\\App\Middleware\\' . $middleware;
+        $middleware = '\\App\Middleware\\'.$middleware;
     }
     $app->add(new $middleware($container));
 }

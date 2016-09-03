@@ -11,7 +11,7 @@ class PageController extends Controller
     public function get(Request $request, Response $response, Array $args)
     {
         $page = Page::where('slug', $request->getAttribute('route')->getArgument('slug'))->first();
-        
+
         if (!$page) {
             return $this->pagenotfound;
         }

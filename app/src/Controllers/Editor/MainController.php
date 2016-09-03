@@ -13,25 +13,23 @@ class MainController extends Controller
 
     public function getPosts($request, $response)
     {
-        echo "lol";
+        echo 'lol';
     }
 
     public function getPages($request, $response)
     {
-        
     }
 
     public function getNewPost($request, $response)
     {
-         return $this->view->render($response, 'editor/newpost.twig', [
+        return $this->view->render($response, 'editor/newpost.twig', [
              'headMeta' => [
-                 'title' => 'Create post'
-             ]
+                 'title' => 'Create post',
+             ],
          ]);
     }
 
     public function getNewPage($request, $response)
     {
-        
     }
 }

@@ -3,10 +3,6 @@
 use Psr\Http\Message\RequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 
-ini_set('display_startup_errors',1);
-ini_set('display_errors',1);
-error_reporting(-1);
-
 // To help the built-in PHP dev server, check if the request was actually for
 // something which should probably be served as a static file
 if (PHP_SAPI === 'cli-server' && $_SERVER['SCRIPT_FILENAME'] !== __FILE__) {
@@ -36,9 +32,6 @@ $app->add(function (Request $request, Response $response, callable $next) {
 
 // Set up dependencies
 require __DIR__ . '/../app/dependencies.php';
-
-// Register middleware
-require __DIR__ . '/../app/middleware.php';
 
 // Register routes
 require __DIR__ . '/../app/routes.php';

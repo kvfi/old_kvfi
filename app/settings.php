@@ -1,4 +1,5 @@
 <?php
+
 return [
     'settings' => [
         // Slim Settings
@@ -8,9 +9,9 @@ return [
 
         // View settings
         'view' => [
-            'template_path' => __DIR__ . '/templates',
+            'template_path' => __DIR__.'/templates',
             'twig' => [
-                'cache' => __DIR__ . '/../cache/twig',
+                'cache' => __DIR__.'/../cache/twig',
                 'debug' => true,
                 'auto_reload' => true,
             ],
@@ -19,7 +20,7 @@ return [
         // monolog settings
         'logger' => [
             'name' => 'app',
-            'path' => __DIR__ . '/../log/app.log',
+            'path' => __DIR__.'/../log/app.log',
         ],
 
         'database' => [
@@ -40,8 +41,8 @@ return [
           'assets' => [
             'css' => '/static/css/',
             'js' => '/static/js/',
-            'images' => '/static/img/'
-          ]
-        ]
+            'images' => '/static/img/',
+          ],
+        ],
     ],
 ];

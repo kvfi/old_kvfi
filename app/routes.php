@@ -2,6 +2,7 @@
 
 use App\Middleware\AuthMiddleware;
 use App\Middleware\GuestMiddleware;
+
 /* HOMEPAGE */
 
 $app->get('/', 'HomeController:index')->setName('home');
@@ -20,7 +21,7 @@ $app->group('/editor', function () {
 
     $this->get('/new/post', 'Editor\MainController:getNewPost')->setName('editor.new.post');
     $this->get('/new/page', 'Editor\MainController:getNewPage')->setName('editor.new.page');
-    
+
     $this->get('/logout', 'Auth\AuthController:getLogOut')->setName('editor.logout');
 
     $this->get('/password/change', 'Auth\PasswordController:getChangePassword')->setName('editor.password.change');

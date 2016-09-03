@@ -3,7 +3,6 @@
 use App\Middleware\AuthMiddleware;
 use App\Middleware\GuestMiddleware;
 /* HOMEPAGE */
-$app->get('/', 'HomeController:index')->setName('home');
 
 /* Editor */
 $app->group('/editor', function () {

@@ -90,7 +90,7 @@ $container['webconf'] = function ($c) {
 $controllers = [
     'Auth\AuthController',
     'Auth\PasswordController',
-    'Editor\HomeController',
+    'Editor\MainController',
     'HomeController',
     'PageController',
     'PostController'

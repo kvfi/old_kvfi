@@ -1,0 +1,32 @@
+{% extends 'editor/layout.twig' %}
+
+{% block main %}
+<div class="row">
+    <div class="col-md-9">
+        <div class="panel panel-default">
+            <div class="panel-heading">New post</div>
+            <div class="panel-body">
+                <form class="" action="{{ path_for('editor.login') }}" method="post" autocomplete="off">
+                    <div class="form-group{{ form_errors.email ? ' has-error' : '' }}">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" value="{{ old_form_data.username}}">
+                        {% if form_errors %}
+                        <span class="help-block">{{ form_errors.username | first }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="form-group{{ form_errors.password ? ' has-error' : '' }}">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" value="{{ old_form_data.password }}">
+                        {% if form_errors %}
+                        <span class="help-block">{{ form_errors.password | first }}</span>
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="btn btn-default">Sign up</button>
+
+                    {{ csrf.field | raw }}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

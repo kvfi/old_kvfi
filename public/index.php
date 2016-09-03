@@ -9,6 +9,12 @@ if (PHP_SAPI === 'cli-server' && $_SERVER['SCRIPT_FILENAME'] !== __FILE__) {
     return false;
 }
 
+if (substr($_SERVER['HTTP_HOST'], -4) === '.dev') {
+    define('WEBENV', 'dev');
+} else {
+    define('WEBENV', 'prod');
+}
+
 require __DIR__ . '/../vendor/autoload.php';
 
 session_start();

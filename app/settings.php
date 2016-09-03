@@ -24,10 +24,10 @@ return [
 
         'database' => [
           'driver' => 'mysql',
-          'database' => parse_ini_file('../db.ini', true)['dev']['database'],
-          'host' => parse_ini_file('../db.ini', true)['dev']['host'],
-          'username' => parse_ini_file('../db.ini', true)['dev']['username'],
-          'password' => parse_ini_file('../db.ini', true)['dev']['password'],
+          'database' => parse_ini_file('../db.ini', true)[WEBENV]['database'],
+          'host' => parse_ini_file('../db.ini', true)[WEBENV]['host'],
+          'username' => parse_ini_file('../db.ini', true)[WEBENV]['username'],
+          'password' => parse_ini_file('../db.ini', true)[WEBENV]['password'],
           'charset' => 'utf8',
           'collation' => 'utf8_unicode_ci',
           'prefix' => '',

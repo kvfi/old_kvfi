@@ -42,7 +42,11 @@ $container['view'] = function ($c) {
 };
 
 $container['pagenotfound'] = function ($c) {
-    return $c->view->render($c->response->withStatus(404), '404.twig');
+    return $c->view->render($c->response->withStatus(404), '404.twig', [
+        'headMeta' => [
+              'title' => 'Woops XD',
+          ],
+    ]);
 };
 
 $capsule = new \Illuminate\Database\Capsule\Manager;

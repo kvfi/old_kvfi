@@ -6,14 +6,15 @@
 {% block content %}
 
 <div class="post">
-  <article id="article_{{ data.post.id }}" data-article-id="{{ data.post.id }}">
+  {% if auth.check %}
+  <a href="{{ path_for('editor.edit.post', {id :  data.post.id}) }}">Edit</a>
+  {% endif %}
+  <article>
     <div class="article-head">
         <h1>{{ data.post.title }}</h1>
         {% if data.post.intro is not empty %}<h5>{{ data.post.intro }}</h5>{% endif %}
-        <p>published: <span>{{ data.post.created_at|date('M j') }}<sup>{{ data.post.created_at|date('S') }}</sup> {{ data.post.created_at|date('Y') }}</span>; in <a href="/Archives?category={{ data.post.category.slug }}"><span>{{ data.post.category.name }}</span></a>; last update: <span>{% if data.post.updated_at != '0000-00-00 00:00:00' %}{{ data.post.updated_at|date('M j') }}<sup>{{ data.post.updated_at|date('S') }}</sup> {{ data.post.updated_at|date('Y') }}{% else %}never{% endif %}</span>; progress: <span>{{ data.post.progress }}</span>; epistemic state: <span>{{ data.post.epistemic }}</span></p>
+        <p>published: <span>{{ data.post.created_at|date('M j') }}<sup>{{ data.post.created_at|date('S') }}</sup> {{ data.post.created_at|date('Y') }}</span>; in <a href="/Archives?category={{ data.post.category.slug }}"><span>{{ data.post.category.name }}</span></a>; last update: <span>{% if data.post.updated_at != data.post.created_at %}{{ data.post.updated_at|date('M j') }}<sup>{{ data.post.updated_at|date('S') }}</sup> {{ data.post.updated_at|date('Y') }}{% else %}never{% endif %}</span>; progress: <span>{{ data.post.progress }}</span>; epistemic state: <span>{{ data.post.epistemic }}</span></p>
     </div>
-      <!-- <div class="frd-image"><img src="{{ config.cdn_image }}{{ data.post.image | raw}}" /></div> -->
-      <div id="container"></div>
       {% if data.post.category.slug == 'correlations' %}
       <div class="subc">
         <p>{{ data.post.category.description }} More <a href="/Archives?category={{ data.post.category.slug }}">here</a>.</p>
@@ -22,7 +23,7 @@
       {% endif %}
       <div class="article-body">
           {% if data.post.toc %}<div class="table-of-contents"></div>{% endif %}
-          {{ data.post.content | raw}}
+          <script>mdToHTML('{{ data.post.content | raw }}')</script>
       </div>
       <div class="comments" id="comments">
           {% if data.comments %}

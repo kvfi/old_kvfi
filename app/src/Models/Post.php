@@ -17,6 +17,7 @@ class Post extends Model
          'category',
          'progress',
          'epistemic',
+         'tags',
          'toc',
          'extras',
      ];

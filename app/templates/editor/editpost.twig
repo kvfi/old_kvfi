@@ -1,0 +1,61 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<div class="post">
+  <article class="form">
+    <form class="" action="{{ path_for('editor.new.post') }}" method="post">
+        <div class="article-head">
+            <input type="text" class="input-style slug-input-gen" name="title" value="{{ data.post.title }}" placeholder="Just a title" />
+            <div class="slug-container">
+                <div class="url-viewer"></div>
+                <input type="hidden" class="slug-input" name="slug" value="{{ data.post.slug }}" placeholder="Enter desired slug" />
+                <span class="helper">{{ form_errors.slug | first }}</span>
+            </div>
+            <input type="text" class="input-style" name="intro" value="{{ data.post.intro }}" placeholder="And maybe an intro too">
+            <span class="helper">{{ form_errors.intro | first }}</span>
+            <p>published: 
+                <span>
+                    <input class="input-date input-style" name="created_at" type="date" value="{{ data.post.created_at|date('Y-m-d') }}">
+                </span>
+                <span>
+                    <select class="select_meta input-style" name="category">
+                        <option value="">Category</option>
+                        {% for category in data.categories %}
+                        <option value="{{ category.slug }}"{% if category.slug == data.post.category %} selected{% endif %}>{{ category.name }}</option>
+                        {% endfor %}
+                    </select>
+                </span>
+                <span>
+                    <select class="select_meta input-style" name="progress">
+                        <option value="">Progress</option>
+                        {% for progress in data.progressions %}
+                        <option value="{{ progress.slug }}"{% if progress.slug == data.post.progress %} selected{% endif %}>{{ progress.title }}</option>
+                        {% endfor %}
+                    </select>
+                </span>
+                <span>
+                    <select class="select_meta input-style" name="epistemic">
+                        <option value="">Epistemic</option>
+                        {% for epistemic in data.epistemics %}
+                        <option value="{{ epistemic.slug }}"{% if epistemic.slug == data.post.epistemic %} selected{% endif %}>{{ epistemic.title }}</option>
+                        {% endfor %}
+                    </select>
+                </span>
+            </p>
+            <span class="helper">{{ form_errors.created_at | first }}</span>
+            <span class="helper">{{ form_errors.category | first }}</span>
+            <span class="helper">{{ form_errors.progress | first }}</span>
+            <span class="helper">{{ form_errors.epistemic | first }}</span>
+        </div> 
+        <div class="tags"></div>
+        <div class="article-body">
+            <span class="helper">{{ form_errors.content | first }}</span>
+            <textarea name="content">```Enter markdown text here...```</textarea>
+            <div class="converted_md_txt"></div>
+        </div>
+        <input type="submit" />
+        {{ csrf.field | raw }}
+      </form>
+  </article>
+</div>
+{% endblock %}

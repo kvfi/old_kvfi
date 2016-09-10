@@ -21,13 +21,30 @@ $container['flash'] = function () {
 };
 
 // Twig
-$container['view'] = function ($c) {
+$container['view'] = function ($c) use ($app) {
     $settings = $c->get('settings');
     $view = new Slim\Views\Twig($settings['view']['template_path'], $settings['view']['twig']);
 
     // Add extensions
     $view->addExtension(new Slim\Views\TwigExtension($c->get('router'), $c->get('request')->getUri()));
     $view->addExtension(new Twig_Extension_Debug());
+
+    $unserialize = new Twig_SimpleFilter('unserialize', function ($serial) {
+        return unserialize($serial);
+    });
+
+     $implode = new Twig_SimpleFilter('implode', function ($array) {
+        return implode(', ', $array);
+    });
+
+    $toHTML = new Twig_SimpleFilter('toHTML', function ($md) {
+        $html = new ParsedownExtra();;
+        return $html->text($md);
+    });
+
+    $view->getEnvironment()->addFilter($unserialize);
+    $view->getEnvironment()->addFilter($implode);
+    $view->getEnvironment()->addFilter($toHTML);
 
     $view->getEnvironment()->addGlobal('auth', [
         'check' => $c->auth->check(),

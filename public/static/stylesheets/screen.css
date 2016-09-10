@@ -396,6 +396,12 @@ a.logo {
     font-weight: 900;
 }
 
+.bodyPage .post article .admin-meta {
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
 .bodyPage .post article .article-head {
     margin: 0 0 10px 0;
     padding: 30px 0 0 0;
@@ -410,7 +416,7 @@ a.logo {
     margin: 0 0 10px 0;
 }
 
-.bodyPage .post article .article-head p {
+.bodyPage .post article .article-head .meta {
     font-size: 13px;
     color: #7a7a7a;
     padding: 10px 0;
@@ -436,8 +442,6 @@ a.logo {
     height: auto;
     margin: 0 0 20px 0;
 }
-
-.bodyPage .mainBody article .embed-image {}
 
 .bodyPage .post article .subc {
     background-color: #f2f2f2;
@@ -755,8 +759,7 @@ article.form form textarea {
     line-height: 170%;
     width: 100%;
     outline: 0;
-    resize: none;
-    overflow: hidden;
+    resize: vertical;
     min-height: 100px;
 }
 

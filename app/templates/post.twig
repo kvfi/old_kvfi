@@ -6,14 +6,11 @@
 {% block content %}
 
 <div class="post">
-  {% if auth.check %}
-  <a href="{{ path_for('editor.edit.post', {id :  data.post.id}) }}">Edit</a>
-  {% endif %}
   <article>
     <div class="article-head">
         <h1>{{ data.post.title }}</h1>
         {% if data.post.intro is not empty %}<h5>{{ data.post.intro }}</h5>{% endif %}
-        <p>published: <span>{{ data.post.created_at|date('M j') }}<sup>{{ data.post.created_at|date('S') }}</sup> {{ data.post.created_at|date('Y') }}</span>; in <a href="/Archives?category={{ data.post.category.slug }}"><span>{{ data.post.category.name }}</span></a>; last update: <span>{% if data.post.updated_at != data.post.created_at %}{{ data.post.updated_at|date('M j') }}<sup>{{ data.post.updated_at|date('S') }}</sup> {{ data.post.updated_at|date('Y') }}{% else %}never{% endif %}</span>; progress: <span>{{ data.post.progress }}</span>; epistemic state: <span>{{ data.post.epistemic }}</span></p>
+        <div class="meta">published: <span>{{ data.post.created_at|date('M j') }}<sup>{{ data.post.created_at|date('S') }}</sup> {{ data.post.created_at|date('Y') }}</span>; in <a href="/Archives?category={{ data.post.category.slug }}"><span>{{ data.post.category.name }}</span></a>; last update: <span>{% if data.post.updated_at != data.post.created_at %}{{ data.post.updated_at|date('M j') }}<sup>{{ data.post.updated_at|date('S') }}</sup> {{ data.post.updated_at|date('Y') }}{% else %}never{% endif %}</span>; progress: <span>{{ data.post.progress }}</span>; epistemic state: <span>{{ data.post.epistemic }}</span></div>
     </div>
       {% if data.post.category.slug == 'correlations' %}
       <div class="subc">
@@ -23,8 +20,13 @@
       {% endif %}
       <div class="article-body">
           {% if data.post.toc %}<div class="table-of-contents"></div>{% endif %}
-          <script>mdToHTML('{{ data.post.content | raw }}')</script>
+          {{ data.post.content | toHTML | raw }}
       </div>
+      {% if auth.check %}
+      <div class="admin-meta">
+        <span><a href="{{ path_for('editor.edit.post', {id :  data.post.id}) }}">Edit</a></span>
+      </div>
+      {% endif %}
       <div class="comments" id="comments">
           {% if data.comments %}
           <h5>Comments &mdash; {% if data.post.extras.comment_counter_start is not empty %}{{ data.post.extras.comment_counter_start + data.comment_count }}{% else %}{{ data.comment_count }}{% endif %} so far.</h5>

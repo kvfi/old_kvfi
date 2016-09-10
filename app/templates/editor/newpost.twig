@@ -27,7 +27,8 @@
         <div class="tags"></div>
         <div class="article-body">
             <span class="helper">{{ form_errors.content | first }}</span>
-            <textarea name="content">```Enter markdown text here...```</textarea>
+            <textarea name="content" placeholder="Write, paste Markdown code here."></textarea>
+            
             <div class="converted_md_txt"></div>
         </div>
         <input type="submit" />

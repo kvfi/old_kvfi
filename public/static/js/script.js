@@ -59,8 +59,6 @@ var Footnotes = {
 
 }
 
-
-
 jQuery(document).ready(function() {
     Footnotes.setup();
     var ToC = "<h6>Table of Contents</h6>" +
@@ -93,55 +91,44 @@ jQuery(document).ready(function() {
     $(".table-of-contents").prepend(ToC);
     $(".footnotes").prepend("<h5>References</h5>");
 
-    function myFunc() {
-        var text_content = $("article.form form textarea"),
-            tcv = text_content.val(),
-            converter = new showdown.Converter({ extensions: ['footnotes'] });
-        xxxx = converter.makeHtml(tcv);
-        return xxxx;
-    }
-    $('.converted_md_txt').html(myFunc());
-    $("article.form form textarea").keyup(function() {
-        $('.converted_md_txt').html(myFunc());
-    });
-
     $("article.form form textarea").change(function() {
         $('.converted_md_txt').html(myFunc());
     });
 
     $.fn.taggin = function() {
-        $('<input>').attr({
+        $('<input />').attr({
             type: 'text',
             class: 'tagger',
             name: 'tagger',
-            placeholder: 'A tag'
+            placeholder: 'A tag',
+            autocomplete: 'off'
         }).appendTo(this);
-        $('<div>').attr({
-            class: 'tagged'
-        }).prependTo(this);
-        $('<ul>').appendTo('.tagged', this);
-        $('<input>').attr({
-            type: 'hidden',
-            class: 'tags',
-            name: 'tags'
-        }).appendTo(this);
+        if ($('.tagged').length < 0) {
+            $('<div>').attr({
+                class: 'tagged'
+            }).prependTo(this);
+            $('<ul>').appendTo('.tagged', this);
+            $('<input>').attr({
+                type: 'hidden',
+                class: 'tags',
+                name: 'tags'
+            }).appendTo(this);
+        }
 
         $('.tags input.tagger').keypress(function(event) {
             if (event.which == 13) {
                 event.preventDefault();
                 var val = $(this).val();
-                if ($('.tags input.tags').val().indexOf(val) >= 0) {
-                    alert(val + ' was already tagged.');
+                var j1 = new RegExp(val, 'g');
+                $('<li>' + val + '<span class="rm">x</span></li>').appendTo('.tagged ul');
+                var current_tags = $('.tags input.tags').val();
+                if (current_tags.length === 0) {
+                    var updated_tags = current_tags.concat(val);
                 } else {
-                    $('<li>' + val + '<span class="rm">x</span></li>').appendTo('.tagged ul');
-                    var current_tags = $('.tags input.tags').val();
-                    if (current_tags.length === 0) {
-                        var updated_tags = current_tags.concat(val);
-                    } else {
-                        var updated_tags = current_tags.concat(', ' + val);
-                    }
-                    $('.tags input.tags').val(updated_tags);
+                    var updated_tags = current_tags.concat(', ' + val);
                 }
+                $('.tags input.tags').val(updated_tags);
+
                 $(this).val('');
             }
         });
@@ -193,12 +180,16 @@ jQuery(document).ready(function() {
     }
 
     $('article.form form input').attr('autocomplete', 'off');
-    $('.tags').taggin();
+    $('div.tags').taggin();
     $('.slug-input-gen').slugCreator();
 });
 
-function mdToHTML(html) {
-    converter = new showdown.Converter({ extensions: ['footnotes'] });
-    var x = converter.makeHtml(html);
-    $('.post .article-body').append(x);
+
+function isHTML(str) {
+    var a = document.createElement('div');
+    a.innerHTML = str;
+    for (var c = a.childNodes, i = c.length; i--;) {
+        if (c[i].nodeType == 1) return true;
+    }
+    return false;
 }

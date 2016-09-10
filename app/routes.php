@@ -22,8 +22,8 @@ $app->group('/editor', function () {
     $this->get('/new/post', 'Editor\MainController:getNewPost')->setName('editor.new.post');
     $this->post('/new/post', 'Editor\MainController:postNewPost');
 
-    $this->get('/new/post/edit/{id}', 'Editor\MainController:getEditPost')->setName('editor.edit.post');
-    $this->post('/new/post/edit', 'Editor\MainController:postEditPost');
+    $this->get('/post/update/{id}', 'Editor\MainController:getEditPost')->setName('editor.edit.post');
+    $this->post('/post/update/{id}', 'Editor\MainController:postEditPost');
     
     $this->get('/new/page', 'Editor\MainController:getNewPage')->setName('editor.new.page');
 

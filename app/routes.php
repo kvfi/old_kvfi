@@ -37,4 +37,4 @@ $app->group('/editor', function () {
 $app->get('/post/{slug}', 'App\Controllers\PostController:get')->setName('post');
 
 /* Page */
-$app->get('/{slug}', 'App\Controllers\PageController:get')->setName('post');
+$app->get('/{slug}', 'App\Controllers\PageController:get')->setName('page');

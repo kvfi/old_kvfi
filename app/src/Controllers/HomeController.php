@@ -12,13 +12,16 @@ class HomeController extends Controller
     public function index(Request $request, Response $response, $args)
     {
         $pagination = new Paginator(['total' => 100, 'item_per_page' => 20]);
-
+        $posts = [];
+        for ($i = 2010; $i <= date('Y'); $i++) {
+          $posts[$i] = Post::whereYear('created_at', '=', $i)->orderBy('created_at', 'DESC')->get();
+        }
         return $this->view->render($response, 'home.twig', [
           'headMeta' => [
               'title' => 'Home',
           ],
           'data' => [
-              'posts' => Post::limit(10)->orderBy('created_at', 'DESC')->get(),
+              'posts' => $posts,
               'pagination' => $pagination->render(),
           ],
       ]);

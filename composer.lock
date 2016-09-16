@@ -782,16 +782,16 @@
         },
         {
             "name": "respect/validation",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Respect/Validation.git",
-                "reference": "53b737513b0c4a1253762dd3d1b55e11f09d14a9"
+                "reference": "6d0e3a24225581f71f726a9212d4eddac9622ff1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Respect/Validation/zipball/53b737513b0c4a1253762dd3d1b55e11f09d14a9",
-                "reference": "53b737513b0c4a1253762dd3d1b55e11f09d14a9",
+                "url": "https://api.github.com/repos/Respect/Validation/zipball/6d0e3a24225581f71f726a9212d4eddac9622ff1",
+                "reference": "6d0e3a24225581f71f726a9212d4eddac9622ff1",
                 "shasum": ""
             },
             "require": {
@@ -842,7 +842,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2016-08-03 09:06:53"
+            "time": "2016-09-13 09:32:43"
         },
         {
             "name": "slim/csrf",

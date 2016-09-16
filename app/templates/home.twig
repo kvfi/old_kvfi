@@ -10,13 +10,18 @@
 </div>
 <div class="home-articles">
   <h5>recent posts</h5>
-  <ul>
-    {% for post in data.posts %}
-    <li><a href="{{ path_for('post', {'slug' : post.slug}) }}">{{ post.title }}</a> <span>{{ post.created_at|date('m/j/Y') }}</span></li>
-    {% endfor %}
-  </ul>
+  {% for i in "now"|date("Y")..2010 %}
+    {% if data.posts[i] is not empty %}
+      <h6>{{ i }}</h6>
+      {% for post in data.posts[i] %}
+        <ul>
+          <li><time>{{ post.created_at|date('Y-m-d') }}</time> <a href="{{ path_for('post', {slug : post.slug}) }}">{{ post.title }}</a></li>
+        </ul>
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
 </div>
-  {% endblock %}
-  {% block pagination %}
-  {{ pagination }}
-  {% endblock %}
+{% endblock %}
+{% block pagination %}
+{{ pagination }}
+{% endblock %}

@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 use App\Models\Post;
+use App\Models\Category;
 
 class PostController extends Controller
 {
@@ -18,6 +19,7 @@ class PostController extends Controller
         ],
         'data' => array(
             'post' => $post,
+            'category' => Category::where('slug', $post->category)->first()
             /* 'comments' => $post->comments(),
             'comment_count' => count($post->comments()), */
         ),

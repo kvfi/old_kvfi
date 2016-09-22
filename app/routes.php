@@ -24,8 +24,13 @@ $app->group('/editor', function () {
 
     $this->get('/post/update/{id}', 'Editor\MainController:getEditPost')->setName('editor.edit.post');
     $this->post('/post/update/{id}', 'Editor\MainController:postEditPost');
-    
+
+    /* pages */
     $this->get('/new/page', 'Editor\MainController:getNewPage')->setName('editor.new.page');
+    $this->post('/new/page', 'Editor\MainController:postNewPage');
+
+    $this->get('/page/update/{id}', 'Editor\MainController:getEditPage')->setName('editor.edit.page');
+    $this->post('/page/update/{id}', 'Editor\MainController:postEditPage');
 
     $this->get('/logout', 'Auth\AuthController:getLogOut')->setName('editor.logout');
 
@@ -37,4 +42,7 @@ $app->group('/editor', function () {
 $app->get('/post/{slug}', 'App\Controllers\PostController:get')->setName('post');
 
 /* Page */
+$app->get('/archives', 'App\Controllers\PageController:archives')->setName('archives');
+$app->get('/contact', 'App\Controllers\PageController:contact')->setName('contact');
+$app->get('/topics', 'App\Controllers\PageController:topics')->setName('topics');
 $app->get('/{slug}', 'App\Controllers\PageController:get')->setName('page');

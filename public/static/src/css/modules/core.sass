@@ -1,0 +1,329 @@
+.bodyPage
+  padding: 50px 0 0 0
+  .hdr
+    background-image: url('../../images/_bg_h3.png')
+    display: block
+    width: 100%
+    height: 80px
+    margin-bottom: 30px
+  .index-intro
+    margin: 0 0 30px 0
+    p
+      font-size: 15px
+      span
+        background-color: #000
+        color: #fff
+        position: relative
+        padding-right: 3px
+        &:after, &:before
+          left: 100%
+          top: 30%
+          border: solid transparent
+          content: " "
+          height: 0
+          width: 0
+          position: absolute
+          pointer-events: none
+        &:after
+          border: 4px rgba(136, 183, 213, 0)
+          margin-top: -4px
+        &:before
+          border: 5px rgba(194, 225, 245, 0)
+          border-left-color: #c2e1f5
+          margin-top: -5px
+  .home-articles
+    h5
+      font-size: 16px
+      background-color: #eee
+      margin: 0 0 30px 0
+      padding: 5px 10px
+      display: inline-block
+      font-weight: normal
+      color: #555
+    h6
+      font-size: 16px
+      padding-bottom: 5px;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #ddd;
+    ul li
+      padding: 0 0 25px 0
+      a
+        font-size: 16px
+      time
+        display: inline-block
+        width: 20%
+        color: #aaa
+  .mainBody
+    background-color: #fff; padding: 20px;
+    padding-right: 20px
+    article
+      margin: 10px 0
+      padding: 10px 0
+      border-bottom: 1px solid #eee
+      &:first-child
+        margin-top: 0
+        padding-top: 0
+      &:last-child
+        margin-bottom: 0
+        padding-bottom: 0
+        border-bottom: 0
+  .post article
+    h1
+      font-size: 35px
+      font-weight: 900
+    .admin-meta
+      padding: 3px 10px
+      font-size: 12px
+      font-weight: normal
+    .article-head
+      margin: 0 0 10px 0
+      padding: 30px 0 0 0
+      border-top: 1px solid black
+      border-bottom: 1px solid #ccc
+      h5
+        font-size: 16px
+        color: #aaa
+        font-weight: normal
+        margin: 0 0 10px 0
+      .meta
+        font-size: 13px
+        color: #7a7a7a
+        padding: 10px 0
+      p
+        span
+          border-bottom: 1px dotted #aaa
+          cursor: help
+        a
+          text-decoration: none
+          color: inherit
+          span
+            border-bottom: 1px dotted #aaa
+            cursor: auto
+    .frd-image img
+      width: 100%
+      height: auto
+      margin: 0 0 20px 0
+    .subc
+      background-color: #f2f2f2
+      padding: 10px
+      margin-bottom: 15px
+      p
+        font-size: 12px
+        margin-bottom: 5px
+    .article-body
+      padding: 0 0 20px 0
+    h4
+      font-size: 20px
+      margin: 0 0 10px 0
+      border-bottom: 1px solid #111111
+      display: inline-block
+    h6
+      font-size: 1.3rem
+      text-transform: uppercase
+      color: #aaa
+    p, ul, li, blockquote
+      font-size: 15px
+      margin: 0 0 20px 0
+      line-height: 170%
+    p:last-child, li:last-child, blockquote:last-child
+      margin-bottom: 0
+    p sup
+      font-size: 12px
+      line-height: 0
+    ul
+      margin-top: 10px
+    li
+      list-style-type: square
+    blockquote
+      background-color: #f6f6f6
+      padding: 10px
+      display: -webkit-box
+    li
+      margin: 0 0 15px 0
+    .comments
+      border-top: 1px solid #ddd
+      padding-top: 15px
+      h5
+        font-size: 15px
+        font-weight: bold
+      .comment
+        border-bottom: 1px dotted #ddd
+        padding: 10px 0
+        &:last-of-type
+          border-bottom: 0
+        p, ul li, blockquote
+          font-size: 13px
+          line-height: 150%
+        p
+          margin-bottom: 10px
+          &:last-of-type
+            margin-bottom: 0
+        .meta
+          text-align: right
+          margin-top: 10px
+          a
+            color: #888
+            text-decoration: none
+            border-bottom: 1px dotted #ccc
+    .footnotes
+      margin-top: 50px
+      ol li
+        list-style-position: inside
+        list-style-type: decimal
+
+#footnotediv
+  background-color: #fff
+  padding: 5px
+  border: 1px solid #ddd
+  right: 50px
+  p
+    padding: 5px 0
+    margin: 0
+    font-size: 11px
+    font-style: italic
+    color: #333
+    &:first-of-type
+      padding-top: 0
+    &:last-of-type
+      padding-bottom: 0
+
+.footnotes
+  border: 1px solid #ddd
+  padding: 10px
+
+.bodyPage .post article .article-body .footnotes
+  p, li
+    font-size: 11px
+    line-height: 140%
+
+.footnotes
+  h5
+    font-size: 13px
+    color: #777
+    font-weight: bold
+  hr
+    border-width: 0
+
+.admin-buttons
+  margin: 0 0 20px 0
+  ul li
+    display: inline-block
+    font-size: .9em
+    padding: 0 5px
+    background-color: #111
+    color: #eee
+    a
+      color: inherit
+    &:hover
+      background: #555
+
+/* Pagination
+ *-------------------------------------------------------------- */
+
+.pagination
+  margin: 20px 0
+  ul li
+    display: inline-block
+    margin-right: 10px
+    &.current
+      font-weight: bold
+
+/* Footer
+ *-------------------------------------------------------------- */
+
+.not_found
+  h1
+    font-size: 60px
+    color: #999
+  h3
+    font-size: 20px
+
+/* Footer
+ *-------------------------------------------------------------- */
+
+footer
+  margin-top: 20px
+  .tabs
+    width: 405px
+    border-top: 3px solid #eee
+    a
+      padding: 10px 30px 10px 0
+      color: #666
+      text-decoration: none
+  p
+    font-size: .9em
+    color: #777
+
+/* Admin Editor */
+
+article.form form
+  .article-head span
+    border: 0 !important
+  input.input-style, select.input-style
+    border: 0
+    padding: 0
+    background: none
+    overflow: hidden
+  input
+    &[name="title"]
+      font-size: 35px
+      font-weight: bold
+      width: 100%
+    &[name="intro"]
+      font-size: 16px
+      color: #aaa
+      font-weight: normal
+      margin: 0 0 10px 0
+      width: 100%
+    &[type="date"].input-date
+      font-size: 13px
+      color: #7a7a7a
+      width: auto
+  .tags
+    .tagged
+      margin-bottom: 10px
+      ul li
+        display: inline-block
+        background-color: #f3f3f3
+        margin-right: 10px
+        font-size: 14px
+        padding: 0 0 0 5px
+        border-radius: 4px
+        span.rm
+          background-color: #bbb
+          margin-left: 5px
+          padding: 0 4px
+          display: inline-block
+          border-top-right-radius: 4px
+          border-bottom-right-radius: 4px
+          &:hover
+            cursor: pointer
+    input[type="text"]
+      font-size: 13px
+      color: #333
+      width: auto
+  .slug-container .slug-input
+    font-size: 13px
+    color: #333
+    width: auto
+  textarea
+    font-size: 15px
+    line-height: 170%
+    width: 100%
+    outline: 0
+    resize: vertical
+    min-height: 100px
+  input[type="submit"]
+    width: auto
+
+form
+  span.helper
+    font-size: 12px
+    color: red
+  .url-viewer
+    margin: 5px 0
+    font-size: 13px
+    display: none
+    span
+      background-color: rgba(63, 127, 191, 0.6)
+      margin-right: 10px

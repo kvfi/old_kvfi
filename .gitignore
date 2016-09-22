@@ -2,5 +2,4 @@
 db.ini
 log/*
 cache/*
-public/static/src
 node_modules

@@ -11,19 +11,19 @@ class PageController extends Controller
 {
     public function get(Request $request, Response $response, array $args)
     {
-      $page = Page::where('slug', $request->getAttribute('route')->getArgument('slug'))->first();
+        $page = Page::where('slug', $request->getAttribute('route')->getArgument('slug'))->first();
 
-      if (!$page) {
-          return $this->pagenotfound;
-      }
+        if (!$page) {
+            return $this->pagenotfound;
+        }
 
-      return $this->view->render($response, 'page.twig', array(
+        return $this->view->render($response, 'page.twig', array(
         'headMeta' => [
             'title' => $page->title,
         ],
         'data' => array(
             'page' => $page,
-            'category' => Category::where('slug', $page->category)->first()
+            'category' => Category::where('slug', $page->category)->first(),
             /* 'comments' => $post->comments(),
             'comment_count' => count($post->comments()), */
         ),
@@ -32,10 +32,10 @@ class PageController extends Controller
 
     public function contact(Request $request, Response $response, array $args)
     {
-      return $this->view->render($response, 'contact.twig', array(
+        return $this->view->render($response, 'contact.twig', array(
         'headMeta' => [
             'title' => 'Contact me',
-        ]
+        ],
       ));
     }
 }

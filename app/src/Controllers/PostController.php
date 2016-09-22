@@ -19,7 +19,7 @@ class PostController extends Controller
         ],
         'data' => array(
             'post' => $post,
-            'category' => Category::where('slug', $post->category)->first()
+            'category' => Category::where('slug', $post->category)->first(),
             /* 'comments' => $post->comments(),
             'comment_count' => count($post->comments()), */
         ),

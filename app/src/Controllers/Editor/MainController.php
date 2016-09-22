@@ -190,7 +190,7 @@ class MainController extends Controller
             'created_at' => $request->getParam('created_at'),
             'progress' => $request->getParam('progress'),
             'epistemic' => $request->getParam('epistemic'),
-            'content' => $request->getParam('content')
+            'content' => $request->getParam('content'),
         ]);
 
         $this->flash->addMessage('info', 'Post');

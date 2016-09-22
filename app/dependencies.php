@@ -10,7 +10,6 @@ $container = $app->getContainer();
 // Service providers
 // -----------------------------------------------------------------------------
 
-
 $container['auth'] = function ($c) {
     return new \App\Auth\Auth();
 };
@@ -38,7 +37,8 @@ $container['view'] = function ($c) use ($app) {
     });
 
     $toHTML = new Twig_SimpleFilter('toHTML', function ($md) {
-        $html = new ParsedownExtra();;
+        $html = new ParsedownExtra();
+
         return $html->text($md);
     });
 

@@ -13,8 +13,6 @@ class Category extends Model
         'name',
         'slug',
         'description',
-        'special'
+        'special',
      ];
-
-    
 }

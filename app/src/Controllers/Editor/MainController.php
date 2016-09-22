@@ -4,10 +4,10 @@ namespace App\Controllers\Editor;
 
 use App\Controllers\Controller;
 use App\Models\Post;
+use App\Models\Page;
 use App\Models\Category;
 use App\Models\ProgressionState;
 use App\Models\EpistemicState;
-use Parsedown;
 use Respect\Validation\Validator as v;
 
 class MainController extends Controller
@@ -15,15 +15,6 @@ class MainController extends Controller
     public function index($request, $response)
     {
         return $this->view->render($response, 'editor/home.twig');
-    }
-
-    public function getPosts($request, $response)
-    {
-        echo 'lol';
-    }
-
-    public function getPages($request, $response)
-    {
     }
 
     public function getNewPost($request, $response)
@@ -35,21 +26,21 @@ class MainController extends Controller
              'data' => [
                  'categories' => Category::get(['slug', 'name']),
                  'progressions' => ProgressionState::all(),
-                 'epistemics' => EpistemicState::all()
-             ]
+                 'epistemics' => EpistemicState::all(),
+             ],
          ]);
     }
 
     public function postNewPost($request, $response)
     {
-         $validation = $this->validator->validate($request, [
+        $validation = $this->validator->validate($request, [
             'title' => v::notEmpty(),
             'slug' => v::notEmpty(),
             'intro' => v::notEmpty(),
             'category' => v::notEmpty(),
             'progress' => v::notEmpty(),
             'epistemic' => v::notEmpty(),
-            'content' => v::notEmpty()
+            'content' => v::notEmpty(),
         ]);
 
         if ($validation->failed()) {
@@ -72,13 +63,9 @@ class MainController extends Controller
         return $response->withRedirect($this->router->pathFor(('editor.home')));
     }
 
-    public function getNewPage($request, $response)
-    {
-    }
-
     public function getEditPost($request, $response, $args)
     {
-         return $this->view->render($response, 'editor/editpost.twig', [
+        return $this->view->render($response, 'editor/editpost.twig', [
              'headMeta' => [
                  'title' => 'Edit: ',
              ],
@@ -86,8 +73,8 @@ class MainController extends Controller
                  'post' => Post::where('id', $args['id'])->first(),
                  'categories' => Category::get(['slug', 'name']),
                  'progressions' => ProgressionState::all(),
-                 'epistemics' => EpistemicState::all()
-             ]
+                 'epistemics' => EpistemicState::all(),
+             ],
          ]);
     }
 
@@ -100,7 +87,7 @@ class MainController extends Controller
             'category' => v::notEmpty(),
             'progress' => v::notEmpty(),
             'epistemic' => v::notEmpty(),
-            'content' => v::notEmpty()
+            'content' => v::notEmpty(),
         ]);
 
         if ($validation->failed()) {
@@ -122,5 +109,92 @@ class MainController extends Controller
         $this->flash->addMessage('info', 'Post');
 
         return $response->withRedirect($this->router->pathFor(('editor.home')));
+    }
+
+    public function getNewPage($request, $response)
+    {
+        return $this->view->render($response, 'editor/newpage.twig', [
+             'headMeta' => [
+                 'title' => 'Create page',
+             ],
+             'data' => [
+                 'progressions' => ProgressionState::all(),
+                 'epistemics' => EpistemicState::all(),
+             ],
+         ]);
+    }
+
+    public function postNewPage($request, $response)
+    {
+        $validation = $this->validator->validate($request, [
+            'title' => v::notEmpty(),
+            'slug' => v::notEmpty(),
+            'intro' => v::notEmpty(),
+            'progress' => v::notEmpty(),
+            'epistemic' => v::notEmpty(),
+            'content' => v::notEmpty(),
+        ]);
+
+        if ($validation->failed()) {
+            return $response->withRedirect($this->router->pathFor('editor.new.page'));
+        }
+
+        Page::create([
+            'title' => $request->getParam('title'),
+            'slug' => $request->getParam('slug'),
+            'intro' => $request->getParam('intro'),
+            'content' => $request->getParam('content'),
+            'progress' => $request->getParam('progress'),
+            'epistemic' => $request->getParam('epistemic'),
+        ]);
+
+        $this->flash->addMessage('info', 'Page'.$request->getParam('title').' was created successfully.');
+
+        return $response->withRedirect($this->router->pathFor('page', ['slug' => $request->getParam('slug')]));
+    }
+
+    public function getEditPage($request, $response, $args)
+    {
+        return $this->view->render($response, 'editor/editpage.twig', [
+             'headMeta' => [
+                 'title' => 'Edit page: ',
+             ],
+             'data' => [
+                 'page' => Page::where('id', $args['id'])->first(),
+                 'categories' => Category::get(['slug', 'name']),
+                 'progressions' => ProgressionState::all(),
+                 'epistemics' => EpistemicState::all(),
+             ],
+         ]);
+    }
+
+    public function postEditPage($request, $response)
+    {
+        $validation = $this->validator->validate($request, [
+            'title' => v::notEmpty(),
+            'slug' => v::notEmpty(),
+            'intro' => v::notEmpty(),
+            'progress' => v::notEmpty(),
+            'epistemic' => v::notEmpty(),
+            'content' => v::notEmpty(),
+        ]);
+
+        if ($validation->failed()) {
+            return $response->withRedirect($this->router->pathFor('editor.edit.page'));
+        }
+
+        Page::find($request->getParam('id'))->update([
+            'title' => $request->getParam('title'),
+            'slug' => $request->getParam('slug'),
+            'intro' => $request->getParam('intro'),
+            'created_at' => $request->getParam('created_at'),
+            'progress' => $request->getParam('progress'),
+            'epistemic' => $request->getParam('epistemic'),
+            'content' => $request->getParam('content')
+        ]);
+
+        $this->flash->addMessage('info', 'Post');
+
+        return $response->withRedirect($this->router->pathFor('page', ['slug' => $request->getParam('slug')]));
     }
 }

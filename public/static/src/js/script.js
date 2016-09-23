@@ -184,30 +184,7 @@ jQuery(document).ready(function() {
     $('.slug-input-gen').slugCreator();
 });
 
-function toMarkdown() {
-        var text_content = $("article.form form textarea"),
-            tcv = text_content.val(),
-            converter = markdownit({
-                html: true,
-                linkify: true,
-                highlight: function(code, lang) {
-                    if (languageOverrides[lang]) lang = languageOverrides[lang];
-                    if (lang && hljs.getLanguage(lang)) {
-                        try {
-                            return hljs.highlight(lang, code).value;
-                        } catch (e) {}
-                    }
-                    return '';
-                }
-            })
-            .use(markdownitFootnote);
-        xxxx = converter.render(tcv);
-        return xxxx;
-    }
-    $('.converted_md_txt').html(toMarkdown());
-    $("article.form form textarea").keyup(function() {
-        $('.converted_md_txt').html(toMarkdown());
-    });
+
 
 
 function isHTML(str) {

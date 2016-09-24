@@ -16,6 +16,7 @@ class Page extends Model
          'toc',
          'progress',
          'epistemic',
+         'redirect_to'
      ];
 
     public function setPassword($password)

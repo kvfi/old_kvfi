@@ -6,7 +6,7 @@
     <form class="" action="{{ path_for('editor.edit.page', { id : data.page.id }) }}" method="post">
         <div class="article-head">
             <input type="hidden" name="id" value="{{ data.page.id }}" />
-            <input type="text" class="input-style slug-input-gen" name="title" value="{{ data.page.title }}" placeholder="Just a title" />
+            <input type="text" class="input-style slug-input-gen-page" name="title" value="{{ data.page.title }}" placeholder="Just a title" />
             <div class="slug-container">
                 <div class="url-viewer"></div>
                 <input type="hidden" class="slug-input" name="slug" value="{{ data.page.slug }}" placeholder="Enter desired slug" />
@@ -39,6 +39,7 @@
             <span class="helper">{{ form_errors.category | first }}</span>
             <span class="helper">{{ form_errors.progress | first }}</span>
             <span class="helper">{{ form_errors.epistemic | first }}</span>
+            <label>Redirects to (optional)</label><input type="text" name="redirect_to" value="{{ data.page.redirect_to }}" />
         </div> 
         <div class="tags">
         {% if data.page.tags is not empty %}

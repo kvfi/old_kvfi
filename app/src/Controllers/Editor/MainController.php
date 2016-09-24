@@ -126,14 +126,20 @@ class MainController extends Controller
 
     public function postNewPage($request, $response)
     {
-        $validation = $this->validator->validate($request, [
-            'title' => v::notEmpty(),
-            'slug' => v::notEmpty(),
-            'intro' => v::notEmpty(),
-            'progress' => v::notEmpty(),
-            'epistemic' => v::notEmpty(),
-            'content' => v::notEmpty(),
-        ]);
+        if (empty($request->getParam('redirect_to'))) {
+            $validation = $this->validator->validate($request, [
+                'title' => v::notEmpty(),
+                'slug' => v::notEmpty(),
+                'intro' => v::notEmpty(),
+                'progress' => v::notEmpty(),
+                'epistemic' => v::notEmpty(),
+                'content' => v::notEmpty()
+            ]);
+        } else {
+            $validation = $this->validator->validate($request, [
+                'redirect_to' => v::notEmpty()
+            ]);
+        }
 
         if ($validation->failed()) {
             return $response->withRedirect($this->router->pathFor('editor.new.page'));
@@ -146,6 +152,7 @@ class MainController extends Controller
             'content' => $request->getParam('content'),
             'progress' => $request->getParam('progress'),
             'epistemic' => $request->getParam('epistemic'),
+            'redirect_to' => $request->getParam('redirect_to')
         ]);
 
         $this->flash->addMessage('info', 'Page'.$request->getParam('title').' was created successfully.');
@@ -170,14 +177,20 @@ class MainController extends Controller
 
     public function postEditPage($request, $response)
     {
-        $validation = $this->validator->validate($request, [
-            'title' => v::notEmpty(),
-            'slug' => v::notEmpty(),
-            'intro' => v::notEmpty(),
-            'progress' => v::notEmpty(),
-            'epistemic' => v::notEmpty(),
-            'content' => v::notEmpty(),
-        ]);
+        if (empty($request->getParam('redirect_to'))) {
+            $validation = $this->validator->validate($request, [
+                'title' => v::notEmpty(),
+                'slug' => v::notEmpty(),
+                'intro' => v::notEmpty(),
+                'progress' => v::notEmpty(),
+                'epistemic' => v::notEmpty(),
+                'content' => v::notEmpty()
+            ]);
+        } else {
+            $validation = $this->validator->validate($request, [
+                'redirect_to' => v::notEmpty()
+            ]);
+        }
 
         if ($validation->failed()) {
             return $response->withRedirect($this->router->pathFor('editor.edit.page'));
@@ -191,6 +204,7 @@ class MainController extends Controller
             'progress' => $request->getParam('progress'),
             'epistemic' => $request->getParam('epistemic'),
             'content' => $request->getParam('content'),
+            'redirect_to' => "xd"
         ]);
 
         $this->flash->addMessage('info', 'Post');

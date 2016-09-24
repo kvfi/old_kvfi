@@ -5,7 +5,7 @@
   <article class="form">
     <form class="" action="{{ path_for('editor.new.page') }}" method="post">
         <div class="article-head">
-            <input type="text" class="input-style slug-input-gen" name="title" placeholder="Just a title" />
+            <input type="text" class="input-style slug-input-gen-page" name="title" placeholder="Just a title" />
             <div class="slug-container">
                 <div class="url-viewer"></div>
                 <input type="hidden" class="slug-input" name="slug" placeholder="Enter desired slug" />
@@ -21,6 +21,7 @@
             <span class="helper">{{ form_errors.created_at | first }}</span>
             <span class="helper">{{ form_errors.progress | first }}</span>
             <span class="helper">{{ form_errors.epistemic | first }}</span>
+            <label>Redirects to (optional)</label><input type="text" name="redirect_to" />
         </div> 
         <div class="article-body">
             <span class="helper">{{ form_errors.content | first }}</span>

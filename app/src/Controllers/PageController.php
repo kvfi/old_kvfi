@@ -17,6 +17,10 @@ class PageController extends Controller
             return $this->pagenotfound;
         }
 
+        if (!empty($page->redirect_to)) {
+            return $response->withRedirect($this->router->pathFor('page', ['slug' => $page->redirect_to]));
+        }
+
         return $this->view->render($response, 'page.twig', array(
         'headMeta' => [
             'title' => $page->title,

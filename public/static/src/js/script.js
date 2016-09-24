@@ -158,13 +158,20 @@ jQuery(document).ready(function() {
     }
 
 
-    $.fn.slugCreator = function() {
+    $.fn.slugCreator = function(options) {
         var weburl = 'http://scif.ml/post/',
             url_viewer = $('.url-viewer');
+        if (options.is_page == true) {
+            weburl = 'http://scif.ml/';
+        }
         $(this).on('keyup', function() {
             if ($(this).val().length > 0) {
                 url_viewer.css('display', 'inline-block');
+                if (options.is_page == true) {
+                    var str = $(this).val().replace(/ /g, '_').replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '');
+                } else {
                 var str = $(this).val().toLowerCase().replace(/ /g, '-').replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '');
+                }
                 url_viewer.html('URL: <span class="link">' + weburl + str + '</a></span> <span><a href="#" class="modify_slug">Modify</a></span> <span><a href="' + weburl + str + '" target="_blank">View post</a></span>');
                 $(this).next().find('input[name="slug"]').val(str);
             } else {
@@ -181,7 +188,12 @@ jQuery(document).ready(function() {
 
     $('article.form form input').attr('autocomplete', 'off');
     $('div.tags').taggin();
-    $('.slug-input-gen').slugCreator();
+    $('.slug-input-gen').slugCreator({
+        is_page: false
+    });
+    $('.slug-input-gen-page').slugCreator({
+        is_page: true
+    });
 });
 
 

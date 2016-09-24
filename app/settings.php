@@ -37,6 +37,7 @@ return [
         'webconf' => [
           'site_url' => 'scif.ml.dev',
           'site_name' => 'Science FML',
+          'site_description' => 'A blog about obsessive stuff.',
           'site_locale' => 'en-US',
           'assets' => [
             'css' => '/static/css/',

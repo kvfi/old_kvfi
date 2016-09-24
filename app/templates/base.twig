@@ -4,6 +4,11 @@
 <head>
     {% block head %}<meta charset="utf-8"/>
     <meta name="google-site-verification" content="Se1BU47QDuaWbURxnshcyzaqRjosEdM0nZjwy_c8OEo" />
+    <meta property="og:url" content="{{ current_url }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{% if base_path == '/' %}{{ config.site_name }}{% else %}{{ headMeta.title }}{% endif %}" />
+    <meta property="og:description" content="{{ headMeta.description }}" />
+    <meta property="og:image" content="https://scif.ml/static/images/logo.jpg" />
     <title>{{ headMeta.title }} &mdash; {{ config.site_name }}</title>
     <link rel="shortcut icon" href="/static/images/xd.gif" type="image/x-icon">
     <link rel="stylesheet" href="/static/dist/css/app.css" type="text/css" media="screen">

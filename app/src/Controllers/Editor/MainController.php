@@ -204,7 +204,7 @@ class MainController extends Controller
             'progress' => $request->getParam('progress'),
             'epistemic' => $request->getParam('epistemic'),
             'content' => $request->getParam('content'),
-            'redirect_to' => "xd"
+            'redirect_to' => $request->getParam('redirect_to')
         ]);
 
         $this->flash->addMessage('info', 'Post');

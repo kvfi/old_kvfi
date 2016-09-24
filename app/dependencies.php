@@ -24,8 +24,7 @@ $container['view'] = function ($c) use ($app) {
     $settings = $c->get('settings');
     $view = new Slim\Views\Twig($settings['view']['template_path'], $settings['view']['twig']);
 
-    // Add extensions
-    $view->addExtension(new Slim\Views\TwigExtension($c->get('router'), $c->get('request')->getUri()));
+    $view->addExtension(new \Slim\Views\TwigExtension($c['router'], $c['request']->getUri()));
     $view->addExtension(new Twig_Extension_Debug());
 
     $unserialize = new Twig_SimpleFilter('unserialize', function ($serial) {
@@ -51,6 +50,8 @@ $container['view'] = function ($c) use ($app) {
         'user' => $c->auth->user(),
     ]);
 
+    $view->getEnvironment()->addGlobal('current_url', $c->request->getUri());
+    $view->getEnvironment()->addGlobal('base_path', $c->request->getUri()->getPath());
     $view->getEnvironment()->addGlobal('flash', $c->flash);
     $view->getEnvironment()->addGlobal('config', $c->settings['webconf']);
 

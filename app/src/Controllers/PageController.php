@@ -24,6 +24,7 @@ class PageController extends Controller
         return $this->view->render($response, 'page.twig', array(
         'headMeta' => [
             'title' => $page->title,
+            'description' => $page->intro
         ],
         'data' => array(
             'page' => $page,

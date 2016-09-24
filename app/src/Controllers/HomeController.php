@@ -19,11 +19,12 @@ class HomeController extends Controller
 
         return $this->view->render($response, 'home.twig', [
           'headMeta' => [
-              'title' => 'Home',
+            'title' => 'Home',
+            'description' => $this->container->webconf['site_description']
           ],
           'data' => [
-              'posts' => $posts,
-              'pagination' => $pagination->render(),
+            'posts' => $posts,
+            'pagination' => $pagination->render(),
           ],
       ]);
     }

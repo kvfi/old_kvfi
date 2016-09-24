@@ -16,7 +16,7 @@ class PostController extends Controller
         return $this->view->render($response, 'post.twig', array(
         'headMeta' => [
             'title' => $post->title,
-            'description' => $page->intro
+            'description' => $post->intro
         ],
         'data' => array(
             'post' => $post,

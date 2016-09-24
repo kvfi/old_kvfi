@@ -3,6 +3,5 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [QSA,L]
 
-RewriteCond %{HTTP_HOST} !^scif\.ml [NC]
-RewriteCond %{HTTP_HOST} !^$
-RewriteRule ^(.*)$ https://scif.ml/$1 [R,L]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

@@ -3,7 +3,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [QSA,L]
 
-<If "%{HTTP_HOST} != 'scif.ml'">
-RewriteCond %{REQUEST_URI} !^scif\.ml
+RewriteCond %{HTTP_HOST} !^scif\.ml [NC]
+RewriteCond %{HTTP_HOST} !^$
 RewriteRule ^(.*)$ https://scif.ml/$1 [R,L]
-</If>

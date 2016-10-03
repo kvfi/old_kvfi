@@ -13,7 +13,8 @@
     <title>{{ headMeta.title }} &mdash; {{ config.site_name }}</title>
     <link rel="shortcut icon" href="/static/images/xd.gif" type="image/x-icon">
     <link rel="stylesheet" href="/static/dist/css/app.css" type="text/css" media="screen">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+    <script type="text/javascript" src="/static/dist/js/jquery-3.1.0.min.js"></script>
     {% if auth.check %}<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/7.0.1/markdown-it.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it-footnote/3.0.1/markdown-it-footnote.min.js"></script>
     {% endif %}<script type="text/javascript" src="/static/dist/js/scripts.js"></script>{% endblock %}
@@ -24,6 +25,7 @@
         <div class="aside col-1-6">
             <div class="container">
                 <a href="/" class="logo"></a>
+                <div class="subtitle"><p>An introductory lexicon of obsessive science</p></div>
                 <ul class="menu">
                     <li><a href="{{ path_for('page', { slug: 'Me' }) }}" title="About">About</a></li>
                     <!-- <li><a href="{{ path_for('archives') }}" title="Archives">Archives</a></li> -->

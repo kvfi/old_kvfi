@@ -10,7 +10,7 @@
     <div class="article-head">
         <h1>{{ data.post.title }}</h1>
         {% if data.post.intro is not empty %}<h5>{{ data.post.intro }}</h5>{% endif %}
-        <div class="meta">published: <span>{{ data.post.created_at|date('M j') }}<sup>{{ data.post.created_at|date('S') }}</sup> {{ data.post.created_at|date('Y') }}</span>; in <a href="/Archives?category={{ data.category.slug }}"><span>{{ data.category.name }}</span></a>; last update: <span>{% if data.post.updated_at != data.post.created_at %}{{ data.post.updated_at|date('M j') }}<sup>{{ data.post.updated_at|date('S') }}</sup> {{ data.post.updated_at|date('Y') }}{% else %}never{% endif %}</span>; progress: <span>{{ data.post.progress }}</span>; epistemic state: <span>{{ data.post.epistemic }}</span></div>
+        <div class="meta">created <span>{{ data.post.created_at|date('M j') }}<sup>{{ data.post.created_at|date('S') }}</sup> {{ data.post.created_at|date('Y') }}</span> &mdash; in <a href="/Archives?category={{ data.category.slug }}"><span>{{ data.category.name }}</span></a> &mdash; last update: <span>{% if data.post.updated_at != data.post.created_at %}{{ data.post.updated_at|date('M j') }}<sup>{{ data.post.updated_at|date('S') }}</sup> {{ data.post.updated_at|date('Y') }}{% else %}never{% endif %}</span> &mdash; progress: <span>{{ data.post.progress }}</span> &mdash; epistemic state: <span>{{ data.post.epistemic }}</span></div>
     </div>
       {% if data.post.type == 'correlation' %}
       <div class="subc">

@@ -21,6 +21,11 @@ class PostController extends Controller
         'data' => array(
             'post' => $post,
             'category' => Category::where('slug', $post->category)->first(),
+            'tags' => function() {
+                foreach ($tag as $post['tags']) {
+                    return $tag;
+                }
+            }
             /* 'comments' => $post->comments(),
             'comment_count' => count($post->comments()), */
         ),

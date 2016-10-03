@@ -36,131 +36,140 @@
       color: #555
     h6
       font-size: 16px
-      padding-bottom: 5px;
-      margin-bottom: 30px;
-      border-bottom: 3px solid #ddd;
+      padding-bottom: 5px
+      margin-bottom: 30px
+      border-bottom: 3px solid #ddd
     ul li
       padding: 0 0 25px 0
-      a
-        font-size: 16px
+      font-size: 16px
       time
         display: inline-block
         width: 20%
         color: #aaa
-  .mainBody
-    background-color: #fff; padding: 20px;
-    padding-right: 20px
-    article
-      margin: 10px 0
-      padding: 10px 0
-      border-bottom: 1px solid #eee
-      &:first-child
-        margin-top: 0
-        padding-top: 0
-      &:last-child
-        margin-bottom: 0
-        padding-bottom: 0
-        border-bottom: 0
-  .post article
-    h1
-      font-size: 45px
+.home-articles section#last-topics-updates
+  ul li
+    border-left: 5px solid #ddd
+    margin: 0 0 10px
+    padding: 0 0 0 10px
+    time
+      width: auto
+      display: block
+      font-size: 70%
+.mainBody
+  background-color: #fff
+  padding: 20px
+  padding-right: 20px
+  article
+    margin: 10px 0
+    padding: 10px 0
+    border-bottom: 1px solid #eee
+    &:first-child
+      margin-top: 0
+      padding-top: 0
+    &:last-child
+      margin-bottom: 0
+      padding-bottom: 0
+      border-bottom: 0
+.post article
+  h1
+    font-size: 45px
+    font-weight: normal
+  .admin-meta
+    padding: 3px 10px
+    font-size: 12px
+    font-weight: normal
+  .article-head
+    margin: 0 0 10px 0
+    border-bottom: 1px solid #ccc
+    h5
+      font-size: 18px
+      color: #666
       font-weight: normal
-    .admin-meta
-      padding: 3px 10px
-      font-size: 12px
-      font-weight: normal
-    .article-head
-      margin: 0 0 10px 0
-      border-bottom: 1px solid #ccc
-      h5
-        font-size: 18px
-        color: #666
-        font-weight: normal
-        font-style: italic
-        margin: 0 0 5px 0
-      .meta
-        font-size: 13px
-        color: #7a7a7a
-        padding: 0px 0 10px 0
-      p
+      font-style: italic
+      margin: 0 0 5px 0
+    .meta
+      font-size: 13px
+      color: #7a7a7a
+      padding: 0px 0 10px 0
+    p
+      span
+        border-bottom: 1px dotted #aaa
+        cursor: help
+      a
+        text-decoration: none
+        color: inherit
         span
           border-bottom: 1px dotted #aaa
-          cursor: help
-        a
-          text-decoration: none
-          color: inherit
-          span
-            border-bottom: 1px dotted #aaa
-            cursor: auto
-    .frd-image img
-      width: 100%
-      height: auto
-      margin: 0 0 20px 0
-    .subc
-      background-color: #f2f2f2
+          cursor: auto
+  .frd-image img
+    width: 100%
+    height: auto
+    margin: 0 0 20px 0
+  .subc
+    background-color: #f2f2f2
+    padding: 10px
+    margin-bottom: 15px
+  .article-body
+    padding: 0 0 20px 0
+    h4
+      font-size: 20px
+      margin: 0 0 10px 0
+      border-bottom: 1px solid #111111
+      display: inline-block
+    h6
+      font-size: 1.3rem
+      text-transform: uppercase
+      color: #aaa
+    p, ul, li, blockquote
+      font-size: 15px
+      margin: 0 0 10px 0
+      .footnote-ref
+        vertical-align: super
+        font-size: 80%
+        line-height: 0
+        margin-left: 2px
+    p:last-child, li:last-child, blockquote:last-child
+      margin-bottom: 0
+    ul
+      margin-top: 10px
+    li
+      list-style-type: square
+    blockquote
+      background-color: #f6f6f6
       padding: 10px
-      margin-bottom: 15px
-    .article-body
-      padding: 0 0 20px 0
-      h4
-        font-size: 20px
-        margin: 0 0 10px 0
-        border-bottom: 1px solid #111111
-        display: inline-block
-      h6
-        font-size: 1.3rem
-        text-transform: uppercase
-        color: #aaa
-      p, ul, li, blockquote
-        font-size: 15px
-        margin: 0 0 20px 0
-        .footnote-ref
-          vertical-align: super
-          font-size: 80%
-          line-height: 0
-          margin-left: 2px
-      p:last-child, li:last-child, blockquote:last-child
-        margin-bottom: 0
-      ul
-        margin-top: 10px
-      li
-        list-style-type: square
-      blockquote
-        background-color: #f6f6f6
-        padding: 10px
-        display: -webkit-box
-      li
-        margin: 0 0 15px 0
-    .comments
-      border-top: 1px solid #ddd
-      padding-top: 15px
-      h5
-        font-size: 15px
-        font-weight: bold
-      .comment
-        border-bottom: 1px dotted #ddd
-        padding: 10px 0
+      display: -webkit-box
+    li
+      margin: 0 0 15px 0
+  .comments
+    border-top: 1px solid #ddd
+    padding-top: 15px
+    h5
+      font-size: 15px
+      font-weight: bold
+    .comment
+      border-bottom: 1px dotted #ddd
+      padding: 10px 0
+      &:last-of-type
+        border-bottom: 0
+      p, ul li, blockquote
+        font-size: 13px
+        line-height: 150%
+      p
+        margin-bottom: 10px
         &:last-of-type
-          border-bottom: 0
-        p, ul li, blockquote
-          font-size: 13px
-          line-height: 150%
-        p
-          margin-bottom: 10px
-          &:last-of-type
-            margin-bottom: 0
-        .meta
-          text-align: right
-          margin-top: 10px
-          a
-            color: #888
-            text-decoration: none
-            border-bottom: 1px dotted #ccc
-    .footnotes
-      margin-top: 50px
-      ol li
-        list-style-position: inside
-        list-style-type: decimal
+          margin-bottom: 0
+      .meta
+        text-align: right
+        margin-top: 10px
+        a
+          color: #888
+          text-decoration: none
+          border-bottom: 1px dotted #ccc
+  .footnotes
+    margin-top: 50px
+    ol li
+      list-style-position: inside
+      list-style-type: decimal
 
 #footnotediv
   background-color: #fff
@@ -177,7 +186,6 @@
       padding-top: 0
     &:last-of-type
       padding-bottom: 0
-
 .footnotes
   border: 1px solid #ddd
   padding: 10px
@@ -186,6 +194,8 @@
   p, li
     font-size: 11px
     line-height: 140%
+  p
+    display: inline
 
 .footnotes
   h5

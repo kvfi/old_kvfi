@@ -1,12 +1,18 @@
 a.logo
-  background: url('../../images/logo.jpg') no-repeat;
-  display: block;
-  width: 150px;
-  height: 150px;
+  background: url('../../images/logo.jpg') no-repeat
+  display: block
+  width: 150px
+  height: 150px
 .aside
   .container
-    width: 80%
+    width: 90%
     margin: auto
+  .subtitle
+    margin: 10px 0 0 0
+    width: 150px
+    p
+    font-style: italic
+      font-size: 10px
   .bio
     padding: 10px 0
     margin: 10px 0
@@ -15,11 +21,16 @@ a.logo
   .menu
     margin-top: 30px
     li
-      font-size: 15px
-      padding: 5px 0 5px 10px
-      border-left: 20px solid #ddd
+      font-size: 16px
+      border-left: 5px solid #ddd
+      margin: 0 0 10px
+      padding: 0 0 0 10px
+      &:hover
+        border-color: #888
       a
         color: #888
         text-decoration: none
+        border-bottom: none
+        display: flex
         &:hover
           color: #aaa

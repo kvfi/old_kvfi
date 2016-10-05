@@ -46,3 +46,6 @@ $app->get('/archives', 'App\Controllers\PageController:archives')->setName('arch
 $app->get('/contact', 'App\Controllers\PageController:contact')->setName('contact');
 $app->get('/topics', 'App\Controllers\PageController:topics')->setName('topics');
 $app->get('/{slug}', 'App\Controllers\PageController:get')->setName('page');
+
+/* TAG */
+$app->get('/tags/{slug}', 'App\Controllers\TagController:get')->setName('tag');

@@ -4,12 +4,10 @@
 
 {% block content %}
 <div class="index-intro">
-  <p>Howdy young Internet traveler,<br />
-  This is a <a href="{{ path_for('page', { slug : 'Me' }) }}">semi-personal knowledge</a> base I've been building for the last 12 years. I mostly write about obsessive stuff.</p>
-  <p>Anyway, you're most welcome.</p>
+  {{ data.intro | toHTML | raw }}
 </div>
 <div class="home-articles grid">
-  <section id="recent_posts" class="col-2-3">
+  <section id="recent_posts" class="col-3-5">
     <h5>recent posts</h5>
     {% for i in "now"|date("Y")..2010 %}
       {% if data.posts[i] is not empty %}
@@ -22,7 +20,7 @@
       {% endif %}
     {% endfor %}
   </section>
-  <section id="last-topics-updates" class="col-1-3">
+  <section id="last-topics-updates" class="col-2-5">
     <h5>last updated topics</h5>
     {% for topic in data.topics %}
       <ul>

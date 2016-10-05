@@ -25,7 +25,7 @@
         <div class="aside col-1-6">
             <div class="container">
                 <a href="/" class="logo"></a>
-                <div class="subtitle"><p>An introductory lexicon of obsessive science</p></div>
+                <div class="subtitle"><p>The marginalized lexicon of obsessive science</p></div>
                 <ul class="menu">
                     <li><a href="{{ path_for('page', { slug: 'Me' }) }}" title="About">About</a></li>
                     <!-- <li><a href="{{ path_for('archives') }}" title="Archives">Archives</a></li> -->
@@ -37,11 +37,12 @@
                 
             </div>
         </div>
-        <div class="col-4-6">
+        <div class="col-4-7">
             {% block content %}
             {% endblock %}
             {% block pagination %}
             {% endblock %}
+            <footer><p><a href="{{ path_for('page', { slug: 'Me' })}}#copyright">Copyright is for losers</a>.<br />All work is published in the public domain. Enjoy knowledge.</p></footer>
         </div>
     </div>
 </div>

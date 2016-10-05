@@ -13,6 +13,10 @@ class PostController extends Controller
     {
         $post = Post::where('slug', $request->getAttribute('route')->getArgument('slug'))->first();
 
+        if (!$post) {
+            return $this->pagenotfound;
+        }
+
         return $this->view->render($response, 'post.twig', array(
         'headMeta' => [
             'title' => $post->title,
@@ -21,6 +25,7 @@ class PostController extends Controller
         'data' => array(
             'post' => $post,
             'category' => Category::where('slug', $post->category)->first(),
+            'content' => $this->getPostContent($post->slug),
             'tags' => function() {
                 foreach ($tag as $post['tags']) {
                     return $tag;
@@ -30,5 +35,16 @@ class PostController extends Controller
             'comment_count' => count($post->comments()), */
         ),
     ));
+    }
+
+    protected function getPostContent($slug)
+    {
+        $path = __DIR__ . '/../../../resources/files/posts/' . $slug . '.md';
+        if (file_exists($path)) {
+            $file = file_get_contents($path, FILE_USE_INCLUDE_PATH);
+            return $file;
+        } else {
+            return false;
+        }
     }
 }

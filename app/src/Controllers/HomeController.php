@@ -25,9 +25,21 @@ class HomeController extends Controller
           ],
           'data' => [
             'posts' => $posts,
+            'intro' => $this->getIntroText(),
             'topics' => Topic::orderBy('updated_at', 'DESC')->limit(3)->get(),
-            'pagination' => $pagination->render(),
+            'pagination' => $pagination->render()
           ],
       ]);
+    }
+
+    protected function getIntroText()
+    {
+      $path = __DIR__ . '/../../../resources/files/misc/intro.md';
+      if (file_exists($path)) {
+          $file = file_get_contents($path, FILE_USE_INCLUDE_PATH);
+          return $file;
+      } else {
+          return false;
+      }
     }
 }

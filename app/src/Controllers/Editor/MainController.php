@@ -36,11 +36,9 @@ class MainController extends Controller
         $validation = $this->validator->validate($request, [
             'title' => v::notEmpty(),
             'slug' => v::notEmpty(),
-            'intro' => v::notEmpty(),
             'category' => v::notEmpty(),
             'progress' => v::notEmpty(),
             'epistemic' => v::notEmpty(),
-            'content' => v::notEmpty(),
         ]);
 
         if ($validation->failed()) {
@@ -133,11 +131,11 @@ class MainController extends Controller
                 'intro' => v::notEmpty(),
                 'progress' => v::notEmpty(),
                 'epistemic' => v::notEmpty(),
-                'content' => v::notEmpty()
+                'content' => v::notEmpty(),
             ]);
         } else {
             $validation = $this->validator->validate($request, [
-                'redirect_to' => v::notEmpty()
+                'redirect_to' => v::notEmpty(),
             ]);
         }
 
@@ -152,7 +150,7 @@ class MainController extends Controller
             'content' => $request->getParam('content'),
             'progress' => $request->getParam('progress'),
             'epistemic' => $request->getParam('epistemic'),
-            'redirect_to' => $request->getParam('redirect_to')
+            'redirect_to' => $request->getParam('redirect_to'),
         ]);
 
         $this->flash->addMessage('info', 'Page'.$request->getParam('title').' was created successfully.');
@@ -184,11 +182,11 @@ class MainController extends Controller
                 'intro' => v::notEmpty(),
                 'progress' => v::notEmpty(),
                 'epistemic' => v::notEmpty(),
-                'content' => v::notEmpty()
+                'content' => v::notEmpty(),
             ]);
         } else {
             $validation = $this->validator->validate($request, [
-                'redirect_to' => v::notEmpty()
+                'redirect_to' => v::notEmpty(),
             ]);
         }
 
@@ -204,7 +202,7 @@ class MainController extends Controller
             'progress' => $request->getParam('progress'),
             'epistemic' => $request->getParam('epistemic'),
             'content' => $request->getParam('content'),
-            'redirect_to' => $request->getParam('redirect_to')
+            'redirect_to' => $request->getParam('redirect_to'),
         ]);
 
         $this->flash->addMessage('info', 'Post');

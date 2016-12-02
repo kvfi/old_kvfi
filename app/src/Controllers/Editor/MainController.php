@@ -81,11 +81,9 @@ class MainController extends Controller
         $validation = $this->validator->validate($request, [
             'title' => v::notEmpty(),
             'slug' => v::notEmpty(),
-            'intro' => v::notEmpty(),
             'category' => v::notEmpty(),
             'progress' => v::notEmpty(),
             'epistemic' => v::notEmpty(),
-            'content' => v::notEmpty(),
         ]);
 
         if ($validation->failed()) {
@@ -128,10 +126,8 @@ class MainController extends Controller
             $validation = $this->validator->validate($request, [
                 'title' => v::notEmpty(),
                 'slug' => v::notEmpty(),
-                'intro' => v::notEmpty(),
                 'progress' => v::notEmpty(),
                 'epistemic' => v::notEmpty(),
-                'content' => v::notEmpty(),
             ]);
         } else {
             $validation = $this->validator->validate($request, [
@@ -179,10 +175,8 @@ class MainController extends Controller
             $validation = $this->validator->validate($request, [
                 'title' => v::notEmpty(),
                 'slug' => v::notEmpty(),
-                'intro' => v::notEmpty(),
                 'progress' => v::notEmpty(),
                 'epistemic' => v::notEmpty(),
-                'content' => v::notEmpty(),
             ]);
         } else {
             $validation = $this->validator->validate($request, [

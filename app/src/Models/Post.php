@@ -14,11 +14,13 @@ class Post extends Model
          'title',
          'intro',
          'content',
+         'created_at',
          'category',
          'progress',
          'epistemic',
          'tags',
          'toc',
+         'difficulty',
          'extras',
      ];
 }

@@ -18,28 +18,31 @@ class HomeController extends Controller
             $posts[$i] = Post::whereYear('created_at', '=', $i)->orderBy('created_at', 'DESC')->get();
         }
 
-        return $this->view->render($response, 'home.twig', [
+        $reponse = $this->view->render($response, 'home.twig', [
           'headMeta' => [
             'title' => 'Home',
-            'description' => $this->container->webconf['site_description']
+            'description' => $this->container->webconf['site_description'],
           ],
           'data' => [
             'posts' => $posts,
             'intro' => $this->getIntroText(),
             'topics' => Topic::orderBy('updated_at', 'DESC')->limit(3)->get(),
-            'pagination' => $pagination->render()
+            'pagination' => $pagination->render(),
           ],
-      ]);
+        ]);
+
+        return $reponse;
     }
 
     protected function getIntroText()
     {
-      $path = __DIR__ . '/../../../resources/files/misc/intro.md';
-      if (file_exists($path)) {
-          $file = file_get_contents($path, FILE_USE_INCLUDE_PATH);
-          return $file;
-      } else {
-          return false;
-      }
+        $path = __DIR__.'/../../../resources/files/misc/intro.md';
+        if (file_exists($path)) {
+            $file = file_get_contents($path, FILE_USE_INCLUDE_PATH);
+
+            return $file;
+        } else {
+            return false;
+        }
     }
 }

@@ -19,6 +19,8 @@ $container['flash'] = function () {
     return new \Slim\Flash\Messages();
 };
 
+require "src/Core/ParsedownExtraPlugin.php";
+
 // Twig
 $container['view'] = function ($c) use ($app) {
     $settings = $c->get('settings');
@@ -36,14 +38,19 @@ $container['view'] = function ($c) use ($app) {
     });
 
     $toHTML = new Twig_SimpleFilter('toHTML', function ($md) {
-        $html = new ParsedownExtra();
+        $html = new App\Core\ParsedownExtraPlugin();
 
         return $html->text($md);
+    });
+
+    $removeTLCommas = new Twig_SimpleFilter('removeTLCommas', function ($string) {
+        return rtrim($string, ",");
     });
 
     $view->getEnvironment()->addFilter($unserialize);
     $view->getEnvironment()->addFilter($implode);
     $view->getEnvironment()->addFilter($toHTML);
+    $view->getEnvironment()->addFilter($removeTLCommas);
 
     $view->getEnvironment()->addGlobal('auth', [
         'check' => $c->auth->check(),
@@ -127,19 +134,9 @@ foreach ($controllers as $controller) {
 // -----------------------------------------------------------------------------
 // Middleware
 // -----------------------------------------------------------------------------
-
-$middlewares = [
-    'CsrfViewMiddleware',
-    'OldInputMiddleware',
-    'ValidationErrorsMiddleware',
-];
-
-foreach ($middlewares as $middleware) {
-    if (substr($middleware, 0, 1) !== '\\') {
-        $middleware = '\\App\Middleware\\'.$middleware;
-    }
-    $app->add(new $middleware($container));
-}
+$app->add(new \App\Middleware\CsrfViewMiddleware($container));
+$app->add(new \App\Middleware\OldInputMiddleware($container));
+$app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
 
 $app->add($container->csrf);
 

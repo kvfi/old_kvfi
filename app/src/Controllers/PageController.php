@@ -24,15 +24,28 @@ class PageController extends Controller
         return $this->view->render($response, 'page.twig', array(
         'headMeta' => [
             'title' => $page->title,
-            'description' => $page->intro
+            'description' => $page->intro,
         ],
         'data' => array(
             'page' => $page,
             'category' => Category::where('slug', $page->category)->first(),
+            'content' => $this->getPageContent($page->slug),
             /* 'comments' => $post->comments(),
             'comment_count' => count($post->comments()), */
         ),
       ));
+    }
+
+    protected function getPageContent($slug)
+    {
+        $path = __DIR__.'/../../../resources/files/pages/'.$slug.'.md';
+        if (file_exists($path)) {
+            $file = file_get_contents($path, FILE_USE_INCLUDE_PATH);
+
+            return $file;
+        } else {
+            return false;
+        }
     }
 
     public function contact(Request $request, Response $response, array $args)

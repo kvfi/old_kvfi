@@ -12,11 +12,12 @@ class Page extends Model
          'title',
          'intro',
          'content',
+         "created_at",
          'slug',
          'toc',
          'progress',
          'epistemic',
-         'redirect_to'
+         'redirect_to',
      ];
 
     public function setPassword($password)

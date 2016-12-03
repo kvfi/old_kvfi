@@ -9,10 +9,9 @@
   <article>
     <div class="article-head">
         <h1>{{ data.post.title }}</h1>
-        {% if data.post.intro is not empty %}<h5>{{ data.post.intro }}{% if data.post.tags is not empty %}
-        ({% for tag in data.post.tags|unserialize %}<a href="{{ path_for('tag', {slug : tag}) }}">{{ tag }}</a>, {% endfor %})
-        {% endif %}</h5>{% endif %}
-        <div class="meta">created <span>{{ data.post.created_at|date('M j') }}<sup>{{ data.post.created_at|date('S') }}</sup> {{ data.post.created_at|date('Y') }}</span> &bull; last update: <span>{% if data.post.updated_at != data.post.created_at %}{{ data.post.updated_at|date('M j') }}<sup>{{ data.post.updated_at|date('S') }}</sup> {{ data.post.updated_at|date('Y') }}{% else %}never{% endif %}</span> &bull; progress: <span>{{ data.post.progress }}</span> &bull; epistemic state: <span>{{ data.post.epistemic }}</span></div>
+        {% if data.post.intro is not empty %}<h5>{{ data.post.intro }}</h5>{% endif %}
+        <div class="meta">created <span>{{ data.post.created_at|date('M j') }}<sup>{{ data.post.created_at|date('S') }}</sup> {{ data.post.created_at|date('Y') }}</span> &bull; last update: <span>{% if data.post.updated_at != data.post.created_at %}{{ data.post.updated_at|date('M j') }}<sup>{{ data.post.updated_at|date('S') }}</sup> {{ data.post.updated_at|date('Y') }}{% else %}never{% endif %}</span> &bull; progress: <span><a href="{{ path_for('archives') }}?progress={{ data.post.progress }}">{{ data.post.progress }}</a></span> &bull; epistemic state: <a href="{{ path_for('archives') }}?progress={{ data.post.epistemic }}">{{ data.post.epistemic }}</a></span></div>
+        <div class="www_tags">{% if data.post.tags is not empty %}<strong>Keywords:</strong> {{ data.tags|raw }}{% endif %}</div>
     </div>
       {% if data.post.type == 'correlation' %}
       <div class="subc">

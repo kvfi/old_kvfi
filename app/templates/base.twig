@@ -13,11 +13,21 @@
     <title>{{ headMeta.title }} &mdash; {{ config.site_name }}</title>
     <link rel="shortcut icon" href="/static/images/xd.gif" type="image/x-icon">
     <link rel="stylesheet" href="/static/dist/css/app.css" type="text/css" media="screen">
-    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
-    <script type="text/javascript" src="/static/dist/js/jquery-3.1.0.min.js"></script>
-    {% if auth.check %}<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/7.0.1/markdown-it.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it-footnote/3.0.1/markdown-it-footnote.min.js"></script>
-    {% endif %}<script type="text/javascript" src="/static/dist/js/scripts.js"></script>{% endblock %}
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js">
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
+    }
+  });
+</script>
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="/static/dist/js/scripts.js"></script>{% endblock %}
 </head>
 <body class="{{ css_class }}">
 <div class="bodyPage">
@@ -27,12 +37,11 @@
                 <a href="/" class="logo"></a>
                 <div class="subtitle"><p>The marginalized lexicon of obsessive science</p></div>
                 <ul class="menu">
-                    <li><a href="{{ path_for('page', { slug: 'Me' }) }}" title="About">About</a></li>
-                    <!-- <li><a href="{{ path_for('archives') }}" title="Archives">Archives</a></li> -->
+                    <li><a href="{{ path_for('page', { slug: 'About' }) }}" title="About">About</a></li>
+                    <li><a href="{{ path_for('archives') }}" title="Archives">Archives</a></li>
                     <li><a href="{{ path_for('contact') }}" title="Contact">Contact</a></li>
                 </ul>
                 <br/>
-
                 <p><em>“Even in the most heinous act of gruesomeness I will be bound to glimpse beauty.<br/>Because beauty is everywhere.”</em></p>
                 
             </div>

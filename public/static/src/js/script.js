@@ -1,7 +1,7 @@
 var Footnotes = {
     footnotetimeout: false,
     setup: function() {
-        var footnotelinks = jQuery('[rel=\'footnote\']')
+        var footnotelinks = jQuery('.footnoteRef')
 
         footnotelinks.unbind('mouseover', Footnotes.footnoteover);
         footnotelinks.unbind('mouseout', Footnotes.footnoteoout);
@@ -23,22 +23,22 @@ var Footnotes = {
         div.bind('mouseout', Footnotes.footnoteoout);
 
         var el = document.getElementById(id);
-        div.html('<div>' + jQuery(el).html() + '</div>');
+        div.html('<div>'+jQuery(el).html()+'</div>');
 
         jQuery(document.body).append(div);
 
         var left = position.left;
-        if (left + 420 > jQuery(window).width() + jQuery(window).scrollLeft())
+        if(left + 420  > jQuery(window).width() + jQuery(window).scrollLeft())
             left = jQuery(window).width() - 420 + jQuery(window).scrollLeft();
-        var top = position.top + 20;
-        if (top + div.height() > jQuery(window).height() + jQuery(window).scrollTop())
+        var top = position.top+20;
+        if(top + div.height() > jQuery(window).height() + jQuery(window).scrollTop())
             top = position.top - div.height() - 15;
         div.css({
-            left: left,
-            top: top,
-            opacity: 1,
-            position: "absolute",
-        });
+            left:left,
+            top:top,
+            opacity:1,
+            position: "absolute"
+            });
     },
     footnoteoout: function() {
         Footnotes.footnotetimeout = setTimeout(function() {
@@ -47,16 +47,15 @@ var Footnotes = {
             }, 300, function() {
                 jQuery('#footnotediv').remove();
             });
-        }, 100);
+        },100);
     },
     divover: function() {
         clearTimeout(Footnotes.footnotetimeout);
         jQuery('#footnotediv').stop();
         jQuery('#footnotediv').css({
-            opacity: 1
+                opacity: 1
         });
-    },
-
+    }
 }
 
 jQuery(document).ready(function() {

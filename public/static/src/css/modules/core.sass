@@ -28,6 +28,20 @@
           border: 5px rgba(194, 225, 245, 0)
           border-left-color: #c2e1f5
           margin-top: -5px
+  .legend_marker
+    font-size: 10px
+    margin: 0 0 20px 0
+    .legend
+      background-color: #f5f5f5
+      padding: 5px
+      font-weight: normal
+      text-transform: none
+      font-size: 14px
+      span
+        color: #333
+        font-weight: bold
+    .markers
+      font-size: 15px
   .home-articles
     h5
       font-size: 16px
@@ -43,8 +57,8 @@
       margin-bottom: 30px
       border-bottom: 3px solid #ddd
     ul li
-      padding: 0 0 25px 0
-      font-size: 18px
+      padding: 0 0 5px 0
+      font-size: 17px
       time
         display: inline-block
         width: 20%
@@ -75,7 +89,7 @@
       border-bottom: 0
 .post article
   h1
-    font-size: 45px
+    font-size: 35px
     font-weight: normal
   .admin-meta
     padding: 3px 10px
@@ -83,9 +97,13 @@
     font-weight: normal
   .article-head
     margin: 0 0 10px 0
+    padding: 0 0 10px 0
+    position: relative
     border-bottom: 1px solid #ccc
+    .www_tags
+      font-size: 14px
     h5
-      font-size: 20px
+      font-size: 22px
       color: #666
       font-weight: normal
       font-style: italic
@@ -112,13 +130,18 @@
     background-color: #f2f2f2
     padding: 10px
     margin-bottom: 15px
-  .article-body
+  .article-body      
     padding: 0 0 20px 0
+    > p, > ul, > blockquote
+      overflow: auto
     h4
       font-size: 20px
-      margin: 0 0 10px 0
-      border-bottom: 1px solid #111111
-      display: inline-block
+      font-weight: bold
+      margin-top: 20px
+    h5
+      font-size: 17px
+      font-weight: bold
+      margin-top: 20px
     h6
       font-size: 1.3rem
       text-transform: uppercase
@@ -133,14 +156,17 @@
         margin-left: 2px
     p:last-child, li:last-child, blockquote:last-child
       margin-bottom: 0
+    p:empty
+      margin: 0 0 0 5px
     ul
       margin-top: 10px
     li
       list-style-type: square
     blockquote
       background-color: #f6f6f6
-      padding: 10px
-      display: -webkit-box
+      padding: 4px 10px
+      margin-top: 10px
+      color: #444444
     li
       margin: 0 0 15px 0
   .comments
@@ -195,7 +221,7 @@
 
 .bodyPage .post article .article-body .footnotes
   p, li
-    font-size: 11px
+    font-size: 14px
     line-height: 140%
   p
     display: inline

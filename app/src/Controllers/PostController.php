@@ -49,8 +49,10 @@ class PostController extends Controller
         $tags = Post::select('tags')->where('slug', $slug)->first();
         $tags = unserialize($tags->tags);
         $taglist = "";
-        foreach ($tags as $tag) {
-            $taglist .= '<a href="'.$this->container->router->pathFor('archives').'?tag='.$tag.'">'.$tag . '</a>, '; 
+        if (is_array($tags)) {
+            foreach ($tags as $tag) {
+                $taglist .= '<a href="'.$this->container->router->pathFor('archives').'?tag='.$tag.'">'.$tag . '</a>, '; 
+            }
         }
         return rtrim($taglist, ", ");
     }

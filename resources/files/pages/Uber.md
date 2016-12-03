@@ -9,7 +9,8 @@ Let's be clear, Uber does **not** contribute to any kind of [sharing economy](ht
 
 * Uber gave U.S. government and agencies [data on more than 12m users](http://www.reuters.com/article/us-uber-tech-data-idUSKCN0X91R5). In 85% of the cases, Uber provides data on request.
 
-* Uber [tracks its custumers before and after they're dropped off](http://www.npr.org/sections/alltechconsidered/2016/12/01/503985473/uber-now-tracks-passengers-locations-even-after-theyre-dropped-off). The company says its only done for 5 minutes but who knows for how much longer data collection goes on.
+* Uber [tracks its custumers](http://www.npr.org/sections/alltechconsidered/2016/12/01/503985473/uber-now-tracks-passengers-locations-even-after-theyre-dropped-off) before and after they're dropped off.
+
 * [Incidents](http://www.whosdrivingyou.org/rideshare-incidents) directly involving Uber are frequent.
 
 * A senior Uber executive [suggested investigating the personal life of a journalist](https://www.buzzfeed.com/bensmith/uber-executive-suggests-digging-up-dirt-on-journalists) who criticized the company.

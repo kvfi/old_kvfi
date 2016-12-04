@@ -8,4 +8,4 @@ I've been thinking about this situation for a while and I decided to create a se
 
 #### List by date
 
-* [Théorème de Brauer](Théorème%20de%20Bauer)
+* 2016/12/05 [Théorème de Brauer](Théorème%20de%20Brauer)

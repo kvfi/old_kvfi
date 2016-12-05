@@ -45,10 +45,10 @@ $app->get('/post/{slug}', 'App\Controllers\PostController:get')->setName('post')
 $app->get('/archives', 'App\Controllers\PageController:archives')->setName('archives');
 $app->get('/contact', 'App\Controllers\PageController:contact')->setName('contact');
 $app->get('/topics', 'App\Controllers\PageController:topics')->setName('topics');
+$app->get('/TDJ', 'App\Controllers\PageController:tdj')->setName('TDJ');
 $app->get('/{slug}', 'App\Controllers\PageController:get')->setName('page');
 
 /* TAG */
 $app->get('/tags/{slug}', 'App\Controllers\TagController:get')->setName('tag');
 
 /* Special page */
-$app->get('/TDJ', 'App\Controllers\PageController:tdj')->setName('TDJ');

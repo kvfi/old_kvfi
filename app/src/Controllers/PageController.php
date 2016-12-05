@@ -53,7 +53,19 @@ class PageController extends Controller
         return $this->view->render($response, 'contact.twig', array(
         'headMeta' => [
             'title' => 'Contact me',
-        ],
+        ]
       ));
     }
-}
+
+    public function tdj(Request $request, Response $response, array $args)
+    {
+        return $this->view->render($response, 'extras/theoremes.twig', array(
+            'headMeta' => [
+                'title' => 'Théorème du jour',
+                'desc' => 'Découvrez chaque nouveau théorème mathématique expliqué de manière simple.'
+            ],
+            'data' => [
+                'theorems' => Post::where('type', 'theorem')->all(),
+            ]
+        ));
+    }

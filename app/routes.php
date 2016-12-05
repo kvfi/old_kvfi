@@ -49,3 +49,6 @@ $app->get('/{slug}', 'App\Controllers\PageController:get')->setName('page');
 
 /* TAG */
 $app->get('/tags/{slug}', 'App\Controllers\TagController:get')->setName('tag');
+
+/* Special page */
+$app->get('/TDJ', 'App\Controllers\PageController:tdj')->setName('TDJ');

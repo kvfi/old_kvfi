@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 use App\Models\Page;
+use App\Models\Post;
 use App\Models\Category;
 
 class PageController extends Controller
@@ -65,7 +66,7 @@ class PageController extends Controller
                 'desc' => 'Découvrez chaque nouveau théorème mathématique expliqué de manière simple.'
             ],
             'data' => [
-                'theorems' => Post::where('type', 'theorem')->all(),
+                'theorems' => Post::where('type', '=', 'theorem')->all(),
             ]
         ));
     }

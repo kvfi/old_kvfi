@@ -66,7 +66,7 @@ class PageController extends Controller
                 'desc' => 'Découvrez chaque nouveau théorème mathématique expliqué de manière simple.'
             ],
             'data' => [
-                'theorems' => Post::where('type', '=', 'theorem')->all(),
+                'theorems' => Post::where('type', '=', 'theorem')->get(),
             ]
         ));
     }

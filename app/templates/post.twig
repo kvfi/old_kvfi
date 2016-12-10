@@ -22,6 +22,9 @@
       <div class="article-body">
           {% if data.post.toc %}<div class="table-of-contents"></div>{% endif %}
           {{ data.content | toHTML | raw }}
+          {% if data.post.slug == 'Théorème du jour' %}
+            {% include 'extras/theorems_fr.twig' %}
+          {% endif %}
       </div>
       {% if auth.check %}
       <div class="admin-meta">

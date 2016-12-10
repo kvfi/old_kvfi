@@ -37,7 +37,7 @@
                 <a href="/" class="logo"></a>
                 <div class="subtitle"><p>The marginalized lexicon of obsessive science</p></div>
                 <ul class="menu">
-                    <li><a href="{{ path_for('page', { slug: 'About' }) }}" title="About">About</a></li>
+                    <li><a href="{{ path_for('post', { slug: 'About' }) }}" title="About">About</a></li>
                     <li><a href="{{ path_for('archives') }}" title="Archives">Archives</a></li>
                     <li><a href="{{ path_for('contact') }}" title="Contact">Contact</a></li>
                 </ul>
@@ -51,19 +51,17 @@
             {% endblock %}
             {% block pagination %}
             {% endblock %}
-            <footer><p><a href="{{ path_for('page', { slug: 'Me' })}}#copyright">Copyright is for losers</a>.<br />All work is published in the public domain. Enjoy knowledge.</p></footer>
+            <footer class="grid">
+                <div class="col-1-10">
+                    <a style="border: 0" rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+                </div>
+                <div class="9-10">
+                    <p>I support <a href="https://okfn.org/">open knowledge</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. Enjoy freedom on knowledge. Check <a href="{{ path_for('post', { slug: 'About' })}}#copyright">my views</a> on copyrights.</p>
+                </div>
+            </footer>
         </div>
     </div>
 </div>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-84667467-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-84667467-1', 'auto');ga('send', 'pageview');</script>
 </body>
 </html>

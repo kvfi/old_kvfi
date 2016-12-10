@@ -12,25 +12,32 @@ class PostController extends Controller
     public function get(Request $request, Response $response, $args)
     {
         $post = Post::where('slug', $request->getAttribute('route')->getArgument('slug'))->first();
+        $cond = [];
 
         if (!$post) {
             return $this->pagenotfound;
         }
 
+        if ($post->slug === 'Théorème du jour')
+        {
+            $cond['theorems'] = Post::where('type', 'theorem')->get();
+        }
+
         return $this->view->render($response, 'post.twig', array(
-        'headMeta' => [
-            'title' => $post->title,
-            'description' => $post->intro,
-        ],
-        'data' => array(
-            'post' => $post,
-            'category' => Category::where('slug', $post->category)->first(),
-            'content' => $this->getPostContent($post->slug),
-            'tags' => $this->getFormattedPostTags($post->slug),
-            /* 'comments' => $post->comments(),
-            'comment_count' => count($post->comments()), */
-        ),
-    ));
+            'headMeta' => [
+                'title' => $post->title,
+                'description' => $post->intro,
+            ],
+            'data' => array(
+                'post' => $post,
+                'category' => Category::where('slug', $post->category)->first(),
+                'content' => $this->getPostContent($post->slug),
+                'tags' => $this->getFormattedPostTags($post->slug),
+                'cond' => $cond
+                /* 'comments' => $post->comments(),
+                'comment_count' => count($post->comments()), */
+            ),
+        ));
     }
 
     protected function getPostContent($slug)

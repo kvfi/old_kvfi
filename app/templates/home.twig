@@ -36,7 +36,7 @@
     <h5>last updated topics</h5>
     {% for topic in data.topics %}
       <ul>
-        <li><time>{{ topic.updated_at|date('Y-m-d') }} at {{ topic.updated_at|date('H:i') }}</time><a href="{{ path_for('page', {slug : topic.slug}) }}">{{ topic.title }}</a></li>
+        <li><time>{{ topic.updated_at|date('Y-m-d') }} at {{ topic.updated_at|date('H:i') }}</time><a href="{{ path_for('post', {slug : topic.slug}) }}">{{ topic.title }}</a></li>
       </ul>
     {% endfor %}
   </section>

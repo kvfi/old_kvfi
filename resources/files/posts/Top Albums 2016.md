@@ -28,7 +28,7 @@ I look forward to listening Pouya/Fat Nick mixtape that should be put out later 
 * [“Bottomless Pit”](https://itunes.apple.com/us/album/bottomless-pit/id1109208657) by Death Grips
 * [“YØU CAN'T KILL US”](https://hirs.bandcamp.com/album/y-u-cant-kill-us) by HIRS
 * [“Nothing Gives”](https://slowcoaches.bandcamp.com/album/nothing-gives) by Slowcoaches
-* [“Blackout E.P.(”]https://gravemistakerecords.bandcamp.com/album/blackout-e-p) by Memory Loss
+* [“Blackout E.P.”](https://gravemistakerecords.bandcamp.com/album/blackout-e-p) by Memory Loss
 * [“That's Cool...in a totally negative and destructive way”](https://killlincolndc.bandcamp.com/album/thats-cool-in-a-totally-negative-and-destructive-way) by Kill Lincoln
 * [“TRANS DAY OF REVENGE”](https://girlslivingoutsidesocietysshit.bandcamp.com/album/trans-day-of-revenge) by G.L.O.S.S.
 * [“WORRY.”](https://jeffrosenstock.bandcamp.com/album/worry) by Jeff Rosenstock

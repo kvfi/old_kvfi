@@ -5,7 +5,6 @@ namespace App\Controllers;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 use App\Models\Post;
-use App\Models\Page as Topic;
 use App\Core\Pagination\Paginator;
 
 class HomeController extends Controller
@@ -26,7 +25,7 @@ class HomeController extends Controller
           'data' => [
             'posts' => $posts,
             'intro' => $this->getIntroText(),
-            'topics' => Topic::orderBy('updated_at', 'DESC')->limit(3)->get(),
+            'topics' => Post::orderBy('updated_at', 'DESC')->limit(3)->get(),
             'pagination' => $pagination->render(),
           ],
         ]);

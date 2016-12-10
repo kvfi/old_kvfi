@@ -42,6 +42,14 @@
                         {% endfor %}
                     </select>
                 </span>
+                <span>
+                    <select class="select_meta input-style" name="difficulty">
+                        <option value="">Difficulty</option>
+                        {% for difficulty in range(1, 4) %}
+                        <option value="{{ difficulty }}"{% if difficulty == data.post.difficulty %} selected{% endif %}>{{ difficulty }}</option>
+                        {% endfor %}
+                    </select>
+                </span>
             </p>
             <span class="helper">{{ form_errors.created_at | first }}</span>
             <span class="helper">{{ form_errors.category | first }}</span>

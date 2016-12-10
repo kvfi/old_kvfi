@@ -21,6 +21,6 @@ class Post extends Model
          'tags',
          'toc',
          'difficulty',
-         'extras',
+         'extras'
      ];
 }

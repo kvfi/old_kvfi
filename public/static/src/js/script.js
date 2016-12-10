@@ -23,22 +23,22 @@ var Footnotes = {
         div.bind('mouseout', Footnotes.footnoteoout);
 
         var el = document.getElementById(id);
-        div.html('<div>'+jQuery(el).html()+'</div>');
+        div.html('<div>' + jQuery(el).html() + '</div>');
 
         jQuery(document.body).append(div);
 
         var left = position.left;
-        if(left + 420  > jQuery(window).width() + jQuery(window).scrollLeft())
+        if (left + 420 > jQuery(window).width() + jQuery(window).scrollLeft())
             left = jQuery(window).width() - 420 + jQuery(window).scrollLeft();
-        var top = position.top+20;
-        if(top + div.height() > jQuery(window).height() + jQuery(window).scrollTop())
+        var top = position.top + 20;
+        if (top + div.height() > jQuery(window).height() + jQuery(window).scrollTop())
             top = position.top - div.height() - 15;
         div.css({
-            left:left,
-            top:top,
-            opacity:1,
+            left: left,
+            top: top,
+            opacity: 1,
             position: "absolute"
-            });
+        });
     },
     footnoteoout: function() {
         Footnotes.footnotetimeout = setTimeout(function() {
@@ -47,13 +47,13 @@ var Footnotes = {
             }, 300, function() {
                 jQuery('#footnotediv').remove();
             });
-        },100);
+        }, 100);
     },
     divover: function() {
         clearTimeout(Footnotes.footnotetimeout);
         jQuery('#footnotediv').stop();
         jQuery('#footnotediv').css({
-                opacity: 1
+            opacity: 1
         });
     }
 }
@@ -156,12 +156,11 @@ jQuery(document).ready(function() {
         });
     }
 
-
     $.fn.slugCreator = function(options) {
-        var weburl = 'http://scif.ml/post/',
+        var weburl = 'https://scif.ml/',
             url_viewer = $('.url-viewer');
         if (options.is_page == true) {
-            weburl = 'http://scif.ml/';
+            weburl = 'https://scif.ml/';
         }
         $(this).on('keyup', function() {
             if ($(this).val().length > 0) {
@@ -169,7 +168,7 @@ jQuery(document).ready(function() {
                 if (options.is_page == true) {
                     var str = $(this).val().replace(/ /g, '_').replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '');
                 } else {
-                var str = $(this).val().toLowerCase().replace(/ /g, '-').replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '');
+                    var str = $(this).val().toLowerCase().replace(/ /g, '-').replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '');
                 }
                 url_viewer.html('URL: <span class="link">' + weburl + str + '</a></span> <span><a href="#" class="modify_slug">Modify</a></span> <span><a href="' + weburl + str + '" target="_blank">View post</a></span>');
                 $(this).next().find('input[name="slug"]').val(str);

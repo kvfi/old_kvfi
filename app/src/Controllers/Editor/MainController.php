@@ -14,7 +14,15 @@ class MainController extends Controller
 {
     public function index($request, $response)
     {
-        return $this->view->render($response, 'editor/home.twig');
+        $posts = Post::where('type', '<>', 'theorem')->orderBy('created_at', 'DESC')->get();
+        return $this->view->render($response, 'editor/home.twig', [
+            'headMeta' => [
+
+            ],
+            'data' => [
+                'posts' => $posts
+            ]
+        ]);
     }
 
     public function getNewPost($request, $response)
@@ -27,7 +35,7 @@ class MainController extends Controller
                  'categories' => Category::get(['slug', 'name']),
                  'progressions' => ProgressionState::all(),
                  'epistemics' => EpistemicState::all(),
-             ],
+             ]
          ]);
     }
 
@@ -54,6 +62,7 @@ class MainController extends Controller
             'epistemic' => $request->getParam('epistemic'),
             'content' => $request->getParam('content'),
             'tags' => serialize(explode(', ', $request->getParam('tags'))),
+            'difficulty' => $request->getParam('difficulty')
         ]);
 
         $this->flash->addMessage('info', 'Post');
@@ -100,6 +109,7 @@ class MainController extends Controller
             'epistemic' => $request->getParam('epistemic'),
             'content' => $request->getParam('content'),
             'tags' => serialize(explode(', ', $request->getParam('tags'))),
+            'difficulty' => $request->getParam('difficulty')
         ]);
 
         $this->flash->addMessage('info', 'Post');

@@ -57,17 +57,4 @@ class PageController extends Controller
         ]
       ));
     }
-
-    public function tdj(Request $request, Response $response, array $args)
-    {
-        return $this->view->render($response, 'extras/theoremes.twig', array(
-            'headMeta' => [
-                'title' => 'Théorème du jour',
-                'desc' => 'Découvrez chaque nouveau théorème mathématique expliqué de manière simple.'
-            ],
-            'data' => [
-                'theorems' => Post::where('type', '=', 'theorem')->get(),
-            ]
-        ));
-    }
 }

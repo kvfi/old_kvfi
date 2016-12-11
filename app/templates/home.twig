@@ -12,12 +12,13 @@
     Level of knowledge required.
   </div>
   <div class="col-2-3 markers squares">
-    <span class="one"><i></i> non-technical</span>
+    <span class="one"><i></i> trivial</span>
     <span class="two"><i></i> technical</span>
     <span class="three"><i></i> theorical</span>
     <span class="four"><i></i> academic</span>
   </div>
 </div>
+<br />
 <div class="home-articles grid">
   <section id="recent_posts" class="col-4-5">
     <h5>recent posts</h5>
@@ -26,19 +27,19 @@
         <h6>{{ i }}</h6>
         <ul>
           {% for post in data.posts[i] %}
-          <li><time>{{ post.created_at|date('m/d/Y') }}</time> <span class="squares"><span class="{% if post.difficulty is not empty %}{% if post.difficulty == '1' %}one{% elseif post.difficulty == '2' %}two{% elseif post.difficulty == '3' %}three{% elseif post.difficulty == '4' %}four{% endif %}{% endif %}"><i></i></span></span> <a href="{{ path_for('post', {slug : post.slug}) }}">{{ post.title }}</a></li>
+          <li><time>{{ post.created_at|date('M d') }}</time> <span class="squares"><span class="{% if post.difficulty is not empty %}{% if post.difficulty == '1' %}one{% elseif post.difficulty == '2' %}two{% elseif post.difficulty == '3' %}three{% elseif post.difficulty == '4' %}four{% endif %}{% endif %}"><i></i></span></span> <a href="{{ path_for('post', {slug : post.slug}) }}">{{ post.title }}</a></li>
           {% endfor %}
         </ul>
       {% endif %}
     {% endfor %}
   </section>
   <section id="last-topics-updates" class="col-1-5">
-    <h5>last updated topics</h5>
+    {# <h5>last updated topics</h5>
     {% for topic in data.topics %}
       <ul>
         <li><time>{{ topic.updated_at|date('Y-m-d') }} at {{ topic.updated_at|date('H:i') }}</time><a href="{{ path_for('post', {slug : topic.slug}) }}">{{ topic.title }}</a></li>
       </ul>
-    {% endfor %}
+    {% endfor %} #}
   </section>
 </div>
 {% endblock %}

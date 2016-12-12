@@ -18,6 +18,14 @@
                 <span><select class="select_meta input-style" name="category"><option value="">Category</option>{% for category in data.categories %}<option value="{{ category.slug }}">{{ category.name }}</option>{% endfor %}</select></span>
                 <span><select class="select_meta input-style" name="progress"><option value="">Progress</option>{% for progress in data.progressions %}<option value="{{ progress.slug }}">{{ progress.title }}</option>{% endfor %}</select></span>
                 <span><select class="select_meta input-style" name="epistemic"><option value="">Epistemic</option>{% for epistemic in data.epistemics %}<option value="{{ epistemic.slug }}">{{ epistemic.title }}</option>{% endfor %}</select></span>
+                <span>
+                    <select class="select_meta input-style" name="difficulty">
+                        <option value="">Difficulty</option>
+                        {% for difficulty in range(1, 4) %}
+                        <option value="{{ difficulty }}"{% if difficulty == data.post.difficulty %} selected{% endif %}>{{ difficulty }}</option>
+                        {% endfor %}
+                    </select>
+                </span>
             </p>
             <span class="helper">{{ form_errors.created_at | first }}</span>
             <span class="helper">{{ form_errors.category | first }}</span>

@@ -1,8 +1,6 @@
-![“On the Internet, nobody knows you're a dog.”](/static/images/cartoon2.jpg){.fright}
-Howdy young Internet traveler,
+![“On the Internet, nobody knows you're a dog.”](/static/images/cartoon7.jpg){.fright}
+This blog is a [semi-personal knowledge base](./About) I've been building for the last 12 years. I mostly write about mathematics, computer science and philosophy. I also do correlative studies&mdash;although I [criticized pseudo-factuality](./Pseudofacts), [book reviews](./Book%20reviews), maintain a versioned [list of topics](./Topics) I'm intrigued in, carry out [experiments](./Experiments) and do [predictions](./Predictions). I also happen to do [code golf](https://en.wikipedia.org/wiki/Code_golf).
 
-This is [a semi-personal knowledge base](./About) I've been building for the last 12 years. I mostly write correlative studies — although I made critics of it (see [_“The uncertainty of pseudo-factuality”_](./post/uncertainty-of-pseudofactuality)), [book reviews](./Book_reviews), maintain a [list of topics](./Topics) I'm intrigued in, carry out [experiments](./Experiments) and do [predictions](./Predictions).
-
-If you want to start to read some of my essays, I would recommand my finest work, [“Introduction to logic theory for non-mathematicians”](./post/introduction-logic-theory), (which is BTW also included in [my best writings list](./Best_work_list)), or begin by [_“How to read this blog”_](./Reading_SCIFML) (a guide that highlights my writing/publishing procedures).
+If you want to start to read some of my essays, I would recommand my finest work, [“Logic theory for non-mathematicians”](./Logic%20for%20%20non-mathematicians), (which is by the way listed in [my best writings list](./Best%20work)), you might also start by [_“How to read this blog”_](./Reading%20this%20blog) (a guide that highlights my writing and publishing procedures).
 
 Anyway, you're most welcome.

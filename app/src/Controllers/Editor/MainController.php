@@ -47,6 +47,8 @@ class MainController extends Controller
             'category' => v::notEmpty(),
             'progress' => v::notEmpty(),
             'epistemic' => v::notEmpty(),
+            'difficulty' => v::notEmpty(),
+            'type' => v::notEmpty()
         ]);
 
         if ($validation->failed()) {
@@ -60,7 +62,7 @@ class MainController extends Controller
             'category' => $request->getParam('category'),
             'progress' => $request->getParam('progress'),
             'epistemic' => $request->getParam('epistemic'),
-            'content' => $request->getParam('content'),
+            'type' => $request->getParam('type'),
             'tags' => serialize(explode(', ', $request->getParam('tags'))),
             'difficulty' => $request->getParam('difficulty')
         ]);
@@ -107,7 +109,7 @@ class MainController extends Controller
             'category' => $request->getParam('category'),
             'progress' => $request->getParam('progress'),
             'epistemic' => $request->getParam('epistemic'),
-            'content' => $request->getParam('content'),
+            'type' => $request->getParam('type'),
             'tags' => serialize(explode(', ', $request->getParam('tags'))),
             'difficulty' => $request->getParam('difficulty')
         ]);

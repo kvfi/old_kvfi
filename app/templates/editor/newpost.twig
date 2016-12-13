@@ -27,6 +27,7 @@
                     </select>
                 </span>
             </p>
+            <p><label><input type="checkbox" name="type" value="" /> regular</label> <label><input type="checkbox" name="type" value="page" /> page</label> <label><input type="checkbox" name="type" value="theorem" /> theorem</label> <label><input type="checkbox" name="type" value="experiment" /> experiment</label></p>
             <span class="helper">{{ form_errors.created_at | first }}</span>
             <span class="helper">{{ form_errors.category | first }}</span>
             <span class="helper">{{ form_errors.progress | first }}</span>

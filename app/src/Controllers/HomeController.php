@@ -14,7 +14,7 @@ class HomeController extends Controller
         $pagination = new Paginator(['total' => 100, 'item_per_page' => 20]);
         $posts = [];
         for ($i = 2010; $i <= date('Y'); ++$i) {
-            $posts[$i] = Post::where('type', '<>', 'theorem')->where('slug', '<>', 'Théorèmes')->whereYear('created_at', '=', $i)->orderBy('created_at', 'DESC')->get();
+            $posts[$i] = Post::where('type', '<>', 'theorem')->where('type', '<>', 'experiment')->whereYear('created_at', '=', $i)->orderBy('created_at', 'DESC')->get();
         }
 
         $reponse = $this->view->render($response, 'home.twig', [
@@ -25,8 +25,11 @@ class HomeController extends Controller
           'data' => [
             'posts' => $posts,
             'intro' => $this->getIntroText(),
-            'topics' => Post::orderBy('updated_at', 'DESC')->limit(3)->get(),
+            // 'topics' => Post::orderBy('updated_at', 'DESC')->limit(3)->get(),
+            'experiment' => Post::where('type', '=', 'experiment')->orderBy('created_at', 'DESC')->first(),
+            'theorem' => Post::where('created_at', '>', date('Y-m-d').' 00:00:00')->first(),
             'pagination' => $pagination->render(),
+
           ],
         ]);
 

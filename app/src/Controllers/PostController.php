@@ -14,16 +14,19 @@ class PostController extends Controller
         $post = Post::where('slug', $request->getAttribute('route')->getArgument('slug'))->first();
         $cond = [];
 
+        $tpl = 'post.twig';
+
         if (!$post) {
             return $this->pagenotfound;
         }
 
-        if ($post->slug === 'Théorème du jour')
+        if ($post->slug === 'Théorèmes')
         {
-            $cond['theorems'] = Post::where('type', 'theorem')->get();
+            $cond['theorems'] = Post::where('type', 'theorem')->orderBy('created_at', 'DESC')->get();
+            $cond['theorems_no'] = count($cond['theorems']);
         }
 
-        return $this->view->render($response, 'post.twig', array(
+        return $this->view->render($response, $tpl, array(
             'headMeta' => [
                 'title' => $post->title,
                 'description' => $post->intro,
@@ -58,7 +61,7 @@ class PostController extends Controller
         $taglist = "";
         if (is_array($tags)) {
             foreach ($tags as $tag) {
-                $taglist .= '<a href="'.$this->container->router->pathFor('archives').'?tag='.$tag.'">'.$tag . '</a>, '; 
+                $taglist .= '<a href="'.$this->container->router->pathFor('post', ['slug' => 'Archives']).'?tag='.$tag.'">'.$tag . '</a>, '; 
             }
         }
         return rtrim($taglist, ", ");

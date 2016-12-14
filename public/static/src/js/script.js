@@ -58,8 +58,9 @@ var Footnotes = {
     }
 }
 
+Footnotes.setup();
+
 jQuery(document).ready(function() {
-    Footnotes.setup();
     var ToC = "<h6>Table of Contents</h6>" +
         "<nav role='navigation'>" +
         "<ul>";

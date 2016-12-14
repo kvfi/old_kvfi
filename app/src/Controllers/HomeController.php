@@ -27,7 +27,7 @@ class HomeController extends Controller
             'intro' => $this->getIntroText(),
             // 'topics' => Post::orderBy('updated_at', 'DESC')->limit(3)->get(),
             'experiment' => Post::where('type', '=', 'experiment')->orderBy('created_at', 'DESC')->first(),
-            'theorem' => Post::where('created_at', '>', date('Y-m-d').' 00:00:00')->first(),
+            'theorem' => Post::where('type', '=', 'theorem')->orderBy('created_at', 'DESC')->first(),
             'pagination' => $pagination->render(),
 
           ],

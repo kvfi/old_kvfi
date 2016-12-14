@@ -1,4 +1,4 @@
-> If you want to really hurt you parents, and you don't have the nerve to be gay, the least you can do is go into the arts. I'm not kidding. The arts are not a way to make a living. They are a very human way of making life more bearable. Practicing an art, no matter how well or badly, is a way to make your soul grow, for heaven's sake. Sing in the shower. Dance to the radio. Tell stories. Write a poem to a friend, even a lousy poem. Do it as well as you possible can. You will get an enormous reward. You will have created something. [^first_quote]
+> If you want to really hurt you parents, and you don't have the nerve to be gay, the least you can do is go into the arts. I'm not kidding. The arts are not a way to make a living. They are a very human way of making life more bearable. Practicing an art, no matter how well or badly, is a way to make your soul grow, for heaven's sake. Sing in the shower. Dance to the radio. Tell stories. Write a poem to a friend, even a lousy poem. Do it as well as you possible can. You will get an enormous reward. You will have created something. [^ this is my footnote]
 
 I won't be introducing myself using purposeless information such as where I'm from, where I grew up, giving a c, what diet I'm on or how many ovum I fertilized. Apart from the unproductive result, I've a leaning for strong privacy due to my views and backslash it could eventually provoke. In _[“The drawbacks of having an opinion”](/post/drawbacks-opinion)_, I explain why I chose anonymity and how it allows me to remain watchful (I also try to show that opinion and conviction can obscure self-determination). Although I give more immunity to personality traits (described bellow).
 
@@ -22,7 +22,65 @@ According to the [five factor model (FFM)](https://en.wikipedia.org/wiki/Big_Fiv
 Although I was diagnosed at the age of 4 with Asperger's syndrome, I've never been through any important troubles due to my mental irregularity. Even supposing that I sustain some sort of social malaise and general discomfort when it comes to daily interaction tasks, one can argue that I have a [schizoid personality disorder](https://en.wikipedia.org/wiki/Schizoid_personality_disorder).
 
 #### This website
-This blog is a personal database of thoughts, ideas and notes I'm maintaining for about 12 years now. I use it mainly to share itemized information on various topics and subjects. The website is spit into two separate segments: [topics](Topics) (talking points I feed with information) and [posts](Posts) (daily notes, correlative studies, graphics, etc.)
+This blog is a personal database of thoughts, ideas and notes I'm maintaining for about 12 years now. I use it mainly to share itemized information on various topics and subjects. The website is spit into two separate segments: topics (talking points I feed with information) and **posts** (daily notes, correlative studies, experiments, graphics, etc.).
+
+#### Contact {#contact}
+* Email: <a href="mailto:hey@scif.ml">hey@scif.ml</a>. I don't use social media.
+* [PGP key](http://pgp.mit.edu/pks/lookup?op=get&search=0x288F609565D98527); fingerprint `65D98527`
+
+<pre>
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+=wN15
+
+-----END PGP PUBLIC KEY BLOCK-----
+</pre>
 
 #### Morals & Philosophy {#morals}
 If you can't wait to know more about me, I offer you a large pool of topics disclosing some facets of my morals.

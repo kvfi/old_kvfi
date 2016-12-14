@@ -2,7 +2,6 @@
 
 use App\Middleware\AuthMiddleware;
 use App\Middleware\GuestMiddleware;
-
 /* HOMEPAGE */
 
 $app->get('/', 'HomeController:index')->setName('home');
@@ -42,12 +41,9 @@ $app->group('/editor', function () {
 /* $app->get('/post/{slug}', 'App\Controllers\PostController:get')->setName('post'); */
 
 /* Page */
-$app->get('/archives', 'App\Controllers\PageController:archives')->setName('archives');
-$app->get('/contact', 'App\Controllers\PageController:contact')->setName('contact');
-$app->get('/topics', 'App\Controllers\PageController:topics')->setName('topics');
-$app->get('/TDJ', 'App\Controllers\PageController:tdj')->setName('TDJ');
+// $app->get('/archives', 'App\Controllers\PostController:archives')->setName('archives');
+// $app->get('/contact', 'App\Controllers\PageController:contact')->setName('contact');
 $app->get('/{slug}', 'App\Controllers\PostController:get')->setName('post');
-$app->get('/theorem/{id}', 'App\Controllers\PostController:theorem')->setName('theorem');
 
 /* TAG */
 $app->get('/tags/{slug}', 'App\Controllers\TagController:get')->setName('tag');

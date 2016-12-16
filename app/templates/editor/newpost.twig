@@ -27,18 +27,19 @@
                     </select>
                 </span>
             </p>
-            <p><label><input type="checkbox" name="type" value="" /> regular</label> <label><input type="checkbox" name="type" value="page" /> page</label> <label><input type="checkbox" name="type" value="theorem" /> theorem</label> <label><input type="checkbox" name="type" value="experiment" /> experiment</label></p>
+            <p><strong>type:</strong> 
+                {% set types = ['regular', 'page', 'theorem', 'experiment', 'topic', 'review'] %}
+                {% for type in types %}
+                <input type="radio" name="type" value="{% if type == 'regular' %}{% else %}{{ type }}{% endif %}" id="{{ type }}"{% if type == 'regular' %} checked{% endif %} /> {{ type }}
+                {% endfor %}
+            </p>
             <span class="helper">{{ form_errors.created_at | first }}</span>
             <span class="helper">{{ form_errors.category | first }}</span>
             <span class="helper">{{ form_errors.progress | first }}</span>
             <span class="helper">{{ form_errors.epistemic | first }}</span>
         </div> 
-        <div class="tags"></div>
-        <div class="article-body">
-            <span class="helper">{{ form_errors.content | first }}</span>
-            <textarea name="content" placeholder="Write, paste Markdown code here."></textarea>
-            <div class="converted_md_txt"></div>
-        </div>
+        <input type="text" name="tags" placeholder="Enter" />
+        <hr />
         <input type="submit" />
         {{ csrf.field | raw }}
       </form>

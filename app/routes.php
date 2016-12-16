@@ -41,7 +41,7 @@ $app->group('/editor', function () {
 /* $app->get('/post/{slug}', 'App\Controllers\PostController:get')->setName('post'); */
 
 /* Page */
-// $app->get('/archives', 'App\Controllers\PostController:archives')->setName('archives');
+$app->get('/Archives', 'App\Controllers\PostController:archives')->setName('archives');
 // $app->get('/contact', 'App\Controllers\PageController:contact')->setName('contact');
 $app->get('/{slug}', 'App\Controllers\PostController:get')->setName('post');
 

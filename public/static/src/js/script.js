@@ -91,10 +91,6 @@ jQuery(document).ready(function() {
     $(".table-of-contents").prepend(ToC);
     $(".footnotes").prepend("<h5>References</h5>");
 
-    $("article.form form textarea").change(function() {
-        $('.converted_md_txt').html(myFunc());
-    });
-
     $.fn.taggin = function() {
         $('<input />').attr({
             type: 'text',
@@ -193,17 +189,11 @@ jQuery(document).ready(function() {
     $('.slug-input-gen-page').slugCreator({
         is_page: true
     });
+
+    /* TOOLTIP */
+    $(".tooltip").hover(function() {
+        $('.tooltip-content', this).stop().show();
+    }, function() {
+        $('.tooltip-content', this).stop().fadeOut(700);
+    });
 });
-
-
-
-
-function isHTML(str) {
-    var a = document.createElement('div');
-    a.innerHTML = str;
-    for (var c = a.childNodes, i = c.length; i--;) {
-        if (c[i].nodeType == 1) return true;
-    }
-    return false;
-    // ok
-}

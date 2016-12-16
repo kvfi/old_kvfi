@@ -61,3 +61,40 @@ table
 		span.title
 			font-weight: bold
 			font-size: 14px
+
+.qm
+	cursor: help
+
+.tooltip
+	position: relative
+		z-index: 200
+	.tooltip-content
+		z-index: 100
+		width: 200px
+		position: absolute
+		display: none
+		top: 0
+		margin-top: 30px
+		left: -100px
+		padding: 5px 10px
+		background-color: rgba(255, 255, 255, 1)
+		border: 1px solid #ddd
+	.tooltip-content:after, .tooltip-content:before
+		bottom: 100%
+		left: 50%
+		border: solid transparent
+		content: " "
+		height: 0
+		width: 0
+		position: absolute
+		pointer-events: none
+	.tooltip-content:after
+		border-color: rgba(136, 183, 213, 0)
+		border-bottom-color: #FFFFFF
+		border-width: 4px
+		margin-left: -4px
+	.tooltip-content:before
+		border-color: rgba(194, 225, 245, 0)
+		border-bottom-color: #DDDDDD
+		border-width: 6px
+		margin-left: -6px

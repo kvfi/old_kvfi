@@ -51,6 +51,12 @@
                     </select>
                 </span>
             </p>
+            <p><strong>type:</strong> 
+                {% set types = ['regular', 'page', 'theorem', 'experiment', 'topic', 'review'] %}
+                {% for type in types %}
+                <input type="radio" name="type" value="{% if type == 'regular' %}{% else %}{{ type }}{% endif %}" id="{{ type }}"{% if (type == data.post.type) or ((type == 'regular') and (data.post.type is empty)) %} checked{% endif %}/> {{ type }}
+                {% endfor %}
+            </p>
             <span class="helper">{{ form_errors.created_at | first }}</span>
             <span class="helper">{{ form_errors.category | first }}</span>
             <span class="helper">{{ form_errors.progress | first }}</span>

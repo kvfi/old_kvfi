@@ -6,6 +6,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 use App\Models\Post;
 use App\Models\Category;
+use App\Core\Pagination\Paginator;
 
 class PostController extends Controller
 {
@@ -65,5 +66,15 @@ class PostController extends Controller
             }
         }
         return rtrim($taglist, ", ");
+    }
+
+    public function archives(Request $request, Response $response, $args)
+    {
+        $posts = Post::all();
+        foreach($posts as $post) {
+           Post::find($post->id)->update([
+            'tags' => implode(', ', unserialize($post->tags)),
+        ]);
+        }
     }
 }

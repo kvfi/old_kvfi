@@ -4,7 +4,6 @@ namespace App\Controllers\Editor;
 
 use App\Controllers\Controller;
 use App\Models\Post;
-use App\Models\Page;
 use App\Models\Category;
 use App\Models\ProgressionState;
 use App\Models\EpistemicState;
@@ -15,13 +14,14 @@ class MainController extends Controller
     public function index($request, $response)
     {
         $posts = Post::where('type', '<>', 'theorem')->orderBy('created_at', 'DESC')->get();
+
         return $this->view->render($response, 'editor/home.twig', [
             'headMeta' => [
 
             ],
             'data' => [
-                'posts' => $posts
-            ]
+                'posts' => $posts,
+            ],
         ]);
     }
 
@@ -35,7 +35,7 @@ class MainController extends Controller
                  'categories' => Category::get(['slug', 'name']),
                  'progressions' => ProgressionState::all(),
                  'epistemics' => EpistemicState::all(),
-             ]
+             ],
          ]);
     }
 
@@ -48,7 +48,7 @@ class MainController extends Controller
             'progress' => v::notEmpty(),
             'epistemic' => v::notEmpty(),
             'difficulty' => v::notEmpty(),
-            'type' => v::notEmpty()
+            'type' => v::notEmpty(),
         ]);
 
         if ($validation->failed()) {
@@ -64,7 +64,7 @@ class MainController extends Controller
             'epistemic' => $request->getParam('epistemic'),
             'type' => $request->getParam('type'),
             'tags' => serialize(explode(', ', $request->getParam('tags'))),
-            'difficulty' => $request->getParam('difficulty')
+            'difficulty' => $request->getParam('difficulty'),
         ]);
 
         $this->flash->addMessage('info', 'Post');
@@ -111,7 +111,7 @@ class MainController extends Controller
             'epistemic' => $request->getParam('epistemic'),
             'type' => $request->getParam('type'),
             'tags' => serialize(explode(', ', $request->getParam('tags'))),
-            'difficulty' => $request->getParam('difficulty')
+            'difficulty' => $request->getParam('difficulty'),
         ]);
 
         $this->flash->addMessage('info', 'Post');

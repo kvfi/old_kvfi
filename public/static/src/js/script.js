@@ -192,7 +192,7 @@ jQuery(document).ready(function() {
 
     /* TOOLTIP */
     $(".tooltip").hover(function() {
-        $('.tooltip-content', this).stop().show();
+        $('.tooltip-content', this).stop().fadeIn(700);
     }, function() {
         $('.tooltip-content', this).stop().fadeOut(700);
     });

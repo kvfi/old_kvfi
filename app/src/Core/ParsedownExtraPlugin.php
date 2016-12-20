@@ -5,10 +5,11 @@ namespace App\Core;
 /**
  * Author: Taufik Nurrohman
  * URL: http://latitudu.com
- * Version: 1.1.1
+ * Version: 1.1.1.
  */
 // <https://github.com/tovic/parsedown-extra-plugin>
-class ParsedownExtraPlugin extends \ParsedownExtra {
+class ParsedownExtraPlugin extends \ParsedownExtra
+{
     // version
     const version = '1.1.1';
     // self-closing HTML tags
@@ -52,53 +53,66 @@ class ParsedownExtraPlugin extends \ParsedownExtra {
     // custom footnote back link text
     public $footnote_back_link_text = '&#8617;';
     // ~
-    function __construct() {
-        if(parent::version < '0.7.0') {
+    public function __construct()
+    {
+        if (parent::version < '0.7.0') {
             throw new Exception('ParsedownExtraPlugin requires a later version of ParsedownExtra');
         }
         parent::__construct();
     }
     // ~
-    protected function element(array $element) {
+    protected function element(array $element)
+    {
         $markup = parent::element($element);
-        if( ! isset($element['text'])) {
+        if (!isset($element['text'])) {
             return str_replace(' />', $this->element_suffix, $markup);
         }
+
         return $markup;
     }
     // Check for external links ...
-    private function __doLink($excerpt, $fn) {
-        if($data = call_user_func('parent::' . $fn, $excerpt)) {
+    private function __doLink($excerpt, $fn)
+    {
+        if ($data = call_user_func('parent::'.$fn, $excerpt)) {
             $url = $data['element']['attributes']['href'];
-            if(isset($_SERVER['HTTP_HOST'])) {
+            if (isset($_SERVER['HTTP_HOST'])) {
                 $host = $_SERVER['HTTP_HOST'];
-            } else if(isset($_SERVER['SERVER_NAME'])) {
+            } elseif (isset($_SERVER['SERVER_NAME'])) {
                 $host = $_SERVER['SERVER_NAME'];
             } else {
-                $host = "";
+                $host = '';
             }
-            $in = $url === "" || $host === "" || strpos($url, 'https://' . $host) === 0 || strpos($url, 'http://' . $host) === 0 || strpos($url, '//' . $host) === 0 || strpos($url, '/') === 0 || strpos($url, '?') === 0 || strpos($url, '#') === 0 || strpos($url, 'javascript:') === 0 || strpos($url, '.') === 0 || strpos($url, '://') === false;
-            if(strpos($url, '//') === 0 && strpos($url, '//' . $host) !== 0) $in = false;
+            $in = $url === '' || $host === '' || strpos($url, 'https://'.$host) === 0 || strpos($url, 'http://'.$host) === 0 || strpos($url, '//'.$host) === 0 || strpos($url, '/') === 0 || strpos($url, '?') === 0 || strpos($url, '#') === 0 || strpos($url, 'javascript:') === 0 || strpos($url, '.') === 0 || strpos($url, '://') === false;
+            if (strpos($url, '//') === 0 && strpos($url, '//'.$host) !== 0) {
+                $in = false;
+            }
             $attrs = $this->links_attr;
-            if( ! $in) $attrs = array_merge($attrs, $this->links_external_attr);
+            if (!$in) {
+                $attrs = array_merge($attrs, $this->links_external_attr);
+            }
             $data['element']['attributes'] = array_merge($attrs, $data['element']['attributes']);
         }
+
         return $data;
     }
     // ~
-    protected function inlineLink($excerpt) {
+    protected function inlineLink($excerpt)
+    {
         return $this->__doLink($excerpt, __FUNCTION__);
     }
     // ~
-    protected function inlineUrl($excerpt) {
+    protected function inlineUrl($excerpt)
+    {
         return $this->__doLink($excerpt, __FUNCTION__);
     }
     // ~
-    protected function inlineUrlTag($excerpt) {
+    protected function inlineUrlTag($excerpt)
+    {
         return $this->__doLink($excerpt, __FUNCTION__);
     }
     // ~
-    protected function inlineImage($excerpt) {
+    protected function inlineImage($excerpt)
+    {
         $links_attr = $this->links_attr;
         $links_external_attr = $this->links_external_attr;
         $this->links_attr = $this->images_attr;
@@ -107,6 +121,7 @@ class ParsedownExtraPlugin extends \ParsedownExtra {
         $this->links_attr = $links_attr;
         $this->links_external_attr = $links_external_attr;
         unset($links_attr, $links_external_attr);
+
         return $data;
     }
     // `~~~ php` → `<pre><code class="language-php">`
@@ -115,25 +130,28 @@ class ParsedownExtraPlugin extends \ParsedownExtra {
     // `~~~ .php.html` → `<pre><code class="php html">`
     // `~~~ .php html` → `<pre><code class="php language-html">`
     // `~~~ {.php #foo}` → `<pre><code id="foo" class="php">`
-    protected function blockFencedCode($line) {
-        if(preg_match('/^[' . $line['text'][0] . ']{3,}[ ]*((?:\.?[-\w]+[ ]*)+|\{' . $this->regexAttribute . '+\})?[ ]*$/', $line['text'], $m)) {
+    protected function blockFencedCode($line)
+    {
+        if (preg_match('/^['.$line['text'][0].']{3,}[ ]*((?:\.?[-\w]+[ ]*)+|\{'.$this->regexAttribute.'+\})?[ ]*$/', $line['text'], $m)) {
             $element = array(
                 'name' => 'code',
-                'text' => ""
+                'text' => '',
             );
             $attrs = array();
-            if(isset($m[1])) {
-                if($m[1][0] === '{' && substr($m[1], -1) === '}') {
+            if (isset($m[1])) {
+                if ($m[1][0] === '{' && substr($m[1], -1) === '}') {
                     $attrs = $this->parseAttributeData(substr(substr($m[1], 1), 0, -1));
                 } else {
-                    if(is_callable($this->code_class)) {
+                    if (is_callable($this->code_class)) {
                         $attrs['class'] = call_user_func($this->code_class, $m[1], $line, $m, $this);
                     } else {
-                        $class = "";
-                        foreach(explode(' ', $m[1]) as $k => $v) {
-                            if( ! $v) continue;
-                            if(strpos($v, '.') !== 0) {
-                                $class .= ' ' . sprintf($this->code_class, $v);
+                        $class = '';
+                        foreach (explode(' ', $m[1]) as $k => $v) {
+                            if (!$v) {
+                                continue;
+                            }
+                            if (strpos($v, '.') !== 0) {
+                                $class .= ' '.sprintf($this->code_class, $v);
                             } else {
                                 $class .= str_replace('.', ' ', $v);
                             }
@@ -147,40 +165,46 @@ class ParsedownExtraPlugin extends \ParsedownExtra {
                 'element' => array(
                     'name' => 'pre',
                     'handler' => 'element',
-                    'text' => $element
-                )
+                    'text' => $element,
+                ),
             );
-            if( ! $this->code_block_attr_on_parent) {
+            if (!$this->code_block_attr_on_parent) {
                 $block['element']['text']['attributes'] = $attrs;
             } else {
                 $block['element']['attributes'] = $attrs;
             }
+
             return $block;
         }
     }
     // ~
-    protected function unmarkedText($text) {
-        if( ! isset($this->DefinitionData['Abbreviation'])) {
+    protected function unmarkedText($text)
+    {
+        if (!isset($this->DefinitionData['Abbreviation'])) {
             $this->DefinitionData['Abbreviation'] = $this->abbreviations;
         } else {
             $this->DefinitionData['Abbreviation'] = array_merge($this->abbreviations, $this->DefinitionData['Abbreviation']);
         }
-        if( ! isset($this->DefinitionData['Reference'])) {
+        if (!isset($this->DefinitionData['Reference'])) {
             $this->DefinitionData['Reference'] = $this->links;
         } else {
             $this->DefinitionData['Reference'] = array_merge($this->links, $this->DefinitionData['Reference']);
         }
-        return str_replace('<br />', '<br' . $this->element_suffix, parent::unmarkedText($text));
+
+        return str_replace('<br />', '<br'.$this->element_suffix, parent::unmarkedText($text));
     }
     // ~
-    private function __doTable($line, $block, $fn, $i) {
-        if($block = call_user_func('parent::' . $fn, $line, $block)) {
+    private function __doTable($line, $block, $fn, $i)
+    {
+        if ($block = call_user_func('parent::'.$fn, $line, $block)) {
             $block['element']['attributes'][is_int($this->table_class) ? 'border' : 'class'] = $this->table_class;
-            if( ! $this->table_align_class) return $block;
-            if(isset($block['element']['text'][$i]['text'])) {
-                foreach($block['element']['text'][$i]['text'] as $k => &$v) {
-                    if(isset($v['text'])) {
-                        foreach($v['text'] as $kk => &$vv) {
+            if (!$this->table_align_class) {
+                return $block;
+            }
+            if (isset($block['element']['text'][$i]['text'])) {
+                foreach ($block['element']['text'][$i]['text'] as $k => &$v) {
+                    if (isset($v['text'])) {
+                        foreach ($v['text'] as $kk => &$vv) {
                             $align = isset($block['alignments'][$kk]) ? sprintf($this->table_align_class, $block['alignments'][$kk]) : null;
                             $vv['attributes'] = array('class' => $align);
                         }
@@ -188,29 +212,35 @@ class ParsedownExtraPlugin extends \ParsedownExtra {
                 }
             }
         }
+
         return $block;
     }
     // ~
-    protected function blockTable($line, array $block = null) {
+    protected function blockTable($line, array $block = null)
+    {
         return $this->__doTable($line, $block, __FUNCTION__, 0);
     }
     // ~
-    protected function blockTableContinue($line, array $block) {
+    protected function blockTableContinue($line, array $block)
+    {
         return $this->__doTable($line, $block, __FUNCTION__, 1);
     }
     // ~
-    protected function inlineFootnoteMarker($excerpt) {
-        if(preg_match('#^\[\^(.+?)\]#', $excerpt['text'], $m)) {
+    protected function inlineFootnoteMarker($excerpt)
+    {
+        if (preg_match('#^\[\^(.+?)\]#', $excerpt['text'], $m)) {
             $name = $m[1];
-            if( ! isset($this->DefinitionData['Footnote'][$name])) return;
-            $this->DefinitionData['Footnote'][$name]['count']++;
-            if( ! isset($this->DefinitionData['Footnote'][$name]['number'])) {
+            if (!isset($this->DefinitionData['Footnote'][$name])) {
+                return;
+            }
+            ++$this->DefinitionData['Footnote'][$name]['count'];
+            if (!isset($this->DefinitionData['Footnote'][$name]['number'])) {
                 $this->DefinitionData['Footnote'][$name]['number'] = ++$this->footnoteCount;
             }
             $text = $this->DefinitionData['Footnote'][$name]['number'];
-            if(is_callable($this->footnote_link_text)) {
+            if (is_callable($this->footnote_link_text)) {
                 $text = call_user_func($this->footnote_link_text, $text, $excerpt, $m, $this);
-            } else if($this->footnote_link_text) {
+            } elseif ($this->footnote_link_text) {
                 $text = sprintf($this->footnote_link_text, $text);
             }
             $element = array(
@@ -220,22 +250,24 @@ class ParsedownExtraPlugin extends \ParsedownExtra {
                 'text' => array(
                     'name' => 'a',
                     'attributes' => array(
-                        'href' => '#' . sprintf($this->footnote_link_id, $name),
-                        'class' => $this->footnote_link_class
+                        'href' => '#'.sprintf($this->footnote_link_id, $name),
+                        'class' => $this->footnote_link_class,
                     ),
-                    'text' => $text
-                )
+                    'text' => $text,
+                ),
             );
+
             return array(
                 'extent' => strlen($m[0]),
-                'element' => $element
+                'element' => $element,
             );
         }
     }
     // ~
     private $footnoteCount = 0;
     // ~
-    protected function buildFootnoteElement() {
+    protected function buildFootnoteElement()
+    {
         $element = array(
             'name' => 'div',
             'attributes' => array('class' => $this->footnote_class),
@@ -245,95 +277,112 @@ class ParsedownExtraPlugin extends \ParsedownExtra {
                 array(
                     'name' => 'ol',
                     'handler' => 'elements',
-                    'text' => array()
-                )
-            )
+                    'text' => array(),
+                ),
+            ),
         );
         uasort($this->DefinitionData['Footnote'], 'parent::sortFootnotes');
-        foreach($this->DefinitionData['Footnote'] as $id => $data) {
-            if( ! isset($data['number'])) continue;
+        foreach ($this->DefinitionData['Footnote'] as $id => $data) {
+            if (!isset($data['number'])) {
+                continue;
+            }
             $text = $data['text'];
             $text = parent::text($text);
             $numbers = range(1, $data['count']);
-            $markup = "";
-            foreach($numbers as $number) {
-                $markup .= ' <a href="#' . sprintf($this->footnote_back_link_id, $number, $id) . '" rev="footnote" class="' . $this->footnote_back_link_class . '">' . $this->footnote_back_link_text . '</a>';
+            $markup = '';
+            foreach ($numbers as $number) {
+                $markup .= ' <a href="#'.sprintf($this->footnote_back_link_id, $number, $id).'" rev="footnote" class="'.$this->footnote_back_link_class.'">'.$this->footnote_back_link_text.'</a>';
             }
             $markup = substr($markup, 1);
-            if(substr($text, -4) === '</p>') {
-                $markup = '&#160;' . $markup;
-                $text = substr_replace($text, $markup . '</p>', -4);
+            if (substr($text, -4) === '</p>') {
+                $markup = '&#160;'.$markup;
+                $text = substr_replace($text, $markup.'</p>', -4);
             } else {
-                $text .= "\n" . '<p>' . $markup . '</p>';
+                $text .= "\n".'<p>'.$markup.'</p>';
             }
             $element['text'][1]['text'][] = array(
                 'name' => 'li',
                 'attributes' => array('id' => sprintf($this->footnote_link_id, $id)),
-                'text' => "\n" . $text . "\n"
+                'text' => "\n".$text."\n",
             );
         }
+
         return $element;
     }
     // ~
-    protected function inlineCode($excerpt) {
-        if($data = parent::inlineCode($excerpt)) {
-            if( ! $this->code_text) return $data;
-            if(is_callable($this->code_text)) {
+    protected function inlineCode($excerpt)
+    {
+        if ($data = parent::inlineCode($excerpt)) {
+            if (!$this->code_text) {
+                return $data;
+            }
+            if (is_callable($this->code_text)) {
                 $data['element']['text'] = call_user_func($this->code_text, $data['element']['text'], $data, $excerpt, $this);
             } else {
                 $data['element']['text'] = sprintf($this->code_text, $data['element']['text']);
             }
         }
+
         return $data;
     }
     // ~
-    private function __doBlockCode($block, $fn) {
-        if($data = call_user_func('parent::' . $fn, $block)) {
-            if( ! $this->code_block_text) return $data;
-            if(is_callable($this->code_block_text)) {
+    private function __doBlockCode($block, $fn)
+    {
+        if ($data = call_user_func('parent::'.$fn, $block)) {
+            if (!$this->code_block_text) {
+                return $data;
+            }
+            if (is_callable($this->code_block_text)) {
                 $data['element']['text']['text'] = call_user_func($this->code_block_text, $data['element']['text']['text'], $data, $block, $this);
             } else {
                 $data['element']['text']['text'] = sprintf($this->code_block_text, $data['element']['text']['text']);
             }
         }
+
         return $data;
     }
     // ~
-    protected function blockCodeComplete($block) {
+    protected function blockCodeComplete($block)
+    {
         return $this->__doBlockCode($block, __FUNCTION__);
     }
     // ~
-    protected function blockFencedCodeComplete($block) {
+    protected function blockFencedCodeComplete($block)
+    {
         return $this->__doBlockCode($block, __FUNCTION__);
     }
     // Advance parse attributes ...
-    protected function parseAttributeData($text) {
+    protected function parseAttributeData($text)
+    {
         // Allow compact attributes ...
         $text = str_replace(array('#', '.'), array(' #', ' .'), $text);
-        if(strpos($text, '="') !== false || strpos($text, '=\'') !== false) {
-            $text = preg_replace_callback('#([-\w]+=)(["\'])([^\n]*?)\2#', function($m) {
+        if (strpos($text, '="') !== false || strpos($text, '=\'') !== false) {
+            $text = preg_replace_callback('#([-\w]+=)(["\'])([^\n]*?)\2#', function ($m) {
                 $s = str_replace(array(' #', ' .', ' '), array('#', '.', "\n"), $m[3]);
-                return $m[1] . $m[2] . $s . $m[2];
+
+                return $m[1].$m[2].$s.$m[2];
             }, $text);
         }
         $attrs = array();
-        foreach(explode(' ', $text) as $v) {
-            if( ! $v) continue;
+        foreach (explode(' ', $text) as $v) {
+            if (!$v) {
+                continue;
+            }
             // `{#foo}`
-            if($v[0] === '#' && isset($v[1])) {
+            if ($v[0] === '#' && isset($v[1])) {
                 $attrs['id'] = substr($v, 1);
             // `{.foo}`
-            } else if($v[0] === '.' && isset($v[1])) {
+            } elseif ($v[0] === '.' && isset($v[1])) {
                 $attrs['class'][] = substr($v, 1);
             // ~
-            } else if(strpos($v, '=') !== false) {
+            } elseif (strpos($v, '=') !== false) {
                 $vv = explode('=', $v, 2);
                 // `{foo=}`
-                if($vv[1] === "") {
-                    $attrs[$vv[0]] = "";
+                if ($vv[1] === '') {
+                    $attrs[$vv[0]] = '';
                 // `{foo="bar baz"}`
                 // `{foo='bar baz'}`
-                } else if($vv[1][0] === '"' && substr($vv[1], -1) === '"' || $vv[1][0] === "'" && substr($vv[1], -1) === "'") {
+                } elseif ($vv[1][0] === '"' && substr($vv[1], -1) === '"' || $vv[1][0] === "'" && substr($vv[1], -1) === "'") {
                     $attrs[$vv[0]] = str_replace("\n", ' ', substr(substr($vv[1], 1), 0, -1));
                 // `{foo=bar}`
                 } else {
@@ -344,18 +393,22 @@ class ParsedownExtraPlugin extends \ParsedownExtra {
                 $attrs[$v] = $v;
             }
         }
-        if(isset($attrs['class'])) {
+        if (isset($attrs['class'])) {
             $attrs['class'] = implode(' ', $attrs['class']);
         }
+
         return $attrs;
     }
     protected $regexAttribute = '(?:[#.][-\w]+[ ]*|[-\w]+(?:=(?:["\'][^\n]*?["\']|[^\s]+)?)?[ ]*)';
     // Allow empty abbreviations ...
-    protected function blockAbbreviation($line) {
-        if(preg_match('/^\*\[(.+?)\]:[ ]*$/', $line['text'], $m)) {
+    protected function blockAbbreviation($line)
+    {
+        if (preg_match('/^\*\[(.+?)\]:[ ]*$/', $line['text'], $m)) {
             $this->DefinitionData['Abbreviation'][$m[1]] = null;
+
             return array('hidden' => true);
         }
+
         return parent::blockAbbreviation($line);
     }
 }

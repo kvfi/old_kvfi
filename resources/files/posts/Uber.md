@@ -6,19 +6,13 @@ Let's be clear, Uber does **not** contribute to any kind of [sharing economy](ht
 
 #### Reasons not to use Uber
 * Uber requires its users to identify themselves.
-
 * Uber gave U.S. government and agencies [data on more than 12m users](http://www.reuters.com/article/us-uber-tech-data-idUSKCN0X91R5). In 85% of the cases, Uber provides data on request.
-
 * Uber [tracks its custumers](http://www.npr.org/sections/alltechconsidered/2016/12/01/503985473/uber-now-tracks-passengers-locations-even-after-theyre-dropped-off) before and after they're dropped off.
-
 * [Incidents](http://www.whosdrivingyou.org/rideshare-incidents) directly involving Uber are frequent.
-
 * A senior Uber executive [suggested investigating the personal life of a journalist](https://www.buzzfeed.com/bensmith/uber-executive-suggests-digging-up-dirt-on-journalists) who criticized the company.
-
 * Uber's business model is [apocryphal](https://ftalphaville.ft.com/2016/12/01/2180647/the-taxi-unicorns-new-clothes/)[^apocryphal]. The company promises big payouts but drivers are barely paid minimum wages. Uber's relies on driver not understand their own economics.
-
+* Uber operates in a [nearly-unregulated market](https://en.wikipedia.org/wiki/Laissez-faire), the company can cut rates at any given moment.
 * JPMorgan and DeutscheBank [refused to sell Uber stocks](https://www.bloomberg.com/news/articles/2016-11-07/banks-said-to-have-passed-up-uber-share-sale-on-lack-of-data) on no financials and lack of specifics. Deutsche was supposed to sell the Uber shares through the bank's private-wealth division, which would be a first for a financial product. This story is similar to [Goldman Sachs Group selling private stocks of Facebook to people outside](http://dealbook.nytimes.com/2011/01/17/goldman-limits-facebook-investment-to-foreign-clients/?src=twt&twt=nytimesbusiness) of the U.S. before the company went public in 2012.
-
 * Uber operates in a [nearly-unregulated market](https://en.wikipedia.org/wiki/Laissez-faire), the company can cut rates at any given moment.
 
 [^apocryphal]: _"An apocryphal story is probably not true although it is often told and believed by some people to have happened:"_ [http://dictionary.cambridge.org/dictionary/english/apocryphal](http://dictionary.cambridge.org/dictionary/english/apocryphal)

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="" />
+    <meta name="google-site-verification" content="Se1BU47QDuaWbURxnshcyzaqRjosEdM0nZjwy_c8OEo" />
+    <meta property="og:url" content="http://localhost:8000/Th%C3%A9or%C3%A8mes" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://scif.ml/static/images/logo-200.jpg" />
+    <meta property="fb:app_id" content="1736500373279641" />
+    <title> &mdash; Science FML</title>
+    <link rel="shortcut icon" href="static/images/xd.gif" type="image/x-icon">
+    <link rel="stylesheet" href="static/dist/css/app.css" type="text/css" media="screen">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath: [ ['$','$'], ["\\(","\\)"] ],processEscapes: true}});</script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="static/dist/js/scripts.js"></script>
+</head>
+<body class="">
+    <div class="bodyPage">
+        <div class="grid">
+            <div class="aside col-1-6">
+                <div class="container">
+                    <a href="index.html" class="logo"></a>
+                    <div class="subtitle"><p>The marginalized lexicon of obsessive science</p></div>
+                    <ul class="menu">
+                        <li><a href="About" title="About">About</a></li>
+                        <li><a href="http://localhost:8000/Contact" title="Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-4-7">
+                
+<div class="post">
+  <article>
+    <div class="article-head">
+      <h1></h1>
+                <div class="meta">
+          created <span>Dec 31<sup>st</sup> 2016</span>
+           &bull; progress: <span><a href="Théorèmes#" onclick="return false;"></a></span> &bull; epistemic state: <span><a href="http://localhost:8000/Archives?epistemic=" onclick="return false;" title="See all post with “” status"></a><span class="tooltip"> <span style="cursor:pointer">(?)</span> <div class="tooltip-content"><p class="small">The <em>espitemic status</em> meta-tag matches the way I <strong>personally</strong> feel about what I think. It somehow shows my degree of confidence in the content I write.</a> It also allows me to keep track of my believe and see how often I change my opinion towards a particular subject.</p><p class="small"><a href="About#Epistemic">learn more &raquo;</a></p></div></span></span> &bull; difficulty: <span class="squares"><span style="margin:0;" class=""><i></i></span></span></div>
+            </div>
+
+      <div class="article-body">
+                    <p>Discussions with non-mathematicians&mdash;and people outside academia&mdash;made me notice that lots of acquaintances are showing great interest in generalized aspects of mathematics. Though they wish to understand deeper notions, most of them are not anywhere close to knowing any of the many <a href="https://en.wikipedia.org/wiki/Elementary_mathematics">mathematical fundamentals</a>. I'm sometimes amazed by how little they grasp of what mathematics is really about, that it is more than making your brain heat.
+Some even like to unobtrusively mention that their favorite class in high school was math. And today, as they are grown-ups, have each a career of their own, are still puzzled by the mother of all sciences. The problem being there is no real alternative to learning complex theorems, and I found myself many times unable to explain some concepts because of the gap between high-level mathematics and the non-existence of simple and <a href="https://en.wikipedia.org/wiki/Aphorism">aphoristic</a> vocabulary. So people compromised on math being out of reach for the common people.</p>
+<p>I've been thinking about this situation for a while and I decided to create a serie of self-contained explanations of mathematical thoerems. Every day, I'll post a brief simplification, using straightforward concepts and real-world applications (in French).</p>
+                </div>
+              </article>
+</div>
+                                                <footer class="grid">
+                    <div class="col-1-10">
+                        <a style="border: 0" rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+                    </div>
+                    <div class="9-10">
+                        <p>I support <a href="https://okfn.org/">open knowledge</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br />Enjoy freedom on knowledge. Check <a href="About#copyright">my views</a> on copyrights.</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-84667467-1', 'auto');ga('send', 'pageview');</script>
+</body>
+</html>

@@ -1,5 +1,20 @@
-__Before starting__ I want to hint at the pains I went through during this experiment and how data has been a real affliction to gather. I did a lot of back office work, like building models, running simulations, doing some [computational sociology](https://en.wikipedia.org/wiki/Computational_sociology) (which is not extensively developed here), and to be fully honest, this essay is a pretty good example of an [“is–ought problem”](https://en.wikipedia.org/wiki/Is%E2%80%93ought_problem). This is why, and considered my leaning for strong evaluation, I labbeled this article epistemic level under “almost-believed” (the first of its kind), as it might be ameliorated to some degree.
-
+---
+layout: post
+title: The Grand taxi experiment
+slug: Grand Taxi experiment
+subtitle: Using computational sociology and traffic engineering to map low-income neibghborhoods in Casablanca
+published: 2016-12-01
+updated: 2016-12-02
+progress: ongoing
+epistemic_state: almost believed
+difficulty: 2
+category: engineering
+tags:
+ - mathematical modeling
+ - traffic engineering
+online: true
+---
+__Before starting__ I want to hint at the pains I went through during this experiment and how data has been a real affliction to gather. I did a lot of back office work, like building models, running simulations, doing some [computational sociology](https://en.wikipedia.org/wiki/Computational_sociology) (which is not extensively developed here), and to be fully honest, this essay is a pretty good example of an [“is–ought problem”](https://en.wikipedia.org/wiki/Is%E2%80%93ought_problem). This is why, and considered my leaning for strong evaluation, I labbeled this article epistemic level under “almost-believed” (the first of its kind), as it might be ameliorated to some degree. I hope to come back at this article at a later time and, if possibly, review some of the points I believe do
 -------
 
 > “It was possible, no doubt, to imagine a society in which wealth, in the sense of personal possessions and luxuries, should be evenly distributed, while power remained in the hands of a small privileged caste. But in practice such a society could not long remain stable. For if leisure and security were enjoyed by all alike, the great mass of human beings who are normally stupefied by poverty would become literate and would learn to think for themselves; and when once they had done this, they would sooner or later realise that the privileged minority had no function, and they would sweep it away. In the long run, a hierarchical society was only possible on a basis of poverty and ignorance.” &mdash; George Orwell[^orwell poverty]

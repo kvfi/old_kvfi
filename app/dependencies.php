@@ -2,7 +2,6 @@
 // DIC configuration
 //
 
-use Respect\Validation\Validator as v;
 
 $container = $app->getContainer();
 
@@ -29,34 +28,6 @@ $container['view'] = function ($c) use ($app) {
     $view->addExtension(new \Slim\Views\TwigExtension($c['router'], $c['request']->getUri()));
     $view->addExtension(new Twig_Extension_Debug());
 
-    $unserialize = new Twig_SimpleFilter('unserialize', function ($serial) {
-        return unserialize($serial);
-    });
-
-     $implode = new Twig_SimpleFilter('implode', function ($array) {
-        return implode(', ', $array);
-    });
-
-    $toHTML = new Twig_SimpleFilter('toHTML', function ($md) {
-        $html = new App\Core\ParsedownExtraPlugin();
-
-        return $html->text($md);
-    });
-
-    $removeTLCommas = new Twig_SimpleFilter('removeTLCommas', function ($string) {
-        return rtrim($string, ",");
-    });
-
-    $view->getEnvironment()->addFilter($unserialize);
-    $view->getEnvironment()->addFilter($implode);
-    $view->getEnvironment()->addFilter($toHTML);
-    $view->getEnvironment()->addFilter($removeTLCommas);
-
-    $view->getEnvironment()->addGlobal('auth', [
-        'check' => $c->auth->check(),
-        'user' => $c->auth->user(),
-    ]);
-
     $view->getEnvironment()->addGlobal('current_url', $c->request->getUri());
     $view->getEnvironment()->addGlobal('base_path', $c->request->getUri()->getPath());
     $view->getEnvironment()->addGlobal('flash', $c->flash);
@@ -73,10 +44,6 @@ $container['pagenotfound'] = function ($c) {
     ]);
 };
 
-$capsule = new \Illuminate\Database\Capsule\Manager();
-$capsule->addConnection($container['settings']['database']);
-$capsule->setAsGlobal();
-$capsule->bootEloquent();
 
 // -----------------------------------------------------------------------------
 // Service factories
@@ -90,18 +57,6 @@ $container['logger'] = function ($c) {
     $logger->pushHandler(new Monolog\Handler\StreamHandler($settings['logger']['path'], Monolog\Logger::DEBUG));
 
     return $logger;
-};
-
-$container['db'] = function ($c) use ($capsule) {
-    return $capsule;
-};
-
-$container['validator'] = function ($c) {
-    return new App\Core\Validation\Validator();
-};
-
-$container['csrf'] = function ($c) {
-    return new \Slim\Csrf\Guard();
 };
 
 $container['webconf'] = function ($c) {
@@ -130,18 +85,3 @@ foreach ($controllers as $controller) {
         return new $controller($c);
     };
 }
-
-// -----------------------------------------------------------------------------
-// Middleware
-// -----------------------------------------------------------------------------
-$app->add(new \App\Middleware\CsrfViewMiddleware($container));
-$app->add(new \App\Middleware\OldInputMiddleware($container));
-$app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
-
-$app->add($container->csrf);
-
-// -----------------------------------------------------------------------------
-// Validator rules
-// -----------------------------------------------------------------------------
-
-v::with('App\\Core\\Validation\\Rules\\');

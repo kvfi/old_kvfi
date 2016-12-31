@@ -4,18 +4,31 @@ namespace App\Controllers;
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-use App\Models\Post;
 use App\Core\Pagination\Paginator;
+use \Mni\FrontYAML\Bridge\CommonMark\CommonMarkParser;
+use App\Core\Utility;
+
 
 class HomeController extends Controller
 {
+    const RESOURCES_MISC = __DIR__ . '/../../../resources/files/misc';
+    const POSTS = __DIR__ . '/../../../resources/files/posts';
+
     public function index(Request $request, Response $response, $args)
     {
         $pagination = new Paginator(['total' => 100, 'item_per_page' => 20]);
+        $parser = new \Mni\FrontYAML\Parser();
+        $intro_parse = $parser->parse(file_get_contents(self::RESOURCES_MISC . '/intro.md', FILE_USE_INCLUDE_PATH));
+        $intro = $intro_parse->getContent();
         $posts = [];
-        for ($i = 2015; $i <= date('Y'); ++$i) {
-            $posts[$i] = Post::where('type', '<>', 'theorem')->where('type', '<>', 'experiment')->whereYear('created_at', '=', $i)->orderBy('created_at', 'DESC')->get();
+        for ($i = 2010; $i <= date('Y'); ++$i) {
+           $posts[$i] = $this->get_by_year($i);
         }
+    
+        foreach ($posts as $year => $post) {    
+            usort($posts[$year], [$this, "cmp_by_optionNumber"]);
+        }
+
 
         $reponse = $this->view->render($response, 'home.twig', [
           'headMeta' => [
@@ -24,16 +37,15 @@ class HomeController extends Controller
           ],
           'data' => [
             'posts' => $posts,
-            'intro' => $this->getIntroText(),
+            'intro' => $intro,
             // 'topics' => Post::orderBy('updated_at', 'DESC')->limit(3)->get(),
-            'experiment' => Post::where('type', '=', 'experiment')->orderBy('created_at', 'DESC')->first(),
+            /* 'experiment' => Post::where('type', '=', 'experiment')->orderBy('created_at', 'DESC')->first(),
             'theorem' => Post::where('type', '=', 'theorem')->orderBy('created_at', 'DESC')->first(),
-            'pagination' => $pagination->render(),
+            'pagination' => $pagination->render(), */
 
           ],
         ]);
-
-        return $reponse;
+        return $response;
     }
 
     protected function getIntroText()
@@ -47,4 +59,38 @@ class HomeController extends Controller
             return false;
         }
     }
+
+    protected function get_by_year($year)
+    {
+        $posts = [];
+        $posts = array_diff(scandir(self::POSTS), array('..', '.'));
+        $parser = new \Mni\FrontYAML\Parser();
+        foreach ($posts as $key => &$post) {
+            $path = self::POSTS . '/' . $post;
+            if (file_exists($path)) {
+                $file = file_get_contents($path, FILE_USE_INCLUDE_PATH);
+                $document = $parser->parse($file);
+                $meta = $document->getYAML();
+                $content = $document->getContent();
+                $post = [];
+                $post['meta'] = $meta;
+                $post['content'] = $content;
+                $meta['online'] = $meta['online'] ?? true;
+                $meta['published'] = $meta['published'] ?? null;
+                if (date("Y", $meta['published']) !== strval($year)) {
+                    unset($posts[$key]);
+                }
+                if ($meta['online'] == false) {
+                    unset($posts[$key]);
+                }
+            } else {
+                return false;
+            }
+        }
+        return $posts;
+    }
+
+    protected function cmp_by_optionNumber($a, $b) {
+          return $a['meta']["published"] < $b['meta']["published"];
+        }
 }

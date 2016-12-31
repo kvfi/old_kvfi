@@ -4,46 +4,44 @@ namespace App\Controllers;
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-use App\Models\Post;
-use App\Models\Category;
-use App\Models\Tag;
-use App\Models\EpistemicState as Epistemic;
 use App\Core\Pagination\Paginator;
+use \Mni\FrontYAML\Bridge\CommonMark\CommonMarkParser;
 
 class PostController extends Controller
 {
+    const RESOURCES_MISC = __DIR__ . '/../../../resources/files/misc';
+    const POSTS = __DIR__ . '/../../../resources/files/posts';
+
     public function get(Request $request, Response $response, $args)
     {
-        $post = Post::where('slug', $request->getAttribute('route')->getArgument('slug'))->first();
-        $cond = [];
-
-        $tpl = 'post.twig';
-
-        if (!$post) {
-            return $this->pagenotfound;
+        $file = self::POSTS . '/' . $request->getAttribute('route')->getArgument('slug') . '.md';
+        if (file_exists($file)) {
+            $parser = new \Mni\FrontYAML\Parser();
+            $post = $parser->parse(file_get_contents($file, FILE_USE_INCLUDE_PATH));
+            $tpl = 'post.twig';
+            if ($post === 'Théorèmes') {
+                $cond['theorems'] = Post::where('type', 'theorem')->orderBy('created_at', 'DESC')->get();
+                $cond['theorems_no'] = count($cond['theorems']);
+            }
+            $cond = [];
+            $meta = $post->getYAML();
+            $content = $post->getContent();
+            $meta['tags'] = rtrim(implode(', ', $meta['tags'] ?? []), ', ');
+            return $this->view->render($response, $tpl, array(
+                'headMeta' => [
+                    'title' => $meta['title'] ?? '',
+                    'description' => $meta['subtitle'] ?? ''
+                ],
+                'data' => array(
+                    'post' => ['meta' => $meta, 'content' => $content],
+                    'cond' => $cond
+                    /* 'comments' => $post->comments(),
+                    'comment_count' => count($post->comments()), */
+                ),
+            ));
+        } else {
+            return $response->withStatus(404);
         }
-
-        if ($post->slug === 'Théorèmes')
-        {
-            $cond['theorems'] = Post::where('type', 'theorem')->orderBy('created_at', 'DESC')->get();
-            $cond['theorems_no'] = count($cond['theorems']);
-        }
-
-        return $this->view->render($response, $tpl, array(
-            'headMeta' => [
-                'title' => $post->title,
-                'description' => $post->intro,
-            ],
-            'data' => array(
-                'post' => $post,
-                'category' => Category::where('slug', $post->category)->first(),
-                'content' => $this->getPostContent($post->slug),
-                'tags' => $this->getFormattedPostTags($post->id),
-                'cond' => $cond
-                /* 'comments' => $post->comments(),
-                'comment_count' => count($post->comments()), */
-            ),
-        ));
     }
 
     protected function getPostContent($slug)

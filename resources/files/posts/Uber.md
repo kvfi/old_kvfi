@@ -1,3 +1,18 @@
+---
+layout: post
+title: Not using Uber
+slug: Uber
+subtitle: Reasons not to user Uber
+published: 2010-06-17
+updated: 2016-12-12
+progress: finished
+epsitemic state: believed
+difficulty: 1
+category: tech
+tags:
+ - privacy
+ - free software
+---
 Let's be clear, Uber does **not** contribute to any kind of [sharing economy](https://en.wikipedia.org/wiki/Sharing_economy). It would be giving a social dimension to a company offering mishandling technology to its customers. Uber's goal is to destroy its competitors by instituting ultra-low fares. The company is able to do so because of its immense venture capital valuation of \$69 billion based on a direct \$13 billion investment. The company is losing \$2 billion a year as passengers pay for only [41% of the ride](http://www.bizjournals.com/sanfrancisco/news/2016/12/02/uber-losses.html). Uber's plan is to create a [winner-takes-all market](http://www.investopedia.com/terms/w/winner-takes-all-market.asp), earn billions in returns and replace their human drivers by [driverless cars](http://www.bloomberg.com/news/features/2016-08-18/uber-s-first-self-driving-fleet-arrives-in-pittsburgh-this-month-is06r7on).
 <p></p>
 <hr />

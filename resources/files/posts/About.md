@@ -1,3 +1,20 @@
+---
+layout: page
+title: About myself
+slug: About
+subtitle: Everything important you need to know about the author of this blog
+published: 2008-03-09
+updated: 2016-07-15
+progress: continuous
+epistemic_state: believed
+difficulty: 1
+category:
+tags:
+ - personality
+ - physchology
+ - bio
+online: true
+---
 > If you want to really hurt you parents, and you don't have the nerve to be gay, the least you can do is go into the arts. I'm not kidding. The arts are not a way to make a living. They are a very human way of making life more bearable. Practicing an art, no matter how well or badly, is a way to make your soul grow, for heaven's sake. Sing in the shower. Dance to the radio. Tell stories. Write a poem to a friend, even a lousy poem. Do it as well as you possible can. You will get an enormous reward. You will have created something. [^ this is my footnote]
 
 I won't be introducing myself using purposeless information such as where I'm from, where I grew up, giving a c, what diet I'm on or how many ovum I fertilized. Apart from the unproductive result, I've a leaning for strong privacy due to my views and backslash it could eventually provoke. In _[“The drawbacks of having an opinion”](/post/drawbacks-opinion)_, I explain why I chose anonymity and how it allows me to remain watchful (I also try to show that opinion and conviction can obscure self-determination). Although I give more immunity to personality traits (described bellow).

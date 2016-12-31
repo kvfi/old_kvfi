@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 {% block content %}
 <div class="index-intro">
-  {{ data.intro | toHTML | raw }}
+  {{ data.intro|raw }}
 </div>
 <div class="ongoing-exp">
     <p><span class="title">Ongoing experiment:</span> <a href="{{ path_for('post', {slug : data.experiment.slug}) }}">{{ data.experiment.title }}</a> (<em><a href="{{ path_for('post', {slug : 'Experiments'}) }}">all</a></em>) | <span class="title">Theorem of the day: (fr)</span> <a href="{{ path_for('post', {slug : data.theorem.slug}) }}">{{ data.theorem.title }}</a> (<em><a href="{{ path_for('post', {slug : 'Théorèmes'}) }}">all</a></em>)</p>
@@ -26,7 +26,7 @@
         <h6>{{ i }}</h6>
         <ul>
           {% for post in data.posts[i] %}
-          <li><time>{{ post.created_at|date('M d') }}</time> <span class="squares"><span class="{% if post.difficulty is not empty %}{% if post.difficulty == '1' %}one{% elseif post.difficulty == '2' %}two{% elseif post.difficulty == '3' %}three{% elseif post.difficulty == '4' %}four{% endif %}{% endif %}"><i></i></span></span> <a href="{{ path_for('post', {slug : post.slug}) }}">{{ post.title }}</a></li>
+          <li><time>{{ post.meta.published|date('M d') }}</time> <span class="squares"><span class="{% if post.meta.difficulty is not empty %}{% if post.meta.difficulty == '1' %}one{% elseif post.meta.difficulty == '2' %}two{% elseif post.meta.difficulty == '3' %}three{% elseif post.meta.difficulty == '4' %}four{% endif %}{% endif %}"><i></i></span></span> <a href="{{ path_for('post', {slug : post.meta.slug}) }}">{{ post.meta.title }}</a></li>
           {% endfor %}
         </ul>
       {% endif %}

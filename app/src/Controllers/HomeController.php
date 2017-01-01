@@ -29,7 +29,6 @@ class HomeController extends Controller
             usort($posts[$year], [$this, "cmp_by_optionNumber"]);
         }
 
-
         $reponse = $this->view->render($response, 'home.twig', [
           'headMeta' => [
             'title' => 'Home',

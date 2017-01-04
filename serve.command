@@ -1,0 +1,1 @@
+git add --all && git commit -m "$1" && git push alt && cd public && php -S localhost:8000 && cd ../scifml-wwww && wget -k -K  -E -r -l 10 -p -N -F -nH http://localhost:8000 && git add --all && git commit -m "rebuild" && git push

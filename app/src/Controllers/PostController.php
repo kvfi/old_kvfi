@@ -23,6 +23,9 @@ class PostController extends Controller
                 $cond['theorems'] = Post::where('type', 'theorem')->orderBy('created_at', 'DESC')->get();
                 $cond['theorems_no'] = count($cond['theorems']);
             }
+            if ($request->getAttribute('route')->getArgument('slug') == 'Contact') {
+                $tpl = 'contact.twig';
+            }
             $cond = [];
             $meta = $post->getYAML();
             $content = $post->getContent();

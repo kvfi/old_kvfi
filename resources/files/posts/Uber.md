@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: topic
 title: Not using Uber
 slug: Uber
 subtitle: Reasons not to user Uber

@@ -28,7 +28,7 @@ $container['view'] = function ($c) use ($app) {
     $view->addExtension(new \Slim\Views\TwigExtension($c['router'], $c['request']->getUri()));
     $view->addExtension(new Twig_Extension_Debug());
 
-    $view->getEnvironment()->addGlobal('current_url', $c->request->getUri());
+    $view->getEnvironment()->addGlobal('current_url', 'https://scif.ml');
     $view->getEnvironment()->addGlobal('base_path', $c->request->getUri()->getPath());
     $view->getEnvironment()->addGlobal('flash', $c->flash);
     $view->getEnvironment()->addGlobal('config', $c->settings['webconf']);

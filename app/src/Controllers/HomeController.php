@@ -21,7 +21,7 @@ class HomeController extends Controller
         $intro_parse = $parser->parse(file_get_contents(self::RESOURCES_MISC . '/intro.md', FILE_USE_INCLUDE_PATH));
         $intro = $intro_parse->getContent();
         $posts = [];
-        for ($i = 2010; $i <= date('Y'); ++$i) {
+        for ($i = (date('Y') - 1); $i <= date('Y'); ++$i) {
            $posts[$i] = $this->get_by_year($i);
         }
     

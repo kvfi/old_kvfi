@@ -30,18 +30,22 @@ class PostController extends Controller
             $meta = $post->getYAML();
             $content = $post->getContent();
             $meta['tags'] = rtrim(implode(', ', $meta['tags'] ?? []), ', ');
-            return $this->view->render($response, $tpl, array(
-                'headMeta' => [
-                    'title' => $meta['title'] ?? '',
-                    'description' => $meta['subtitle'] ?? ''
-                ],
-                'data' => array(
-                    'post' => ['meta' => $meta, 'content' => $content],
-                    'cond' => $cond
-                    /* 'comments' => $post->comments(),
-                    'comment_count' => count($post->comments()), */
-                ),
-            ));
+            if ($meta['online']) {
+                return $this->view->render($response, $tpl, array(
+                    'headMeta' => [
+                        'title' => $meta['title'] ?? '',
+                        'description' => $meta['subtitle'] ?? ''
+                    ],
+                    'data' => array(
+                        'post' => ['meta' => $meta, 'content' => $content],
+                        'cond' => $cond
+                        /* 'comments' => $post->comments(),
+                        'comment_count' => count($post->comments()), */
+                    ),
+                ));
+            } else {
+                return $this->container->pagenotfound;
+            }
         } else {
             return $response->withStatus(404);
         }

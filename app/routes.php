@@ -15,10 +15,9 @@ $app->get('/', 'HomeController:index')->setName('home');
 
 /* Page */
 $app->get('/Archives', 'App\Controllers\PostController:archives')->setName('archives');
-// $app->get('/contact', 'App\Controllers\PageController:contact')->setName('contact');
+$app->get('/Newsletter', 'App\Controllers\PageController:newsletter')->setName('page.newsletter');
 $app->get('/{slug}', 'App\Controllers\PostController:get')->setName('post');
 $app->get('/Links/{year}/{month}', 'App\Controllers\PostController:get')->setName('link');
-
 
 /* TAG */
 $app->get('/tags/{slug}', 'App\Controllers\TagController:get')->setName('tag');

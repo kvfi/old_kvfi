@@ -24,11 +24,6 @@
             {% include 'extras/theorems.twig' %}
           {% endif %}
       </div>
-      {% if auth.check %}
-      <div class="admin-meta">
-        <span><a href="{{ path_for('editor.edit.post', {id :  data.post.id}) }}">Edit</a></span>
-      </div>
-      {% endif %}
       {#
       <div class="comments" id="comments">
           {% if data.comments %}

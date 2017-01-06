@@ -2752,7 +2752,7 @@ or comparing to the 2014 InfiniChess: 52 Elo difference between centaurs and eng
 >
 > Eros Riccio: the advantage(s) of the combination Human(s) + engine(s) is obvious: In general, an engine alone is "stupid". It plays random openings, wastes precious time on forced moves, stubbornly wants to play for the win, sometimes forcing the position and losing, when a draw would have been enough to qualify... so, relying on an automatic engine may be quite risky... a human instead, may control all those things which an engine can't. The only advantage of automatic engine I can see, is with little time left in difficult positions, as there is no risk of mouse slips and losing on time.
 
-#### Uninstallling League of Legends {#zzz}
+#### Uninstallling League of Legends {#uninstalling_league}
 I've decided to stop playing League of Legends for a while, putting a sober finale to one of my longuest and most extended gaming experience I've ever had. The whole game has became truly bogus and smashed competitive plays at lower elo.
 * The elo system is rigged at the point is that it has become almost ludicrous to improve, stacking players forever.
 * League's community is one of the most woeful community online games has to offer: from 12 years old to stormy players, the climate operating during games is distastful at every level.

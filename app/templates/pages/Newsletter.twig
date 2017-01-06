@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{% block aside_description %}
+{% endblock %}
+
+{% block content %}
+
+<div class="post">
+  <article>
+    <div class="article-head">
+      <h1>Newsletters and Links</h1>
+      <h5>Montly newsletters containting my writing and reading list</h5>
+    </div>
+
+    <div class="article-body">
+    	<ul>
+    	{% for link in data.links %}
+    		<li><a href="./Links/{{ link.date|date('Y\\/m') }}">{{ link.date|date('F Y') }}</a></li>
+    	{% endfor %}
+    	</ul>
+    </div>
+      
+  </article>
+</div>
+{% endblock %}

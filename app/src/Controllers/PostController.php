@@ -18,6 +18,10 @@ class PostController extends Controller
         $tpl = 'post.twig';
         $cond = [];
         
+        if ($request->getAttribute('route')->getName() ===  'post' && $request->getAttribute('route')->getArgument('slug') ===  'Links') {
+            return $response->withRedirect($this->container->router->pathFor('page.newsletter'));
+        }
+        
         if ($request->getAttribute('route')->getName() ===  'link') {
             $file = self::LINKS . '/' . $request->getAttribute('route')->getArgument('year') . '' . $request->getAttribute('route')->getArgument('month') . '.md';
             $tpl = 'links.twig';

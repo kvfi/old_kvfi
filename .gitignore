@@ -3,6 +3,5 @@ db.ini
 log/*
 cache/*
 node_modules
-public/static/src/
 *.sh
 *.command

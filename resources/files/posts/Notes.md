@@ -4,7 +4,7 @@ title: Notes and
 slug: Notes
 subtitle: Miscellaneous
 published: 2008-03-09
-updated: 2016-12-02
+updated: 2017-01-06
 progress: continious
 epistemic_state: log
 difficulty: 2

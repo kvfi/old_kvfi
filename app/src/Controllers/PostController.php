@@ -11,14 +11,25 @@ class PostController extends Controller
 {
     const RESOURCES_MISC = __DIR__ . '/../../../resources/files/misc';
     const POSTS = __DIR__ . '/../../../resources/files/posts';
+    const LINKS = __DIR__ . '/../../../resources/files/links';
 
     public function get(Request $request, Response $response, $args)
     {
-        $file = self::POSTS . '/' . $request->getAttribute('route')->getArgument('slug') . '.md';
+        $tpl = 'post.twig';
+        $cond = [];
+        
+        if ($request->getAttribute('route')->getName() ===  'link') {
+            $file = self::LINKS . '/' . $request->getAttribute('route')->getArgument('year') . '' . $request->getAttribute('route')->getArgument('month') . '.md';
+            $tpl = 'links.twig';
+            $date = \DateTime::createFromFormat('n-Y', $request->getAttribute('route')->getArgument('month') . '-' . $request->getAttribute('route')->getArgument('year'));
+            $cond['date'] = $date->format('Y-m-d');
+            $meta['title'] = $date->format('M Y') . ' Links';
+        } else {
+            $file = self::POSTS . '/' . $request->getAttribute('route')->getArgument('slug') . '.md';
+        }
         if (file_exists($file)) {
             $parser = new \Mni\FrontYAML\Parser();
             $post = $parser->parse(file_get_contents($file, FILE_USE_INCLUDE_PATH));
-            $tpl = 'post.twig';
             if ($post === 'Théorèmes') {
                 $cond['theorems'] = Post::where('type', 'theorem')->orderBy('created_at', 'DESC')->get();
                 $cond['theorems_no'] = count($cond['theorems']);
@@ -26,11 +37,13 @@ class PostController extends Controller
             if ($request->getAttribute('route')->getArgument('slug') == 'Contact') {
                 $tpl = 'contact.twig';
             }
-            $cond = [];
-            $meta = $post->getYAML();
+            if (!$this->is_link_post($request)) {
+                $meta = $post->getYAML();
+            }
             $content = $post->getContent();
             $meta['tags'] = rtrim(implode(', ', $meta['tags'] ?? []), ', ');
-            if ($meta['online']) {
+
+            if ($meta['online'] ?? true) {
                 return $this->view->render($response, $tpl, array(
                     'headMeta' => [
                         'title' => $meta['title'] ?? '',
@@ -47,7 +60,7 @@ class PostController extends Controller
                 return $this->container->pagenotfound;
             }
         } else {
-            return $response->withStatus(404);
+            return $this->container->pagenotfound;
         }
     }
 
@@ -77,6 +90,15 @@ class PostController extends Controller
             }
         }
         return rtrim($taglist, ", "); 
+    }
+
+    protected function is_link_post($req)
+    {
+        if ($req->getAttribute('route')->getName() ===  'link') {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function archives(Request $request, Response $response, $args)

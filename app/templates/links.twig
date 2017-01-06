@@ -1,0 +1,41 @@
+{% extends "base.twig" %}
+{% block aside_description %}
+{% endblock %}
+
+{% block content %}
+<div class="post">
+  <article>
+    <div class="article-head">
+      <h1>{{ data.cond.date|date('M Y') }} Links</h1>
+      <h5>{{ data.cond.date|date('F Y') }} summary of my online reading</h5>
+      <div class="grid">
+        <div class="col-1-5">
+          <div class="table-of-contents"></div>
+        </div>
+        <div class="col-4-5 article-body">
+            {{ data.post.content | raw }}
+        </div>
+      </div>
+      {#
+      <div class="comments" id="comments">
+          {% if data.comments %}
+          <h5>Comments &mdash; {% if data.post.extras.comment_counter_start is not empty %}{{ data.post.extras.comment_counter_start + data.comment_count }}{% else %}{{ data.comment_count }}{% endif %} so far.</h5>
+          {% for data_comment in data.comments %}
+          <div class="comment" id="comment-{{ data_comment.id }}" data-comment-id="{{ data_comment.id }}">
+            {{ data_comment.content|raw }}
+            <div class="meta">
+              <p><a href="#comment-{{ data_comment.id }}" title="Direct link to this comment">by {{ data_comment.author }} on {{ data_comment.date|date('m/j/Y') }}</a></p>
+            </div>
+          </div>
+          {% endfor %}
+          {% else %}
+          <h5>No comment.</h5>
+          <div class="comment">
+            <p><a href="#" onclick="javascript(return false)">Be the first to comment.</a></p>
+          </div>
+          {% endif %}
+      </div>
+      #}
+  </article>
+</div>
+{% endblock %}

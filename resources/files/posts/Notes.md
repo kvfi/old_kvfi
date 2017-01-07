@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Notes and 
+title: Notes and Memos
 slug: Notes
-subtitle: Miscellaneous
+subtitle: Miscellaneous thoughts and pseudo-articles
 published: 2008-03-09
 updated: 2017-01-06
 progress: continious
@@ -2754,7 +2754,7 @@ or comparing to the 2014 InfiniChess: 52 Elo difference between centaurs and eng
 
 #### Uninstallling League of Legends {#uninstalling_league}
 I've decided to stop playing League of Legends for a while, putting a sober finale to one of my longuest and most extended gaming experience I've ever had. The whole game has became truly bogus and smashed competitive plays at lower elo.
-* The elo system is rigged at the point is that it has become almost ludicrous to improve, stacking players forever.
+* The elo system is rigged at the point that it has become almost ludicrous to improve, stacking players forever.
 * League's community is one of the most woeful community online games has to offer: from 12 years old to stormy players, the climate operating during games is distastful at every level.
 
 I really hope I can get back at it at a later date, with more confidence to see that Riot Games, the Editor, to have addressed these issues that are killing some of the dedicated ones.

@@ -17,17 +17,26 @@
       {% if data.post.meta.tags is not empty %}<div class="www_tags"><strong>Tags:</strong> {{ data.post.meta.tags }}</div>{% endif %}
     </div>
 
-      <div class="grid">
-        <div class="col-1-5">
-          <div class="table-of-contents"></div>
-        </div>
-        <div class="col-4-5 article-body">
-            {{ data.post.content | raw }}
-            {% if data.post.slug == 'Théorèmes' %}
-              {% include 'extras/theorems.twig' %}
-            {% endif %}
-        </div>
+    {% if data.post.meta.toc == true %}
+    <div class="grid">
+      <div class="col-1-5">
+        <div class="table-of-contents"></div>
       </div>
+      <div class="col-4-5 article-body">
+          {{ data.post.content | raw }}
+          {% if data.post.slug == 'Théorèmes' %}
+            {% include 'extras/theorems.twig' %}
+          {% endif %}
+      </div>
+    </div>
+    {% else %}
+    <div class="article-body">
+        {{ data.post.content | raw }}
+        {% if data.post.slug == 'Théorèmes' %}
+          {% include 'extras/theorems.twig' %}
+        {% endif %}
+    </div>
+    {% endif %}
       {#
       <div class="comments" id="comments">
           {% if data.comments %}

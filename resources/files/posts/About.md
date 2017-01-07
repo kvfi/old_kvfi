@@ -45,7 +45,7 @@ This blog is a personal database of thoughts, ideas and notes I'm maintaining fo
 ##### Epistemic state {#epistemic}
 On every post, article that is written by me, you may notice the presence of a _meta-tag_ named “epistemic state”. This meta-tag is used to average the level of confidence I have in what I write. It is tracked and allows, both me and my readers, to wary of my beliefs, and monitor my opinion variation. Up to this day here are the _epistemic states_ I've used:
 
-* “belived”: I'm strongly conviced by what I wrote, it translate my conviction and writing ethics. I regard as true the content. When I use the term _correct_, it means that I have the utmost trust and credence in the topic. I call for people to be able to constitute an anti-proof to my claims, submit counterevidence or disprove my assertion.
+* “belived”: I'm strongly conviced by what I wrote, it translates my conviction and writing ethics. I regard as true the content. When I use the term _correct_, it means that I have the utmost trust and credence in the topic. I call for people to be able to constitute an anti-proof to my claims, submit counterevidence or disprove my assertion.
 * “semi-believed”: Although I'm fairly confident in the content, I assume there is a small room for improvement and refinement.
 * “not believed”: I dont rely anymore on the content, or I changed opinion since, gainsaid in other posts.
 * “log”: A diversified cluster of unorganised, confusing and heterogeneous thoughts. See _[Notes](./Notes)_.

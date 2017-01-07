@@ -8,14 +8,15 @@ updated: 2016-07-15
 progress: continuous
 epistemic_state: believed
 difficulty: 1
-category:
+category: misc
 tags:
  - personality
  - physchology
  - bio
+toc: true
 online: true
 ---
-> If you want to really hurt you parents, and you don't have the nerve to be gay, the least you can do is go into the arts. I'm not kidding. The arts are not a way to make a living. They are a very human way of making life more bearable. Practicing an art, no matter how well or badly, is a way to make your soul grow, for heaven's sake. Sing in the shower. Dance to the radio. Tell stories. Write a poem to a friend, even a lousy poem. Do it as well as you possible can. You will get an enormous reward. You will have created something. [^ this is my footnote]
+> If you want to really hurt you parents, and you don't have the nerve to be gay, the least you can do is go into the arts. I'm not kidding. The arts are not a way to make a living. They are a very human way of making life more bearable. Practicing an art, no matter how well or badly, is a way to make your soul grow, for heaven's sake. Sing in the shower. Dance to the radio. Tell stories. Write a poem to a friend, even a lousy poem. Do it as well as you possible can. You will get an enormous reward. You will have created something. [^Kurt Vonnegut]
 
 I won't be introducing myself using purposeless information such as where I'm from, where I grew up, giving a c, what diet I'm on or how many ovum I fertilized. Apart from the unproductive result, I've a leaning for strong privacy due to my views and backslash it could eventually provoke. In _[“The drawbacks of having an opinion”](/post/drawbacks-opinion)_, I explain why I chose anonymity and how it allows me to remain watchful (I also try to show that opinion and conviction can obscure self-determination). Although I give more immunity to personality traits (described bellow).
 
@@ -118,6 +119,6 @@ If you can't wait to know more about me, I offer you a large pool of topics disc
 * [U.S.A.](USA)
 * [Western Sahara](Western_Sahara)
 
-[^first_quote]: [Kurt Vonnegut](https://en.wikipedia.org/wiki/Kurt_Vonnegut), [A Man Without a Country](https://en.wikipedia.org/wiki/A_Man_Without_a_Country), 2005, ISBN: 1-58322-713-X
-[^FFM]: FFM is a widely examined theory of five broad dimensions used by some psychologists to describe the human personality and psyche. The five factors have been defined as openness to experience, conscientiousness, extroversion, agreeableness, and neuroticism. Acronyms to aid in remembering the five traits include OCEAN and CANOE. Beneath each proposed global factor, a number of correlated and more specific primary factors are claimed. For example, extroversion is said to include such related qualities as gregariousness, assertiveness, excitement seeking, warmth, activity, and positive emotions &mdash; _Big Five personality traits_ on Wikipedia [https://en.wikipedia.org/wiki/Big Five personality traits](https://en.wikipedia.org/wiki/Big Five personality traits)
+[^Kurt Vonnegut]: [Kurt Vonnegut](https://en.wikipedia.org/wiki/Kurt_Vonnegut), [A Man Without a Country](https://en.wikipedia.org/wiki/A_Man_Without_a_Country), 2005, ISBN: 1-58322-713-X
+[^FFM]: FFM is a widely examined theory of five broad dimensions used by some psychologists to describe the human personality and psyche. The five factors have been defined as openness to experience, conscientiousness, extroversion, agreeableness, and neuroticism. Acronyms to aid in remembering the five traits include OCEAN and CANOE. Beneath each proposed global factor, a number of correlated and more specific primary factors are claimed. For example, extroversion is said to include such related qualities as gregariousness, assertiveness, excitement seeking, warmth, activity, and positive emotions &mdash; _Big Five personality traits_ on Wikipedia [Big Five personality traits](https://en.wikipedia.org/wiki/Big‰20Five‰20personality‰20traits)
 [^The Sense of an Ending]: Julian Barnes, The Sense of an Ending, ISBN-10: 0224094157

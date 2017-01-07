@@ -40,7 +40,22 @@ According to the [five factor model (FFM)](https://en.wikipedia.org/wiki/Big_Fiv
 Although I was diagnosed at the age of 4 with Asperger's syndrome, I've never been through any important troubles due to my mental irregularity. Even supposing that I sustain some sort of social malaise and general discomfort when it comes to daily interaction tasks, one can argue that I have a [schizoid personality disorder](https://en.wikipedia.org/wiki/Schizoid_personality_disorder).
 
 #### This website
-This blog is a personal database of thoughts, ideas and notes I'm maintaining for about 12 years now. I use it mainly to share itemized information on various topics and subjects. The website is spit into two separate segments: topics (talking points I feed with information) and **posts** (daily notes, correlative studies, experiments, graphics, etc.).
+This blog is a personal database of thoughts, ideas and notes I'm maintaining for about 12 years now. I use it mainly to share itemized information on various topics and subjects. The website is spit into two separate segments: topics (talking points I feed with information) and **posts** (daily notes, correlative studies, experiments, graphics, etc.). Because I don't use social network or any other type of plateform to adverstise myself, it makes following my writings quiet a challenge. I address this by sending a monthly [newsletter](./Newsletter), containing both my last writing, [changelogs](./Changelog) and reading list (a inventory of links/books I found of interest).
+
+##### Epistemic state
+On every post, article that is written by me, you may notice the presence of a _meta-tag_ named “epistemic state”. This meta-tag is used to average the level of condidence I have in what I write. It is tracked and allows, both me and my readers, to wary of my beliefs, and monitor my opinion variation. Up to this day here are the _epistemic states_ I've used:
+
+* “belived”: I'm strongly conviced by what I wrote, it translate my conviction and writing ethics. I regard as true the content. When I use the term _correct_, it means that I have the utmost trust and credence in the topic. I call for people to be able to constitute an anti-proof to my claims, submit counterevidence or disprove my assertion.
+
+* “semi-believed”: Although I'm fairly confident in the content, I assume there is a small room for improvement and refinement.
+
+* “not believed”: I dont rely anymore on the content, or I changed opinion since, gainsaid in other posts.
+
+* “log”: A diversified cluster of unorganised, confusing and heterogeneous thoughts. See _[Notes](./Notes)_.
+
+* “fiction”: Imaginative writing based on unrealistic/quixotic facts. It's a way to let my imagination make its way using a  dreamed-up fantasy.
+
+* “emotional”: Claims and statements are made with peculiar emotions as foundation. Don't take it thoughtfully.
 
 #### Contact {#contact}
 * Email: <a href="mailto:hey@scif.ml">hey@scif.ml</a>. I don't use social media.

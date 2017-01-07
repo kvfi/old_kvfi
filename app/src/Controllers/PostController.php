@@ -46,7 +46,7 @@ class PostController extends Controller
             }
             $content = $post->getContent();
             $meta['tags'] = rtrim(implode(', ', $meta['tags'] ?? []), ', ');
-
+            $meta['toc'] = $meta['toc'] ?? false;
             if ($meta['online'] ?? true) {
                 return $this->view->render($response, $tpl, array(
                     'headMeta' => [

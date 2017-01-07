@@ -5,7 +5,7 @@ slug: Notes
 subtitle: Miscellaneous thoughts and pseudo-articles
 published: 2008-03-09
 updated: 2017-01-06
-progress: continious
+progress: continuous
 epistemic_state: log
 difficulty: 2
 category: misc

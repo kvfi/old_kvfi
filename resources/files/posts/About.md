@@ -42,7 +42,7 @@ Although I was diagnosed at the age of 4 with Asperger's syndrome, I've never be
 #### This website
 This blog is a personal database of thoughts, ideas and notes I'm maintaining for about 12 years now. I use it mainly to share itemized information on various topics and subjects. The website is spit into two separate segments: topics (talking points I feed with information) and **posts** (daily notes, correlative studies, experiments, graphics, etc.). Because I don't use social network or any other type of plateform to adverstise myself, it makes following my writings quiet a challenge. I address this by sending a monthly [newsletter](./Newsletter), containing both my last writing, [changelogs](./Changelog) and reading list (a inventory of links/books I found of interest).
 
-##### Epistemic state
+##### Epistemic state {#epistemic}
 On every post, article that is written by me, you may notice the presence of a _meta-tag_ named “epistemic state”. This meta-tag is used to average the level of condidence I have in what I write. It is tracked and allows, both me and my readers, to wary of my beliefs, and monitor my opinion variation. Up to this day here are the _epistemic states_ I've used:
 
 * “belived”: I'm strongly conviced by what I wrote, it translate my conviction and writing ethics. I regard as true the content. When I use the term _correct_, it means that I have the utmost trust and credence in the topic. I call for people to be able to constitute an anti-proof to my claims, submit counterevidence or disprove my assertion.

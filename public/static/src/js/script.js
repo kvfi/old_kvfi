@@ -57,8 +57,13 @@ var Footnotes = {
         });
     }
 }
-
+var d = document.getElementsByTagName("body");
+    d[0].className += " isMobile";
 Footnotes.setup();
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+    var d = document.getElementsByTagName("body");
+    d[0].className += " isMobile";
+}
 
 jQuery(document).ready(function() {
     var ToC = "<h6>Table of Contents</h6>" +

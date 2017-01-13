@@ -1,5 +1,5 @@
 .bodyPage
-  padding: 2% 10%
+  margin: 30px 20px
   .index-intro
     margin: 0 0 30px 0
     p
@@ -78,13 +78,12 @@
       border-bottom: 0
 .post article
   h1
-    font-size: 3vw
+    font-size: 20px
     font-weight: bold
-  .admin-meta
-    padding: 3px 10px
-    font-size: 14px
-    font-weight: normal
+    text-align: center
+    text-transform: uppercase
   .article-head
+    text-align: center
     margin: 0 0 10px 0
     padding: 0 0 10px 0
     position: relative
@@ -98,7 +97,7 @@
       font-style: oblique
       margin: 0 0 5px 0
     .meta
-      font-size: 16px
+      font-size: 14px
       color: #555
       padding: 0px 0 10px 0
     p
@@ -138,8 +137,6 @@
     p, ul, li, blockquote
       font-size: 16px
       margin: 0 0 10px 0
-    p
-      line-height: 160%
       .footnote-ref
         vertical-align: super
         font-size: 80%
@@ -159,6 +156,9 @@
       padding: 4px 10px
       margin-top: 10px
       color: #444444
+    table
+      width: 80%
+      margin: 20px auto
   .comments
     border-top: 1px solid #ddd
     padding-top: 15px
@@ -185,9 +185,10 @@
           text-decoration: none
           border-bottom: 1px dotted #ccc
   .footnotes
+    border: 1px solid #ddd
     margin-top: 50px
-    ol li
-      list-style-position: inside
+    padding: 10px
+    ol > li
       list-style-type: decimal
 
 #footnotediv
@@ -205,9 +206,6 @@
       padding-top: 0
     &:last-of-type
       padding-bottom: 0
-.footnotes
-  border: 1px solid #ddd
-  padding: 10px
 
 .bodyPage .post article .article-body .footnotes
   p, li

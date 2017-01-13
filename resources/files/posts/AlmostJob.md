@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The almost-job
-slug: Almost job
+slug: AlmostJob
 subtitle: Reflexions on institutionalized underemployment
 published: 2017-01-13
 updated: 2017-01-13

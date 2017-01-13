@@ -2758,3 +2758,6 @@ I've decided to stop playing League of Legends for a while, putting a sober fina
 * League's community is one of the most woeful community online games has to offer: from 12 years old to stormy players, the climate operating during games is distastful at every level.
 
 I really hope I can get back at it at a later date, with more confidence to see that Riot Games, the Editor, to have addressed these issues that are killing some of the dedicated ones.
+
+#### Hobson's choice and spec work {#Hodsons_Choice_SpecWork_Morocco}
+Today I posted an essay on “[institutionalized underemployment](./AlmostJob)”, which I see as deliberately pernicious at microscale. Although no assessing framework is known to exists&mdash;no policies as well&mdash;it's a must to cope with this destructive phenomenon. That said, my original thoughts were on **[spec work](https://en.wikipedia.org/wiki/Speculative_work)** and long-term unpaid internship in Morocco and how it generates a titanic labor force at no cost. While extra-school training, of course, is essential for a sucessful career, requiring extended and unsalaried periods of pro-bono work is overly abusive. Fresh graduates are left to take a [Hobson's choice](https://en.wikipedia.org/wiki/Hobson%27s_choice): take a so-called ‘job’, acclimatize yourself to honorary work. Or stay home.

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: On not using Facebook anymore
-slug: Facebook
+title: Technological discrimination
+slug: TechDiscrim
 subtitle: Oldery 
 published: 2017-01-14
 updated: 2017-01-14

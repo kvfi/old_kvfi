@@ -1,3 +1,21 @@
+---
+layout: post
+title: The Moral of Global Warming
+slug: GlobalWarmingMoral
+subtitle: On Krugman taking theories for granted
+published: 2017-01-02
+updated: 2017-01-02
+progress: finished
+epistemic_state: semi-believed
+difficulty: 1
+category: policy
+tags:
+ - moral
+ - climate change
+ - opinion
+toc: false
+online: true
+---
 Paul Krugman, a columnist for the New York Times and winner of a prestigious banking prize (usually mistakenly called a “Nobel”), has said that those who criticize theories of global warming are immoral and treasonous. ¡Treasonous! Scores of lesser luminaries, backed by IPCC boss Rajendra Pachauri, say that such criticism, when it is not purely ignorant, is motivated and organized by a conspiracy. ¡Conspiracy! Global warming scientist James Hansen has said that oil executives and their supporters should be put on trial for crimes against humanity. ¡Crimes against humanity!
 And now, childhood hero Bill Nye, The Science Guy, has said that to question the veracity of man-made global warming is to be unpatriotic. ¡Unpatriotic! Treason. Conspiracy. Crimes against humanity. Unpatriotic. These are not words to use lightly.
 

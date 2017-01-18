@@ -1,11 +1,11 @@
 ---
 layout: post
-title: On not using Facebook anymore
+title: No Facebook
 slug: Facebook
-subtitle: Why you should be used by Facebook
+subtitle: Why you shouldn't be used by Facebook
 published: 2009-08-11
 updated: 2016-09-28
-progress: finished
+progress: continous
 epistemic_state: semi-believed
 difficulty: 1
 category: tech
@@ -16,7 +16,7 @@ tags:
 toc: true
 online: true
 ---
-I deleted my Facebook account on Nov 16<sup>th</sup> 2008. I was amongst the first 1000 users to join Facebook in 2005 when its co-founder [Dustin Moskovitz](https://en.wikipedia.org/wiki/Dustin_Moskovitz) sent invite-only memberships to students and prospects at Cambridge/Imperial College. It was a promising project but "the Facebook" got way out of hand.
+I don't use Facebook anymore. I was amongst the first 1000 users to join Facebook in 2005 when its co-founder [Dustin Moskovitz](https://en.wikipedia.org/wiki/Dustin_Moskovitz) sent invite-only memberships to students and open source activists in Europe. It was a promising project but "the Facebook" got way out of hand. I stopped using it.
 
 Putting the photo of someone on Facebook (or Instagram) contributes to surveillance of that person. Please don't post any photos there that include me, and I suggest you avoid posting photos of anyone else too.
 

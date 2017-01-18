@@ -76,10 +76,8 @@ class HomeController extends Controller
                 $post['content'] = $content;
                 $meta['online'] = $meta['online'] ?? true;
                 $meta['published'] = $meta['published'] ?? null;
-                if (date("Y", $meta['published']) !== strval($year)) {
-                    unset($posts[$key]);
-                }
-                if ($meta['online'] == false) {
+                $meta['type'] = $meta['type'] ?? null;
+                if (date("Y", $meta['published']) !== strval($year) OR $meta['online'] == false OR $meta['type'] == 'page') {
                     unset($posts[$key]);
                 }
             } else {

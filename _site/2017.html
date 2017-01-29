@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="2017 is way much more than a just a simple prime number" />
+    <meta name="google-site-verification" content="Se1BU47QDuaWbURxnshcyzaqRjosEdM0nZjwy_c8OEo" />
+    <meta property="og:url" content="https://scif.ml/2017" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="2017, mathematicaly" />
+    <meta property="og:description" content="2017 is way much more than a just a simple prime number" />
+    <meta property="og:image" content="https://scif.ml/static/images/logo-200.jpg" />
+    <meta property="fb:app_id" content="1736500373279641" />
+    <title>2017, mathematicaly &mdash; Science FML</title>
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA/4QAAB7PGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiIRERAAAAIiIREiIRAAESIREiIiEQARERESIiIhARESIRESIiIRESIiEREiIhESIiIhESIiERIiIiERIiIREiIiERESIRESIiIREREREREiIRERERERESIhEREiERAREiERIiIRABEREhEiIhEAARERESIiEAAAAREREiAADwDwAAwAMAAIABAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAAgAEAAMADAADwDwAA" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="static/dist/css/app.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/magula.min.css" integrity="sha256-6SYK16cLJ4/EXxF6Uy1GgznptBtA9jQndk2r81jxfFU=" crossorigin="anonymous" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath: [ ['$','$'], ["\\(","\\)"] ],processEscapes: true}});</script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+</head>
+<body class="">
+    <div class="bodyPage">
+        <div class="grid">
+            <div class="col-1-7">
+                <div class="aside">
+                    <a href="index.html" class="logo"><img src="static/images/logo.png" alt="logo" /></a>
+                    <div class="subtitle"><p>The marginalized lexicon of obsessive science</p></div>
+                    <ul class="menu">
+                        <li><a href="About.html" title="About">About</a></li>
+                        <li><a href="Newsletter.html" title="Newsletter">Newsletter</a></li>
+                        <li><a href="Contact.html" title="Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-4-7">
+                
+<div class="post">
+  <article>
+    <div class="article-head">
+      <h1>2017, mathematicaly</h1>
+      <h5>2017 is way much more than a just a simple prime number</h5>      <div class="meta">
+      category: <span><a href="2017.html#" onclick="return false;" title="mathematics">mathematics</a> &bull; 
+        created <span>Jan 1<sup>st</sup> 2017</span>
+         <br /> progress: <span><a href="2017.html#" onclick="return false;">finished</a></span> &bull; epistemic state: <span><a href="2017.html#" onclick="return false;" title="See all post with “believed” status">believed</a><span class="tooltip"> <span style="cursor:pointer">(?)</span> <div class="tooltip-content"><p class="small">The <em>espitemic status</em> meta-tag matches the way I <strong>personally</strong> feel about what I think. It somehow shows my degree of confidence in the content I write.</a> It also allows me to keep track of my beliefs and see how often I change my opinion towards a particular subject.</p><p class="small"><a href="About.html#epistemic">learn more &raquo;</a></p></div></span></span> &bull; difficulty: <span class="squares"><span style="margin:0;" class="two"><i></i></span>technical</span></div>
+        <div class="www_tags"><strong>Tags:</strong> prime numbers</div>    </div>
+
+        <div class="article-body">
+      <p>Happy prime number year 2017, everyone.</p>
+<p>But 2017 is a prime like no other. I've spent New Year's Eve finding how surprising 2017 actually is. You can verify every claim by yourself using the <a href="https://www.python.org">Python</a> code under each statement.</p>
+<p>To check if a $x$ is a prime number, we use this basic algorithm:</p>
+<pre><code class="language-python">def is_prime(x):
+    if x == 2:
+        return True
+    if x &lt; 2 or x % 2 == 0:
+        return False
+    return not any(x % i == 0 for i in range(3, int(math.sqrt(x)) + 1, 2))</code></pre>
+<p>To compute the $n$<sup>th</sup> prime number, we make use of this one.</p>
+<pre><code class="language-python">def nth_prime(n):
+    count = 0
+    number =  2
+    while count &lt; n:
+        if is_prime(number):
+            count += 1
+        number += 1
+    return number - 1</code></pre>
+<p>To compute the index of a given prime $p$:</p>
+<pre><code class="language-python">def prime_count(n):
+    primes = []
+    if not is_prime(n):
+        return False
+    else:
+        for i in range(2, n + 1):
+            if is_prime(i):
+                primes.append(i)
+        return primes.index(n) + 1</code></pre>
+<p>To get previous prime previous prime of $p$:</p>
+<pre><code class="language-python">def prev_prime(n):
+    primes = []
+    if not is_prime(n):
+        return False
+    elif n == 2:
+        return False
+    else:
+        count = 1
+        for i in range(2, n + 1):
+            if is_prime(i):
+                count += 1
+                primes.append(i)
+        return primes[count - 3]</code></pre>
+<hr />
+<ul>
+<li>20170123456789 is a prime.</li>
+</ul>
+<pre><code class="language-python">is_prime(20170123456789)</code></pre>
+<ul>
+<li>The 2017<sup>th</sup> prime appended to 2017 (201717539) is a prime.</li>
+</ul>
+<pre><code class="language-python">is_prime(int(str(2017) + str(nth_prime(2017))))</code></pre>
+<ul>
+<li>$2^{11} - p_{11} = 2017$ $p \in \mathbb{P}$</li>
+</ul>
+<pre><code class="language-python">2**11 - nth_prime(11)</code></pre>
+<ul>
+<li>Let $p =  2017$ then $\frac{p+1}{2}$ and $\frac{p+2}{3}$ are both primes.</li>
+</ul>
+<pre><code class="language-python">print(is_prime(2017 + 1 / 2))
+print(is_prime(2017 + 2 / 3))</code></pre>
+<ul>
+<li>Insert 7 between any 2 digits of 2017, it's still a prime number</li>
+</ul>
+<pre><code class="language-python">is_prime(27017)
+is_prime(27017)
+is_prime(20177)</code></pre>
+<ul>
+<li>20177 is a prime too.</li>
+</ul>
+<pre><code class="language-python">is_prime(20177)</code></pre>
+<ul>
+<li>The nearest round integer of 2017$\pi$ is a prime.</li>
+</ul>
+<pre><code class="language-python">import math
+is_prime(round(2017 * math.pi))</code></pre>
+<ul>
+<li>The nearest round integer of 2017e is a prime.</li>
+</ul>
+<pre><code class="language-python">import math
+is_prime(round(2017 * math.e))</code></pre>
+<ul>
+<li>2017 as an octoal is a prime. An <a href="https://en.wikipedia.org/wiki/Octal">octal</a> is a number written using the base-8 number system.</li>
+</ul>
+<pre><code class="language-python">n = int('2017', 8); n
+print(is_prime(n))</code></pre>
+          </div>
+            </article>
+</div>
+                                                <footer class="grid">
+                    <div class="col-1-10 noMobile">
+                        <a style="border: 0" rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+                    </div>
+                    <div class="9-10">
+                        <p>I support <a href="https://okfn.org/">open knowledge</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br />Enjoy freedom on knowledge. Check <a href="About.html#copyright">my views</a> on copyrights.</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript" src="static/dist/js/scripts.js"></script>
+</body>
+</html>

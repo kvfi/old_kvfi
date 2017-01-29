@@ -4,4 +4,4 @@ log/*
 cache/*
 node_modules
 *.sh
-*.command
+*.orig

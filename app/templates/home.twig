@@ -2,6 +2,7 @@
 {% block content %}
 <div class="index-intro">
   {{ data.intro|raw }}
+  <div style="clear: both;"></div>
 </div>
 <div class="ongoing-exp">
     <p><span class="title">Ongoing experiment:</span> <a href="{{ path_for('post', {slug : data.experiment.slug}) }}">{{ data.experiment.title }}</a> (<em><a href="{{ path_for('post', {slug : 'Experiments'}) }}">all</a></em>) | <span class="title">Theorem of the day: (fr)</span> <a href="{{ path_for('post', {slug : data.theorem.slug}) }}">{{ data.theorem.title }}</a> (<em><a href="{{ path_for('post', {slug : 'Théorèmes'}) }}">all</a></em>)</p>

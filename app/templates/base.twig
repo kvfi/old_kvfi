@@ -4,6 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="description" content="{{ headMeta.description }}" />
     <meta name="google-site-verification" content="Se1BU47QDuaWbURxnshcyzaqRjosEdM0nZjwy_c8OEo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:url" content="{{ current_url }}" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{% if base_path == '/' %}{{ config.site_name }}{% else %}{{ headMeta.title }}{% endif %}" />
@@ -18,11 +19,15 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath: [ ['$','$'], ["\\(","\\)"] ],processEscapes: true}});</script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  	<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+<![endif]-->
 </head>
 <body class="{{ css_class }}">
-    <div class="bodyPage">
-        <div class="grid">
-            <div class="col-1-7">
+    <div class="container">
+        <div class="row">
+            <div class="column x_1_8">
                 <div class="aside">
                     <a href="{{ path_for('home') }}" class="logo"><img src="/static/images/logo.png" alt="logo" /></a>
                     <div class="subtitle"><p>The marginalized lexicon of obsessive science</p></div>
@@ -32,8 +37,9 @@
                         <li><a href="{{ path_for('post', { slug: 'Contact'}) }}" title="Contact">Contact</a></li>
                     </ul>
                 </div>
+
             </div>
-            <div class="col-4-7">
+            <div class="column half">
                 {% block content %}
                 {% endblock %}
                 {% block pagination %}

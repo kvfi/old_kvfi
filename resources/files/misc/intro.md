@@ -1,4 +1,4 @@
 ![“Cat passes Turing test.”](/static/images/cartoon4.jpg){.fright}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This site is a semi-personal [knowledge base](./About) I've been building for the last 12 years. Parts of it are public and others are private. I mostly write about science, philosophy and programming. This is not a [blog](https://en.wikipedia.org/wiki/Blog), it's a open journal I use to share information and various thoughts. I'm known for being radical towards Internet privacy and online freedom.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This site is a semi-personal [knowledge base](./About) I've been building for the last 12 years. Parts of it are public and others are kept private for very obvious reasons. I write about everything I find interesting or worth taking a look at. Altough it resembles it, this is not a [blog](https://en.wikipedia.org/wiki/Blog)&mdash; at least don't call it so. It's an open journal I use to gather information and miscelenous thoughts on various topics.
 
-Anyway, you're most welcome.
+Anyway, you're most welcome. If you happen to have a question or remark, please do [contact me](./About#contact).

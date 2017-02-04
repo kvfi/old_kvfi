@@ -18,11 +18,11 @@
     </div>
 
     {% if data.post.meta.toc == true %}
-    <div class="grid">
-      <div class="col-1-5 noMobile">
+    <div class="row">
+      <div class="column x_1_5">
         <div class="table-of-contents"></div>
       </div>
-      <div class="col-4-5 article-body">
+      <div class="column x_4_5 article-body">
           {{ data.post.content | raw }}
           {% if data.post.slug == 'Théorèmes' %}
             {% include 'extras/theorems.twig' %}

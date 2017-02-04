@@ -82,14 +82,14 @@
     font-size: 16px;
 }
 .post article .article-head h5 {
-    font-size: 20px;
-    color: #888888;
+    font-size: 18px;
+    color: #999;
+    font-style: italic;
     font-weight: normal;
-    font-style: oblique;
     margin: 0 0 5px 0;
 }
 .post article .article-head .meta {
-    font-size: 14px;
+    font-size: 16px;
     color: #555;
     padding: 0px 0 10px 0;
 }
@@ -142,7 +142,6 @@
 .post article .article-body ul,
 .post article .article-body li,
 .post article .article-body blockquote {
-    font-size: 16px;
     margin: 0 0 10px 0;
 }
 .post article .article-body p .footnote-ref,
@@ -216,12 +215,16 @@
     border-bottom: 1px dotted #ccc;
 }
 .post article .footnotes {
-    border: 1px solid #ddd;
-    margin-top: 50px;
-    padding: 10px;
-}
-.post article .footnotes ol > li {
-    list-style-type: decimal;
+    border-top: 1px solid #111111;
+    margin: 50px 0 0 0;
+    padding: 0 0 0 50px;
+    ol > li {
+    	list-style-type: decimal;
+    	margin-right: 10px;
+    	p {
+    		display: inline;
+    	}
+	}
 }
 #footnotediv {
     background-color: #fff;

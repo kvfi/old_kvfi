@@ -31,11 +31,21 @@
 .column.x_1_8 {
     width: calc(100% / 8);
 }
-
+.column.x_1_5 {
+    width: calc(100% / 5);
+}
 .column.x_3_5 {
     width: calc(100% / 5 * 3);
 }
-
+.column.x_4_5 {
+    width: calc((100% / 5 * 4) - 5%);
+}
+.column.x_4_7 {
+    width: calc((100% / 7 * 4) - 5%);
+}
+.column.x_5_7 {
+    width: calc((100% / 7 * 5) - 5%);
+}
 @media screen and (max-width: 640px) {
     .column.full,
     .column.two-thirds,

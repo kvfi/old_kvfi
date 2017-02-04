@@ -43,21 +43,14 @@ a:hover {
     border-bottom-style: solid;
     transition: color .3s;
 }
-
 a.logo, a.logo:hover,
 a img, a img:hover {
     border: 0;
 }
-
-li {
-    list-style-position: inside;
-}
-
 p {
     font-size: $base-font-size;
     line-height: 1.5;
 }
-
 p.small {
     font-size: 90%;
 }

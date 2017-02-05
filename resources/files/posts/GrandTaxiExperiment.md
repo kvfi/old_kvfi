@@ -14,7 +14,7 @@ tags:
  - traffic engineering
 online: true
 ---
-__Before starting__ I want to hint at the pains I went through during this experiment and how data has been a real affliction to gather. I did a lot of back office work, like building models, running simulations, doing some [computational sociology](https://en.wikipedia.org/wiki/Computational_sociology) (which is not extensively developed here), and to be fully honest, this essay is a pretty good example of an [“is–ought problem”](https://en.wikipedia.org/wiki/Is%E2%80%93ought_problem). This is why, and considered my leaning for strong evaluation, I labbeled this article epistemic level under “almost-believed” (the first of its kind), as it might be ameliorated to some degree. I hope to come back at this article at a later time and, if possibly, review some of the points I believe do need some additional investigation.
+__Before starting__ I want to hint at the pains I went through during this experiment and how data has been a real affliction to gather. I did a lot of back office work, like building models, running simulations, doing some [computational sociology](https://en.wikipedia.org/wiki/Computational_sociology) (which is not extensively developed here, perhaps I'll add the deatails later on), and to be fully honest, this essay is a pretty good example of an [“is–ought problem”](https://en.wikipedia.org/wiki/Is%E2%80%93ought_problem). This is why, and considered my leaning for strong evaluation, I labbeled this article epistemic level under “almost-believed” (the first of its kind), as it might be ameliorated to some degree. I hope to come back at this article at a later time and, if possibly, review some of the points I believe do need some additional investigation.
 
 ----
 
@@ -44,9 +44,7 @@ I already know that the people using Grand Taxis are from the underclass, thus m
 
 We may notice that the more taxis are situated in the same area, the most likely there is to be a bigger traffic flow.
 
-
 [^opposing social order]: [Eugene V. Debs](https://en.wikipedia.org/wiki/Eugene_V._Debs), _“Labor and Freedom”_  was an American union leader, one of the founding members of the Industrial Workers of the World (IWW or the Wobblies), and five times the candidate of the Socialist Party of America for President of the United States.[3] Through his presidential candidacies, as well as his work with labor movements, Debs eventually became one of the best-known socialists living in the United States. Early in his political career, Debs was a member of the Democratic Party. He was elected as a Democrat to the Indiana General Assembly in 1884. After working with several smaller unions, including the Brotherhood of Locomotive Firemen, Debs was instrumental in the founding of the American Railway Union (ARU), one of the nation's first industrial unions. After workers at the Pullman Palace Car Company organized a wildcat strike over pay cuts in the summer of 1894, Debs signed many into the ARU. He called a boycott of the ARU against handling trains with Pullman cars, in what became the nationwide Pullman Strike, affecting most lines west of Detroit, and more than 250,000 workers in 27 states. To keep the mail running, President Grover Cleveland used the United States Army to break the strike. As a leader of the ARU, Debs was convicted of federal charges for defying a court injunction against the strike and served six months in prison.
-
 [^orwell poverty]: [George Orwell, 1984](https://en.wikipedia.org/wiki/Nineteen_Eighty-Four).
 [^worlds_apart]: Worlds Apart:
 [“Measuring International and Global Inequality”](http://press.princeton.edu/titles/7946.html), One of Choice's Outstanding Academic Titles for 2005, eBook, ISBN: 9781400840816.

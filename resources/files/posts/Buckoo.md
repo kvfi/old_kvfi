@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Buckoo":" R web 
+title: >-
+ Buckoo: R web 
 slug: Buckoo
 subtitle: Why you shouldn't be used by Facebook
 published: 2009-08-11

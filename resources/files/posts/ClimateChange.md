@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: topic
 title: Climate Change
-slug: Climate Change
+slug: ClimateChange
 subtitle: Climate change is a humanitarian matter not a polical one
 published: 2012-11-09
 updated: 2016-11-01

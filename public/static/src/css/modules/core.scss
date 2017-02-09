@@ -1,406 +1,244 @@
 .container {
-    margin: 20px 0 0 0;
-    padding: 10px 15px;
+	margin: 20px 0;
+	padding: 10px 15px;
 }
 .index-intro {
-    margin: 0 0 30px 0;
-}
-.index-intro p {
-    margin-top: 10px;
-}
-.index-intro p:first-of-type {
-    margin-top: 0;
-}
-.home-articles h5 {
-    font-size: 16px;
-    background-color: #eee;
-    margin: 0 0 10px 0;
-    padding: 5px 10px;
-    display: inline-block;
-    font-weight: normal;
-    color: #555;
-}
-.home-articles h6 {
-    font-size: 30px;
-    font-style: italic;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border-bottom: 3px dashed #ddd;
-}
-.home-articles ul li {
-    padding: 0 0 3px 0;
-    font-size: 18px;
-}
-.home-articles ul li time {
-    float: right;
-    margin-right: 10px;
-    color: #aaa;
-}
-.home-articles section#last-topics-updates ul li {
-    font-size: 12px;
-    border-left: 5px solid #ddd;
-    margin: 0 0 10px;
-    padding: 0 0 0 10px;
-}
-.home-articles section#last-topics-updates ul li time {
-    float: none;
-    width: auto;
-    display: block;
-    font-size: 70%;
-}
-.mainBody {
-    background-color: #fff;
-    padding: 20px;
-    padding-right: 20px;
-}
-.mainBody article {
-    margin: 10px 0;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-}
-.mainBody article:first-child {
-    margin-top: 0;
-    padding-top: 0;
-}
-.mainBody article:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: 0;
-}
-.post article h1 {
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-.post article .article-head {
-    margin: 0 0 10px 0;
-    padding: 0 0 10px 0;
-    position: relative;
-    border-bottom: 1px solid #cccccc;
-}
-.post article .article-head .www_tags {
-    font-size: 16px;
-}
-.post article .article-head h5 {
-    font-size: 18px;
-    color: #999;
-    font-style: italic;
-    font-weight: normal;
-    margin: 0 0 5px 0;
-}
-.post article .article-head .meta {
-    font-size: 16px;
-    color: #555;
-    padding: 0px 0 10px 0;
-}
-.post article .article-head p span {
-    border-bottom: 1px dotted #aaa;
-    cursor: help;
-}
-.post article .article-head p a {
-    text-decoration: none;
-    color: inherit;
-}
-.post article .article-head p a span {
-    border-bottom: 1px dotted #aaa;
-    cursor: auto;
-}
-.post article .frd-image img {
-    width: 100%;
-    height: auto;
-    margin: 0 0 20px 0;
-}
-.post article .subc {
-    background-color: #f2f2f2;
-    padding: 10px;
-    margin-bottom: 15px;
-}
-.post article .article-body {
-    padding: 0 0 20px 0;
-}
-.post article .article-body > p,
-.post article .article-body > ul,
-.post article .article-body > blockquote {
-    overflow: auto;
-}
-.post article .article-body h4 {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 15px 0 0 0;
-}
-.post article .article-body h5 {
-    font-size: 17px;
-    font-weight: bold;
-    margin: 15px 0 0 0;
-}
-.post article .article-body h6 {
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    color: #aaa;
-}
-.post article .article-body p,
-.post article .article-body ul,
-.post article .article-body li,
-.post article .article-body blockquote {
-    margin: 0 0 10px 0;
-}
-.post article .article-body p .footnote-ref,
-.post article .article-body ul .footnote-ref,
-.post article .article-body li .footnote-ref,
-.post article .article-body blockquote .footnote-ref {
-    vertical-align: super;
-    font-size: 80%;
-    line-height: 0;
-    margin-left: 2px;
-}
-.post article .article-body p:last-child,
-.post article .article-body li:last-child,
-.post article .article-body blockquote:last-child {
-    margin-bottom: 0;
-}
-.post article .article-body p:empty {
-    margin: 0 0 0 5px;
-}
-.post article .article-body ul {
-    margin-top: 10px;
-}
-.post article .article-body ul li {
-    list-style-type: square;
-    margin: 0 0 5px 15px;
-}
-.post article .article-body blockquote {
-    background-color: #f6f6f6;
-    padding: 4px 10px;
-    margin-top: 10px;
-    color: #444444;
-}
-.post article .article-body table {
-    width: 80%;
-    margin: 20px auto;
-}
-.post article .comments {
-    border-top: 1px solid #ddd;
-    padding-top: 15px;
-}
-.post article .comments h5 {
-    font-size: 15px;
-    font-weight: bold;
-}
-.post article .comments .comment {
-    border-bottom: 1px dotted #ddd;
-    padding: 10px 0;
-}
-.post article .comments .comment:last-of-type {
-    border-bottom: 0;
-}
-.post article .comments .comment p,
-.post article .comments .comment ul li,
-.post article .comments .comment blockquote {
-    font-size: 13px;
-    line-height: 150%;
-}
-.post article .comments .comment p {
-    margin-bottom: 10px;
-}
-.post article .comments .comment p:last-of-type {
-    margin-bottom: 0;
-}
-.post article .comments .comment .meta {
-    text-align: right;
-    margin-top: 10px;
-}
-.post article .comments .comment .meta a {
-    color: #888;
-    text-decoration: none;
-    border-bottom: 1px dotted #ccc;
-}
-.post article .footnotes {
-    border-top: 1px solid #111111;
-    margin: 50px 0 0 0;
-    padding: 0 0 0 50px;
-    ol > li {
-    	list-style-type: decimal;
-    	margin-right: 10px;
-    	p {
-    		display: inline;
-    	}
+	margin: 0 0 30px 0;
+	p {
+		margin-top: 10px;
+		&:first-of-type {
+			margin-top: 0;
+		}
 	}
 }
+.home-articles {
+	h5 {
+		font-size: 16px;
+		background-color: #eee;
+		margin: 0 0 10px 0;
+		padding: 5px 10px;
+		display: inline-block;
+		font-weight: bold;
+		color: #555;
+	}
+	h6 {
+		font-size: 30px;
+		font-style: italic;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		border-bottom: 3px dashed #ddd;
+	}
+	ul li {
+		padding: 3px 0;
+		font-size: 16px;
+	 	time {
+			float: right;
+			font-size: 16px;
+			color: #bbb;
+		}
+	}
+	#last-updated-topics p {
+		margin: 0 0 10px;
+		padding: 0 0 0 10px;
+		color: #888;
+	}
+}
+
+/* Post & Article */
+.post {
+	article {
+		.article-head {
+			margin: 0 0 10px 0;
+			padding: 0 0 10px 0;
+			position: relative;
+			border-bottom: 1px solid #cccccc;
+			.www_tags {
+				font-size: 14px;
+			}
+			h1 {
+				font-size: 20px;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			h5 {
+				font-size: 18px;
+				color: #999;
+				font-style: italic;
+				font-weight: normal;
+				margin: 0 0 5px 0;
+			}
+			.meta {
+				font-size: 16px;
+				color: #555;
+				padding: 0px 0 10px 0;
+			}
+			p {
+				span {
+					border-bottom: 1px dotted #aaa;
+					cursor: help;
+				}
+				a {
+					text-decoration: none;
+					color: inherit;
+					span {
+						border-bottom: 1px dotted #aaa;
+						cursor: auto;
+					}
+				}
+			}
+		}
+		.article-body {
+			padding: 0 0 20px 0;
+			> p, > ul, > blockquote {
+				overflow: auto;
+			}
+			h4 {
+				font-size: 20px;
+				font-weight: bold;
+				margin: 15px 0 0 0;
+			}
+			h5 {
+				font-size: 17px;
+				font-weight: bold;
+				margin: 15px 0 0 0;
+			}
+			h6 {
+				font-size: 1.3rem;
+				text-transform: uppercase;
+				color: #aaa;
+			}
+			p, ul, li, blockquote {
+				margin: 0 0 10px 0;
+			}
+			.footnote-ref {
+				vertical-align: super;
+				font-size: 80%;
+				line-height: 0;
+				margin-left: 2px;
+			}
+			p:last-child,
+			li:last-child,
+			blockquote:last-child {
+				margin-bottom: 0;
+			}
+			p:empty {
+				margin: 0 0 0 5px;
+			}
+			ul {
+				margin-top: 10px;
+				li {
+					list-style-type: square;
+					margin: 0 0 5px 15px;
+				}
+			}
+			blockquote {
+				background-color: #f6f6f6;
+				padding: 4px 10px;
+				margin-top: 10px;
+				color: #444444;
+			}
+			table {
+				width: 80%;
+				margin: 20px auto;
+			}
+		}
+		.footnotes {
+			border-top: 1px solid #111111;
+			margin: 50px 0 0 0;
+			padding: 0 0 0 50px;
+			ol > li {
+				list-style-type: decimal;
+				margin-right: 10px;
+				p {
+					display: inline;
+				}
+			}
+		}
+	}
+}
+
 #footnotediv {
-    background-color: #fff;
-    padding: 5px;
-    border: 1px solid #ddd;
-    right: 50px;
+	background-color: #fff;
+	padding: 5px;
+	border: 1px solid #ddd;
+	right: 50px;
 }
 #footnotediv p {
-    padding: 5px 0;
-    margin: 0;
-    font-size: 11px;
-    font-style: italic;
-    color: #333;
+	padding: 5px 0;
+	margin: 0;
+	font-size: 11px;
+	font-style: italic;
+	color: #333;
 }
 #footnotediv p:first-of-type {
-    padding-top: 0;
+	padding-top: 0;
 }
 #footnotediv p:last-of-type {
-    padding-bottom: 0;
+	padding-bottom: 0;
 }
 .bodyPage .post article .article-body .footnotes p,
 .bodyPage .post article .article-body .footnotes li {
-    font-size: 14px;
-    line-height: 140%;
+	font-size: 14px;
+	line-height: 140%;
 }
 .bodyPage .post article .article-body .footnotes p {
-    display: inline;
+	display: inline;
 }
 .footnotes h5 {
-    font-size: 13px;
-    color: #777;
-    font-weight: bold;
+	font-size: 13px;
+	color: #777;
+	font-weight: bold;
 }
 .footnotes hr {
-    border-width: 0;
+	border-width: 0;
 }
 .admin-buttons {
-    margin: 0 0 20px 0;
+	margin: 0 0 20px 0;
 }
 .admin-buttons ul li {
-    display: inline-block;
-    font-size: 0.9em;
-    padding: 0 5px;
-    background-color: #111;
-    color: #eee;
+	display: inline-block;
+	font-size: 0.9em;
+	padding: 0 5px;
+	background-color: #111;
+	color: #eee;
 }
 .admin-buttons ul li a {
-    color: inherit;
+	color: inherit;
 }
 .admin-buttons ul li:hover {
-    background: #555;
+	background: #555;
 }
 /* Pagination
  *-------------------------------------------------------------- */
 
 .pagination {
-    margin: 20px 0;
+	margin: 20px 0;
 }
 .pagination ul li {
-    display: inline-block;
-    margin-right: 10px;
+	display: inline-block;
+	margin-right: 10px;
 }
 .pagination ul li.current {
-    font-weight: bold;
+	font-weight: bold;
 }
 /* Footer
  *-------------------------------------------------------------- */
 
 .not_found h1 {
-    font-size: 60px;
-    color: #999;
+	font-size: 60px;
+	color: #999;
 }
 .not_found h3 {
-    font-size: 20px;
+	font-size: 20px;
 }
 /* Footer
- *-------------------------------------------------------------- */
+*-------------------------------------------------------------- */
 
 footer {
-    border-top: 1px solid #555;
-    margin-top: 20px;
-    padding: 20px 0;
+	border-top: 1px solid #555;
+	margin-top: 20px;
+	padding: 20px 0;
 }
 footer p {
-    font-size: 14px;
-}
-/* Admin Editor */
-
-.bodyPage .post article.form .article-head {
-    padding-bottom: 20px;
-}
-article.form form .article-head span {
-    border: 0 !important;
-}
-article.form form input.input-style,
-article.form form select.input-style {
-    border: 0;
-    padding: 0;
-    background: none;
-    overflow: hidden;
-}
-article.form form input[name="title"] {
-    font-size: 35px;
-    font-weight: bold;
-    width: 100%;
-}
-article.form form input[name="intro"] {
-    font-size: 16px;
-    color: #aaa;
-    font-weight: normal;
-    margin: 0 0 10px 0;
-    width: 100%;
-}
-article.form form input[type="date"].input-date {
-    font-size: 13px;
-    color: #7a7a7a;
-    width: auto;
-}
-article.form form .tags .tagged {
-    margin-bottom: 10px;
-}
-article.form form .tags .tagged ul li {
-    display: inline-block;
-    background-color: #f3f3f3;
-    margin-right: 10px;
-    font-size: 14px;
-    padding: 0 0 0 5px;
-    border-radius: 4px;
-}
-article.form form .tags .tagged ul li span.rm {
-    background-color: #bbb;
-    margin-left: 5px;
-    padding: 0 4px;
-    display: inline-block;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-}
-article.form form .tags .tagged ul li span.rm:hover {
-    cursor: pointer;
-}
-article.form form .tags input[type="text"] {
-    font-size: 13px;
-    color: #333;
-    width: auto;
-}
-article.form form .slug-container .slug-input {
-    font-size: 13px;
-    color: #333;
-    width: auto;
-}
-article.form form textarea {
-    font-size: 15px;
-    line-height: 170%;
-    width: 100%;
-    outline: 0;
-    resize: vertical;
-    min-height: 100px;
-}
-article.form form input[type="submit"] {
-    width: auto;
-}
-article.form form label {
-    font-size: 12px;
-    margin-right: 10px;
-}
-form span.helper {
-    font-size: 12px;
-    color: red;
-}
-form .url-viewer {
-    margin: 5px 0;
-    font-size: 13px;
-    display: none;
-}
-form .url-viewer span {
-    /* background-color: rgba(63, 127, 191, 0.6) */
-    
-    margin-right: 10px;
+	font-size: 14px;
 }

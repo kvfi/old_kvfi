@@ -9,7 +9,7 @@ if (PHP_SAPI === 'cli-server' && $_SERVER['SCRIPT_FILENAME'] !== __FILE__) {
     return false;
 }
 
-if (substr($_SERVER['HTTP_HOST'], -4) === '.dev') {
+if ($_SERVER['HTTP_HOST'] === '127.0.0.1') {
     define('WEBENV', 'dev');
 } else {
     define('WEBENV', 'prod');

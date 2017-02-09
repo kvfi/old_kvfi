@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: topic
 title: No Facebook
 slug: Facebook
 subtitle: Why you shouldn't be used by Facebook

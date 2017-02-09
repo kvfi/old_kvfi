@@ -136,9 +136,9 @@ class HomeController extends Controller
     	if ($type == 'topic') {
     		$topics = '';
     		foreach ($posts as $topic) {
-		        $topics .= '<span class="squares"><span class="'. ($topic['meta']['difficulty'] == 1 ? 'one' : '') . '"><i></i></span></span><a href="./' . $topic['meta']['slug'] . '">' . $topic['meta']['title'] . '</a>, ';
+		        $topics .= '<a href="./' . $topic['meta']['slug'] . '">' . $topic['meta']['title'] . '</a> &bull; ';
 		    }
-		    return rtrim($topics, ', ');
+		    return rtrim($topics, '&bull; ');
     	} else {
     		return $posts;
     	}

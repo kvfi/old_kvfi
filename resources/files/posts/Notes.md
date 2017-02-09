@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Notes and Memos
 slug: Notes
 subtitle: Miscellaneous thoughts and pseudo-articles

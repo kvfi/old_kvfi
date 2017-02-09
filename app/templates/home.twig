@@ -25,7 +25,7 @@
 			<h5>Recent posts</h5>
 			<ul class="roll">
 				{% for post in data.posts %}
-				<li><span class="squares"><span class="{% if post.meta.difficulty is not empty %}{% if post.meta.difficulty == '1' %}one{% elseif post.meta.difficulty == '2' %}two{% elseif post.meta.difficulty == '3' %}three{% elseif post.meta.difficulty == '4' %}four{% endif %}{% endif %}"><i></i></span></span><a href="{{ path_for('post', {slug : post.meta.slug}) }}">{{ post.meta.title }}</a><time>{{ data.post.meta.published|date('M j') }}</time></li>
+				<li><span class="squares"><span class="{% if post.meta.difficulty is not empty %}{% if post.meta.difficulty == '1' %}one{% elseif post.meta.difficulty == '2' %}two{% elseif post.meta.difficulty == '3' %}three{% elseif post.meta.difficulty == '4' %}four{% endif %}{% endif %}"><i></i></span></span><a href="{{ path_for('post', {slug : post.meta.slug}) }}">{{ post.meta.title }}</a><time>{{ post.meta.published|date('M j') }}</time></li>
 				{% endfor %}
 			</ul>
 			<div style="clear: both;"></div>

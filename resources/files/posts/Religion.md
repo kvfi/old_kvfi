@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: topic
 title: Religion
 slug: Religion
 subtitle: My views on religion

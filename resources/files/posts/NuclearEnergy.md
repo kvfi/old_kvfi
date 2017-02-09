@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: topic
 title: Nuclear energy
-slug: Nuclear energy
+slug: NuclearEnergy
 subtitle: My views and thoughts on the use and management of nuclear power
 published: 2012-11-09
 updated: 2016-11-01

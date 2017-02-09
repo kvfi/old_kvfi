@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Grand taxi experiment
-slug: Grand Taxi experiment
+slug: GrandTaxiExperiment
 subtitle: Using computational sociology and traffic engineering to map low-income neighborhoods in Casablanca
 published: 2016-12-01
 updated: 2016-12-02

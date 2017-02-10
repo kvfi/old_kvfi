@@ -3,20 +3,20 @@
 	border: 1px solid #eee;
 	padding: 5px !important;
 	margin: 10px 0 0 0 !important;
-}
-.table-of-contents h6 {
-	font-size: 14px !important;
-}
-.table-of-contents ul {
-	padding: 0;
-}
-.table-of-contents li {
-	font-size: 14px !important;
-	list-style-type: none;
-	padding: 8px 0 !important;
-	margin: 0 !important;
-	line-height: 100% !important;
-}
-.table-of-contents li:last-child {
-	padding-bottom: 0;
+	h6 {
+		font-size: 14px !important;
+	}
+	ul {
+		padding: 0;
+		li {
+			font-size: 14px !important;
+			list-style-type: none;
+			padding: 8px 0 !important;
+			margin: 0 !important;
+			line-height: 100% !important;
+		}
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
 }

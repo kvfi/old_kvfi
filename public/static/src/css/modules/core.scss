@@ -207,13 +207,13 @@
 }
 /* Page CSS
  *-------------------------------------------------------------- */
-.page
-	.notfound
+.page {
+	.notfound {
 		h1 {
 			font-size: 60px;
 			color: #999;
 		}
-		.not_found h3 {
+		h3 {
 			font-size: 20px;
 		}
 	}

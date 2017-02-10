@@ -9,55 +9,57 @@ code {
 table {
     width: 100%;
     font-size: 16px;
-}
-table caption {
-    padding: 10px 0;
-    font-size: 18px;
-}
-table td:first-child {
-    padding-left: 10px;
-}
-table td:last-child {
-    padding-right: 10px;
-}
-table thead {
-    padding: 5px 0;
-}
-table thead tr th {
-    text-align: left;
-    font-weight: bold;
-    padding: 0 10px;
-}
-table tbody tr:nth-child(even) {
-    background: rgba(230, 242, 255, 0.5);
-}
-table tbody td {
-    padding: 5px 0;
-}
-.table {
-    overflow-x: auto;
+    caption {
+        padding: 10px 0;
+        font-size: 18px;
+    }
+    td:first-child {
+        padding-left: 10px;
+    }
+    td:last-child {
+        padding-right: 10px;
+    }
+    thead {
+        padding: 5px 0;
+        tr {
+            th {
+                text-align: left;
+                font-weight: bold;
+                padding: 0 10px;
+            }
+        }
+    }
+    tbody {
+        tr:nth-child(even) {
+            background: rgba(230, 242, 255, 0.5);
+        }
+        td {
+            padding: 5px 0;
+        }
+    }
 }
 .fright {
     float: right;
 }
 .legend_marker {
     margin: 0 0 20px 0;
+    .legend {
+        padding: 5px;
+        font-size: 14px;
+    }
+    span {
+        color: #333;
+        font-weight: bold;
+    }
+    .markers {
+        font-size: 16px;
+        vertical-align: middle;
+    }
+    span {
+        margin-right: 30px;
+    }
 }
-.legend_marker .legend {
-    padding: 5px;
-    font-size: 14px;
-}
-.legend_marker .legend span {
-    color: #333;
-    font-weight: bold;
-}
-.legend_marker .markers {
-    font-size: 16px;
-    vertical-align: middle;
-}
-.legend_marker .markers span {
-    margin-right: 30px;
-}
+
 .ongoing-exp {
     margin: 0 0 20px 0;
     padding: 10px;
@@ -65,53 +67,54 @@ table tbody td {
     border: 1px solid #E0DCBF;
     font-size: 14px;
     padding: 5px 10px;
+    p {
+        font-size: 16px;
+    }
+    span.title {
+        font-weight: bold;
+        font-size: 14px;
+    }
 }
-.ongoing-exp p {
-    font-size: 16px;
-}
-.ongoing-exp p span.title {
-    font-weight: bold;
-    font-size: 14px;
-}
+
 .qm {
     cursor: help;
 }
 .tooltip {
     position: relative;
     position-z-index: 200;
-}
-.tooltip .tooltip-content {
-    z-index: 100;
-    width: 200px;
-    position: absolute;
-    display: none;
-    top: 0;
-    margin-top: 30px;
-    left: -100px;
-    padding: 5px 10px;
-    background-color: white;
-    border: 1px solid #ddd;
-}
-.tooltip .tooltip-content:after,
-.tooltip .tooltip-content:before {
-    bottom: 100%;
-    left: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-}
-.tooltip .tooltip-content:after {
-    border-color: rgba(136, 183, 213, 0);
-    border-bottom-color: #FFFFFF;
-    border-width: 4px;
-    margin-left: -4px;
-}
-.tooltip .tooltip-content:before {
-    border-color: rgba(194, 225, 245, 0);
-    border-bottom-color: #DDDDDD;
-    border-width: 6px;
-    margin-left: -6px;
+    .tooltip-content {
+        z-index: 100;
+        width: 200px;
+        position: absolute;
+        display: none;
+        top: 0;
+        margin-top: 30px;
+        left: -100px;
+        padding: 5px 10px;
+        background-color: white;
+        border: 1px solid #ddd;
+    }
+    &:after,
+    &:before {
+        bottom: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+    &:after {
+        border-color: rgba(136, 183, 213, 0);
+        border-bottom-color: #FFFFFF;
+        border-width: 4px;
+        margin-left: -4px;
+    }
+    &:before {
+        border-color: rgba(194, 225, 245, 0);
+        border-bottom-color: #DDDDDD;
+        border-width: 6px;
+        margin-left: -6px;
+    }
 }

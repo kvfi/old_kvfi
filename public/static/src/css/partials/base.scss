@@ -38,11 +38,10 @@ a {
 	text-decoration: none;
 	border-bottom: 1px dotted $link-color;
     transition: all .4s;
-}
-
-a:hover {
-    border-bottom-style: solid;
-    transition: color .3s;
+    &:hover {
+        border-bottom-style: solid;
+        transition: color .3s;
+    }
 }
 a.logo, a.logo:hover,
 a img, a img:hover {

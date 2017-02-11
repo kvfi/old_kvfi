@@ -39,7 +39,7 @@ According to the [five factor model (FFM)](https://en.wikipedia.org/wiki/Big_Fiv
 
 Although I was diagnosed at the age of 4 with Asperger's syndrome, I've never been through any important troubles due to my mental irregularity. Even supposing that I sustain some sort of social malaise and general discomfort when it comes to daily interaction tasks, one can argue that I have a [schizoid personality disorder](https://en.wikipedia.org/wiki/Schizoid_personality_disorder).
 
-#### This website
+#### This website {#website}
 This blog is a personal database of thoughts, ideas and notes I'm maintaining for about 12 years now. I use it mainly to share itemized information on various topics and subjects. The website is spit into two separate segments: topics (talking points I feed with information) and **posts** (daily notes, correlative studies, experiments, graphics, etc.). Because I don't use [social network](./Facebook) or any other type of plateform to adverstise myself, it makes following my writings quiet a challenge. I address this by sending a monthly [newsletter](./Newsletter), containing both my last writing, [changelogs](./Changelog) and reading list (a inventory of links/books I found of interest).
 
 ##### Epistemic state {#epistemic}

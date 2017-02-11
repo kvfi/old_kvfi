@@ -116,29 +116,31 @@ class HomeController extends Controller
 						unset($posts[$key]);
 					}
 				}
+				if ($post['meta']['online'] == false) { // remove offline posts
+					unset($posts[$key]);
+				}
 			} else {
 				return false;
 			}
 		}
-
 		if ($type == 'topic') {
-			uasort($posts, function ($a, $b) {
+			uasort($posts, function ($a, $b) { // sort by update date
 	        	return ($a['meta']['updated'] > $b['meta']['updated']) ? -1 : 1;
 	    	});
 		} else {
-			uasort($posts, function ($a, $b) {
+			uasort($posts, function ($a, $b) { // sort by publication date
 	        	return ($a['meta']['published'] > $b['meta']['published']) ? -1 : 1;
 	    	});
 		}
 
-    	array_slice($posts, 0, $max, true);
+    	array_slice($posts, 0, $max, true); // limit number of returned items to $max
 
-    	if ($type == 'topic') {
+    	if ($type == 'topic') { // if $type == topic return conresponding HTML
     		$topics = '';
     		foreach ($posts as $topic) {
 		        $topics .= '<a href="./' . $topic['meta']['slug'] . '">' . $topic['meta']['title'] . '</a> &bull; ';
 		    }
-		    return rtrim($topics, '&bull; ');
+		    return rtrim($topics, '&bull; '); // remove trailling “&bull;”
     	} else {
     		return $posts;
     	}

@@ -8,7 +8,7 @@ updated: 2016-07-15
 progress: continuous
 epistemic_state: believed
 difficulty: 1
-category: misc
+category: personal
 tags:
  - personality
  - physchology
@@ -119,15 +119,13 @@ If you can't wait to know more about me, I offer you a large pool of topics disc
 * [Homosexuality](Homosexuality)
 * [Religion](Religion)
 * [Love](Love)
-* [Nuclear energy](Nuclear_energy)
+* [Nuclear energy](NuclearEnergy)
 * [War](War)
 
 ##### Politics
 * [Africa](Africa)
-* [Israel & Palestine](Israel_and_Palestine)
+* [Disputed territories](DisputedTerritories)
 * [Justice](Justice)
-* [U.S.A.](USA)
-* [Western Sahara](Western_Sahara)
 
 [^Kurt Vonnegut]: [Kurt Vonnegut](https://en.wikipedia.org/wiki/Kurt_Vonnegut), [A Man Without a Country](https://en.wikipedia.org/wiki/A_Man_Without_a_Country), 2005, ISBN: 1-58322-713-X
 [^FFM]: FFM is a widely examined theory of five broad dimensions used by some psychologists to describe the human personality and psyche. The five factors have been defined as openness to experience, conscientiousness, extroversion, agreeableness, and neuroticism. Acronyms to aid in remembering the five traits include OCEAN and CANOE. Beneath each proposed global factor, a number of correlated and more specific primary factors are claimed. For example, extroversion is said to include such related qualities as gregariousness, assertiveness, excitement seeking, warmth, activity, and positive emotions &mdash; _Big Five personality traits_ on Wikipedia [Big Five personality traits](https://en.wikipedia.org/wiki/Big‰20Five‰20personality‰20traits)

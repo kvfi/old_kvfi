@@ -99,9 +99,10 @@ class HomeController extends Controller
 				$post = [];
 				$post['meta'] = $meta;
 				$post['content'] = $content;
-				$meta['online'] = $meta['online'] ?? true;
-				$meta['published'] = $meta['published'] ?? null;
 				$meta['layout'] = $meta['layout'] ?? null;
+				$meta['published'] = $meta['published'] ?? null;
+				$meta['online'] = $meta['online'] ?? true;
+				$meta['includeNotes'] = $meta['includeNotes'] ?? false;
 				if ($ly == 'by_year') {
 					if (date("Y", $meta['published']) !== strval($year) OR $meta['online'] == false OR $meta['type'] == 'page') {
 						unset($posts[$key]);
@@ -116,7 +117,7 @@ class HomeController extends Controller
 						unset($posts[$key]);
 					}
 				}
-				if ($post['meta']['online'] == false) { // remove offline posts
+				if ($meta['online'] == false) { // remove offline posts
 					unset($posts[$key]);
 				}
 			} else {

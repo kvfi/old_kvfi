@@ -12,6 +12,7 @@
         "mnapoli/front-yaml": "^1.5",
         "monolog/monolog": "^1.22",
         "league/commonmark": "^0.15.3",
-        "league/commonmark-extras": "^0.1.2"
+        "league/commonmark-extras": "^0.1.2",
+        "phpmd/phpmd": "^2.6"
     }
 }

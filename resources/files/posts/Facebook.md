@@ -155,7 +155,7 @@ censored a photo of two men kissing</a>, posted as a protest
 against India's criminalization of homosexuality.
 
 #### Privacy {#privacy}
-#### Personal Data {#personal_data}
+##### Personal Data {#personal_data}
 * Facebook's "conversation topics" experiment <a href="https://www.theguardian.com/technology/shortcuts/2016/oct/18/facebook-messenger-conversation-topic-telling-everyone-everything-i-do"> actively shows certain selected useds everything</a> that their "friends" are doing.
 * A detailed, <a href="https://www.washingtonpost.com/news/the-intersect/wp/2016/08/19/98-personal-data-points-that-facebook-uses-to-target-ads-to-you/"> long list of the data Facebook collects about each used</a>, for targeting ads. Facebook may collect other information which is not used for targeting ads.
 * Facebook bought WhatsApp and committed not to combine that data with Facebook's other data. <a href="https://www.theguardian.com/technology/2016/aug/25/whatsapp-backlash-facebook-data-privacy-users">Now it is going to do just that.</a> For Facebook, any commitment is meant to be broken, after a delay for people to forget about it.
@@ -203,7 +203,7 @@ such as Facebook to give anyone data about you.  It will give them the
 data it wants them to have, not the data you want to give them.
 * How did Mari Sherkin end up on a dating site unwillingly? Facebook opens browser windows showing other companies' sites, which <a href="http://www.cbc.ca/news/canada/toronto facebook-info-sharing-created-zoosk-com-dating-profile-for-married-woman-1.2844953">trick Facebook useds<a href="#used">*</a> into agreeing to let those companies get their personal data from Facebook</a>.
 
-#### Profiling People {#profiling}
+##### Profiling People {#profiling}
 * Facebook may be able to <a href="https://www.theguardian.com/commentisfree/2016/nov/01/facebook-target-mental-halth-data-online">identify whether each used is mentally ill or not</a>.
 * Facebook
 <a href="https://www.washingtonpost.com/news/innovations/wp/2016/02/24/why-a-privacy-advocate-made-it-easy-to-track-when-your-facebook-friends-sleep/">can

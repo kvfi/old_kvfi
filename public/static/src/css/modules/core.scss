@@ -52,16 +52,16 @@
 			padding: 0 0 10px 0;
 			position: relative;
 			border-bottom: 1px solid #cccccc;
+			text-align: center;
 			.www_tags {
-				font-size: 14px;
+				font-size: 16px;
 			}
 			h1 {
-				font-size: 20px;
+				font-size: 24px;
 				font-weight: bold;
-				text-transform: uppercase;
 			}
-			h5 {
-				font-size: 18px;
+			h2 {
+				font-size: 20px;
 				color: #999;
 				font-style: italic;
 				font-weight: normal;
@@ -103,9 +103,8 @@
 				margin: 15px 0 0 0;
 			}
 			h6 {
-				font-size: 1.3rem;
-				text-transform: uppercase;
-				color: #aaa;
+				font-size: 13px;
+				color: #333;
 			}
 			p, ul, li, blockquote {
 				margin: 0 0 10px 0;
@@ -148,8 +147,10 @@
 			padding: 0 0 0 50px;
 			ol > li {
 				list-style-type: decimal;
-				margin-right: 10px;
+				font: 12px $sec-font-family;
+				margin: 0 0 5px;
 				p {
+					font-size: 12px;
 					display: inline;
 				}
 			}

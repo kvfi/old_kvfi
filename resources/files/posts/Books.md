@@ -52,3 +52,9 @@ A must-read to anyone interested in the storyline of US interventionism culture 
 _by **Linda Heywood**. Boydell & Brewer Ltd, 328 pp., $83.33_
 
 The well-written, accessible and beautifuly-explained political history of opposition groups during the colonial era in Angola. Linda M. Heywood examines a particular historic periods during which the União Nacional para a Independência Total de Angola (UNITA) and various other anti-colonial syndicates brawled to who will lead the country. One of the most important aspect of colonised Angola is its slavery narrative that stretched even long after its abolition. (+1): The author offers a comprehensive lexicon as an introduction to Angola's geopolitics, listing areas of conflicts, names of rebel groups and national milestones.
+
+#### March 2017 {mar2017}
+##### How Everything Became War and the Military Became Everything: Tales from the Pentagon {#Tales_from_the_Pentagon}
+_by **Rosa Brooks**. Simon & Schuster, 438 pp., $16.29_
+
+An important book by a civilian with the necessary experience with the military to comment on the disturbingly increasing role played by the military in US national security interests, but the negative character of that role is enhanced, even inspired, by the ignorance and inexperience of too many senior civilian officials in the government. Both of these phenomena are in large part the result of the end of conscription, as the US military becomes more and more isolated from our civilian society. The unfortunate result may be a military that is little more than "patriotic" mercenaries.

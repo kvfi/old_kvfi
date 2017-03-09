@@ -48,6 +48,7 @@ class PostController extends Controller
 			$content = $post->getContent();
 			$meta['tags'] = rtrim(implode(', ', $meta['tags'] ?? []), ', ');
 			$meta['toc'] = $meta['toc'] ?? false;
+			$meta['featured_img'] = $meta['featured_img'] ?? false;
 			if ($meta['online'] ?? true) {
 				return $this->view->render($response, $tpl, array(
 					'headMeta' => [

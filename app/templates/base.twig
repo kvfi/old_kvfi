@@ -12,7 +12,7 @@
     <meta property="og:image" content="https://scif.ml/static/images/logo-200.jpg" />
     <meta property="fb:app_id" content="1736500373279641" />
     <title>{{ headMeta.title }} &mdash; {{ config.site_name }}</title>
-    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA/4QAAB7PGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiIRERAAAAIiIREiIRAAESIREiIiEQARERESIiIhARESIRESIiIRESIiEREiIhESIiIhESIiERIiIiERIiIREiIiERESIRESIiIREREREREiIRERERERESIhEREiERAREiERIiIRABEREhEiIhEAARERESIiEAAAAREREiAADwDwAAwAMAAIABAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAAgAEAAMADAADwDwAA" rel="icon" type="image/x-icon" />
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="/static/dist/css/app.css" type="text/css" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/magula.min.css" integrity="sha256-6SYK16cLJ4/EXxF6Uy1GgznptBtA9jQndk2r81jxfFU=" crossorigin="anonymous" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -44,11 +44,11 @@
                 {% endblock %}
                 {% block pagination %}
                 {% endblock %}
-                <footer class="grid">
-                    <div class="col-1-10 noMobile">
+                <footer class="row">
+                    <div class="column x_1_9">
                         <a style="border: 0" rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
                     </div>
-                    <div class="9-10">
+                    <div class="column x_8_9">
                         <p>I support <a href="https://okfn.org/">open knowledge</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br />Enjoy freedom on knowledge. Check <a href="{{ path_for('post', { slug: 'About' })}}#copyright">my views</a> on copyrights.</p>
                     </div>
                 </footer>

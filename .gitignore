@@ -1,6 +1,6 @@
 .DS_Store
 db.ini
-/vendor/
+/vendor/*
 /log/*
 !/logs/README.md
 cache/*

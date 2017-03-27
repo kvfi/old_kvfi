@@ -82,7 +82,7 @@ protests are generally illegal.
 <a href="http://www.theguardian.com/technology/2015/jan/27/facebook-blocks-turkish-page-insults-prophet-muhammad">religious
 censorship</a>, just as previously it yielded to China's
 <a href="https://stallman.org/archives/2011-mar-jun.html#01_May_2011_(Urgent:_Urge_Facebook_not_to_partner_with_censors)">political censorship</a>.
-* Facebook has developed 
+* Facebook has developed
 <a href="https://www.theguardian.com/technology/2016/nov/23/facebook-secret-software-censor-user-posts-china">software
 to allow various countries to directly control censorship</a> of what
 useds in that country can see.
@@ -91,7 +91,7 @@ endorse all the bellicose or dangerous "responses" to the September 11
 attacks. Facebook <a href="http://www.stonekettle.com/2016/09/renegade-911.html">censored
 it</a>, apparently for political reasons.
 
-This shows the danger of depending on facebook.
+This shows the danger of depending on Facebook.
 
 * Facebook <a href="https://www.theguardian.com/technology/2016/may/13/facebook-turkish-government-zed-books">deleted
 without explanation the page of a publisher in the UK</a> that had posted
@@ -171,6 +171,7 @@ have a Facebook app installed before I say yes.
 gives the site access to lots of information</a> about the used.
 * acebook, as an 'experiment', <a href="http://arstechnica.com/business/2013/12/facebook-collects-conducts-research-on-status-updates-you-never-post/">collected</a> the text its useds started to enter as status updates and ultimately did not send.
 * Facebook also announced it planned to <a href="http://arstechnica.com/business/2013/10/facebook-may-start-logging-your-cursor-movements/">track mouse movement even in the absence of a click</a>.
+* Facebook [refuses to deactivate old accounts]((http://www.smashcompany.com/philosophy/facebook-activated-my-dormant-account-and-it-wont-let-me-deactivate-it)) unless the used presents a government issued ID
 
 These work by means of malicious Javascript code.
 
@@ -530,7 +531,7 @@ It is important to keep in mind that Facebook is bad for many other
 reasons.  This is one more reason to oppose it, but we had plenty
 already.
 
-It is unfortunate that the article uses the term 
+It is unfortunate that the article uses the term
 <a href="http://gnu.org/philosophy/words-to-avoid.html#Content">"content"</a>
 to refer to published text.  Just because CNN does that is no reason
 why we should follow its example.
@@ -668,4 +669,4 @@ Facebook: <a href="http://www.scholarsandrogues.com/2012/06/26/facebook-the-most
 
 <div id="used">* We call them 'useds' rather than 'users'
 because Facebook is using them,
-not vice versa.</div> 
+not vice versa.</div>

@@ -8,7 +8,7 @@ env:
 
 branches:
   only:
-    - master                          # for Github Project Pages replace with "master"
+    - sources                           # for Github Project Pages replace with "master"
 
 install:  
   - rm -rf public || exit 0             # cleanup previous run

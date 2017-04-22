@@ -6,5 +6,6 @@ vendor
 cache/*
 node_modules
 public/static/dist
+.idea/
 *.sh
 *.orig

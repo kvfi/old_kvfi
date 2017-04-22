@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="{{ headMeta.description }}" />
+    <meta name="google-site-verification" content="Se1BU47QDuaWbURxnshcyzaqRjosEdM0nZjwy_c8OEo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:url" content="{{ current_url }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{% if base_path == '/' %}{{ config.site_name }}{% else %}{{ headMeta.title }}{% endif %}" />
+    <meta property="og:description" content="{{ headMeta.description }}" />
+    <meta property="og:image" content="https://scif.ml/static/images/logo-200.jpg" />
+    <meta property="fb:app_id" content="1736500373279641" />
+    <title>{{ headMeta.title }} &mdash; {{ config.site_name }}</title>
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="/static/dist/css/app.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/magula.min.css" integrity="sha256-6SYK16cLJ4/EXxF6Uy1GgznptBtA9jQndk2r81jxfFU=" crossorigin="anonymous" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath: [ ['$','$'], ["\\(","\\)"] ],processEscapes: true}});</script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  	<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+<![endif]-->
+</head>
+<body class="{{ css_class }}">
+    <div class="container">
+        <div class="row">
+            <div class="column x_1_8">
+                <div class="aside">
+                    <a href="{{ path_for('home') }}" class="logo"><img src="/static/images/logo.png" alt="logo" /></a>
+                    <div class="subtitle"><p>The marginalized lexicon of obsessive science</p></div>
+                    <ul class="menu">
+                        <li><a href="{{ path_for('post', { slug: 'About' }) }}" title="About">About</a></li>
+                        <li><a href="{{ path_for('page.newsletter') }}" title="Newsletter">Newsletter</a></li>
+                        <li><a href="{{ path_for('post', { slug: 'Contact'}) }}" title="Contact">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="column x_3_5">
+                {% block content %}
+                {% endblock %}
+                {% block pagination %}
+                {% endblock %}
+                <footer class="row">
+                    <div class="column x_1_9">
+                        <a style="border: 0" rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+                    </div>
+                    <div class="column x_8_9">
+                        <p>I support <a href="https://okfn.org/">open knowledge</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br />Enjoy freedom on knowledge. Check <a href="{{ path_for('post', { slug: 'About' })}}#copyright">my views</a> on copyrights.</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript" src="/static/dist/js/scripts.js"></script>
+</body>
+</html>

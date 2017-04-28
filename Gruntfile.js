@@ -3,21 +3,21 @@ module.exports = function(grunt) {
     grunt.initConfig({
         concat: {
             js: {
-                src: ['public/static/src/js/**/*.js'],
-                dest: 'public/static/dist/js/scripts.js',
+                src: ['static/src/js/**/*.js'],
+                dest: 'static/dist/js/scripts.js',
             }
         },
         uglify: {
             my_target: {
                 files: {
-                    'public/static/dist/js/scripts.js': ['public/static/dist/js/scripts.js']
+                    'static/dist/js/scripts.js': ['static/dist/js/scripts.js']
                 }
             }
         },
         sass: {
             dist: {
                 files: {
-                    'public/static/dist/css/app.css': 'public/static/src/css/main.scss'
+                    'static/dist/css/app.css': 'static/src/css/main.scss'
                 }
             }
         },
@@ -28,17 +28,17 @@ module.exports = function(grunt) {
             },
             target: {
                 files: {
-                  'public/static/dist/css/app.css': ['public/static/dist/css/app.css']
+                  'static/dist/css/app.css': ['static/dist/css/app.css']
                 }
             }
         },
         watch: {
             js: {
-                files: 'public/static/src/js/**/*.js',
+                files: 'static/src/js/**/*.js',
                 tasks: ['concat:js', 'uglify'],
             },
             sass: {
-                files: 'public/static/src/css/**/*.scss',
+                files: 'static/src/css/**/*.scss',
                 tasks: ['sass', 'cssmin']
             }
            

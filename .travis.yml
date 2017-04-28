@@ -7,7 +7,7 @@ install:
  - python setup.py install
 script:
  - pip install flask
- - pip install flask_frozen
+ - pip install Frozen-Flask
  - pip install python-frontmatter
  - pip install mistune
  - python web.py

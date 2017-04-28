@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="index-intro">
+	<div style="float: right;"><img style="margin-top: -20px;" src="http://cache2.allpostersimages.com/p/LRG/100/10048/5S4L500Z/posters/pat-byrnes-the-russians-hacked-my-homework-cartoon.jpg" /></div>
+	{{ intro_txt|safe }}
+	<div style="clear: both;"></div>
+</div>
+
+<div class="legend_marker grid noMobile">
+	<div class="col-1-3 legend">
+		<span>Legend.</span>
+		Level of knowledge required.
+	</div>
+	<div class="col-2-3 markers squares">
+		<span class="one"><i></i> trivial</span>
+		<span class="two"><i></i> technical</span>
+		<span class="three"><i></i> theoretical</span>
+		<span class="four"><i></i> academic</span>
+	</div>
+</div>
+<div class="home-articles">
+	<div class="row">
+		<h5>Featured</h5>
+		<ul>
+			{% for post in posts %}
+			<li><a href="/{{ post.meta.slug }}.html" title="Read {{ post.meta.title }}">{{ post.meta.title }}</a></li>
+			{% endfor %}
+		</ul>
+		<div style="clear: both;"></div>
+  	</div>
+</div>
+{% endblock %}
+{% block pagination %}
+{{ pagination }}
+{% endblock %}

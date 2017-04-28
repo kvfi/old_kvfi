@@ -14,6 +14,7 @@ tags:
  - climate change
  - opinion
 toc: false
+featured: true
 online: true
 ---
 Paul Krugman, a columnist for the New York Times and winner of a prestigious banking prize (usually mistakenly called a “Nobel”), has said that those who criticize theories of global warming are immoral and treasonous. ¡Treasonous! Scores of lesser luminaries, backed by IPCC boss Rajendra Pachauri, say that such criticism, when it is not purely ignorant, is motivated and organized by a conspiracy. ¡Conspiracy! Global warming scientist James Hansen has said that oil executives and their supporters should be put on trial for crimes against humanity. ¡Crimes against humanity!

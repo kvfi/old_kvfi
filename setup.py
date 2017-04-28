@@ -8,6 +8,5 @@ setup(name='kvfi',
 	author='kvfi',
 	author_email='ouafi@ouafi.net',
 	url='https://ouafi.net',
-	packages=['kvfi'],
 	install_requires=['flask', 'frontmatter', 'mistune', 'flask_frozen'],
 )

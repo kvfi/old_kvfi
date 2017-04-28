@@ -1,16 +1,19 @@
 language: python
 python:
- - "3.5"
- - "3.4"
- - "3.3"
+- '3.5'
+- '3.4'
+- '3.3'
 install:
- - python setup.py install
+- python setup.py install
 script:
- - pip install flask
- - pip install Frozen-Flask
- - pip install python-frontmatter
- - pip install mistune
- - python web.py
+- pip install flask
+- pip install Frozen-Flask
+- pip install python-frontmatter
+- pip install mistune
+- python web.py
 notifications:
- email:
+  email:
   - ouafi@ouafi.net
+before_install:
+- openssl aes-256-cbc -K $encrypted_426384d6f939_key -iv $encrypted_426384d6f939_iv
+  -in deploy_key.enc -out deploy_key -d

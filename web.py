@@ -1,4 +1,4 @@
-import copy, frontmatter, mistune, mdcustom, os
+import copy, frontmatter, mistune, mdcustom, os, sys
 from skeleton import posts
 from flask import Flask, render_template
 from flask_frozen import Freezer
@@ -43,3 +43,4 @@ def post(slug):
 if __name__ == "__main__":
 	app.run(debug=True)
 	freezer.freeze()
+	sys.exit()

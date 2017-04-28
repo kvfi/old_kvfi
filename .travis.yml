@@ -6,6 +6,7 @@ script:
  - pip install Frozen-Flask
  - pip install python-frontmatter
  - pip install mistune
+ - python web.py
  - bash ./deploy.sh
 env:
  global:

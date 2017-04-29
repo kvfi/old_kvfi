@@ -49,6 +49,13 @@ a img, a img:hover {
 p {
     font-size: $base-font-size;
     line-height: 1.5;
+    span.big {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    span:first-letter {
+        font-size: 20px;
+    }
 }
 p.small {
     font-size: 90%;

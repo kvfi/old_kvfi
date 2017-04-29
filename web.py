@@ -5,6 +5,9 @@ from flask_frozen import Freezer
 
 
 app = Flask(__name__, template_folder="templates")
+app.config.update(dict(
+  PREFERRED_URL_SCHEME = 'https'
+))
 renderer = mdcustom.WikiLinkRenderer()
 inline = mdcustom.WikiLinkInlineLexer(renderer)
 inline.enable_wiki_link()

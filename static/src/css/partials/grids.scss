@@ -74,6 +74,11 @@
 .column.x_8_9 {
 	width: calc((100% / 9 * 8) - 5%);
 }
+
+.column.x_1_10 {
+	width: calc(100% / 10);
+}
+
 @media screen and (max-width: 600px) {
 	.column.full,
 	.column.two-thirds,

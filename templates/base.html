@@ -27,31 +27,39 @@
 <body class="{{ css_class }}">
     <div class="container">
         <div class="row">
-            <div class="column x_1_8">
-                <div class="aside">
-                    <a href="{{ url_for('home') }}" class="logo">ouafi.net</a>
-                    <div class="subtitle"><p>marginalized lexicon of obsessive science</p></div>
-                    <ul class="menu">
-                        <li><a href="{{ url_for('post', slug='about') }}" title="About">About</a></li>
-                        <li><a href="{{ url_for('post', slug='newsletter') }}" title="Newsletter">Newsletter</a></li>
-                        <li><a href="{{ url_for('post', slug='contact') }}" title="Contact">Contact</a></li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="column x_3_5">
-                {% block content %}
-                {% endblock %}
-                {% block pagination %}
-                {% endblock %}
-                <footer class="row">
+            <div class="column x_4_5">
+                <div class="head_banner"></div>
+                <div class="siteinfos"><p><strong><a href="https://ouafi.net">ouafi.net</a></strong> &raquo; <em>marginalized lexicon of obsessive science</em></p></div>
+                <div style="clear: both;"></div>
+                <div class="row">
                     <div class="column x_1_9">
-                        <a style="border: 0" rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+                        <div class="aside">
+                            <a href="{{ url_for('home') }}" class="logo"></a>
+                            <h5>Quick links</h5>
+                            <ul class="menu">
+                            <li><a href="{{ url_for('home') }}" title="Home">Home</a></li>
+                                <li><a href="{{ url_for('post', slug='About') }}" title="About">About</a></li>
+                                <li><a href="{{ url_for('post', slug='Newsletter') }}" title="Newsletter">Newsletter</a></li>
+                                <li><a href="{{ url_for('post', slug='Contact') }}" title="Contact">Contact</a></li>
+                            </ul>
+                        </div>
+
                     </div>
                     <div class="column x_8_9">
-                        <p>I support <a href="https://okfn.org/">open knowledge</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br />Enjoy freedom on knowledge. Check <a href="{{ url_for('post', slug='about') }}#copyright">my views</a> on copyrights.</p>
+                        {% block content %}
+                        {% endblock %}
+                        {% block pagination %}
+                        {% endblock %}
+                        <footer class="row">
+                            <div class="column x_1_9">
+                                <a style="border: 0" rel="license" href="http://creativecommons.org/publicdomain/mark/1.0/"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/p/mark/1.0/80x15.png" /></a>
+                            </div>
+                            <div class="column x_8_9">
+                                <p>I support <a href="https://okfn.org/">open knowledge</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br />Enjoy freedom on knowledge. Check <a href="{{ url_for('post', slug='about') }}#copyright">my views</a> on copyrights.</p>
+                            </div>
+                        </footer>
                     </div>
-                </footer>
+                </div>
             </div>
         </div>
     </div>

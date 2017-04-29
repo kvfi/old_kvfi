@@ -2,28 +2,16 @@
 
 set -o errexit -o nounset
 
-if [ "$TRAVIS_BRANCH" != "master" ]
-then
-  echo "This commit was made against the $TRAVIS_BRANCH and not the master! No deploy!"
-  exit 0
-fi
-
-rev=$(git rev-parse --short HEAD)
-
 cd build
 
 git init
-git config user.name "kvfi"
-git config user.email "kouafi@icloud.com"
-
-git remote add upstream "https://$GH_TOKEN@github.com/kvfi/kvfi.git"
-git fetch upstream
-git reset upstream/gh-pages
-
+git remote add origin "https://github.com/kvfi/kvfi.git"
+git checkout -B gh-pages
 echo "ouafi.net" > CNAME
 
-touch .
+git add .
+git commit -m "rebuild pages"
 
-git add -A .
-git commit -m "rebuild pages at ${rev}"
-git push -q upstream HEAD:gh-pages
+git push -f origin gh-pages
+
+rm -rf build/*

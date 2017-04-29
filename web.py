@@ -1,4 +1,4 @@
-import copy, frontmatter, mistune, mdcustom, os, sys
+import copy, frontmatter, mistune, mdcustom, os
 from skeleton import posts
 from flask import Flask, render_template
 from flask_frozen import Freezer
@@ -34,12 +34,12 @@ def home():
 	intro_txt = markdown(frontmatter.load(resources_dir + 'misc/intro.md').content)
 	return render_template('home.html', headMeta=headMeta, intro_txt=intro_txt, posts=posts.Post.get_home())
 
-@app.route("/<slug>.html", endpoint='post')
+@app.route("/<slug>", endpoint='post')
 def post(slug):
 	post = posts.Post.get_post(slug)
-	headMeta = {'title': post.meta['title'], 'description': post.meta['title']}
+	headMeta = {'title': post['meta']['title'], 'description': post['meta']['subtitle']}
 	return render_template('post.html', headMeta=headMeta, post=posts.Post.get_post(slug))
 
 if __name__ == "__main__":
-	#app.run()
+	app.run(debug=True)
 	freezer.freeze()

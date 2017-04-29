@@ -25,16 +25,10 @@ class Post(object):
 
 	def get_post(slug):
 		dir = './resources/files/posts/'
-		postlist = os.listdir(dir)
-		for post in postlist:
-			loader = frontmatter.load(dir + post)
-			content = markdown(loader.content)
-			metadata = loader.metadata
-			if 'slug' not in metadata:
-				metadata['slug'] = None
-			elif str(metadata['slug']).lower() == slug.lower():
-				post = {"meta": metadata, "content": content}
-				break
+		loader = frontmatter.load(dir + slug + ".md")
+		content = markdown(loader.content)
+		metadata = loader.metadata
+		post = {"meta": metadata, "content": content}
 		return post
 
 	@staticmethod

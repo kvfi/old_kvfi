@@ -94,9 +94,6 @@ ENV/
 # Rope project settings
 .ropeproject
 
-# build
-/build
-
 .DS_Store
 node_modules
 public/static/dist

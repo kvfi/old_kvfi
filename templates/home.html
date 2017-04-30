@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="index-intro">
-	<div style="float: right; width: 300px"><img style="margin-top: -20px;" src="{{ url_for('static', filename='images/cartoon_9.jpg')}}" /></div>
+	<div style="float: right; width: 400px"><img style="margin-top: -20px;" src="{{ url_for('static', filename='images/cartoon_9.jpg')}}" /></div>
 	{{ intro_txt|safe }}
 	<div style="clear: both;"></div>
 </div>
@@ -23,7 +23,7 @@
 		<h5>Featured</h5>
 		<ul>
 			{% for post in posts %}
-			<li><a href="/{{ post.meta.slug }}.html" title="Read {{ post.meta.title }}">{{ post.meta.title }}</a></li>
+			<li>{% if post.meta.difficulty %}<span class="squares"><span style="margin:0;" class="{% if post.meta.difficulty == 1 %}one{% elif post.meta.difficulty == 2 %}two{% elif post.meta.difficulty == 3 %}three{% elif post.meta.difficulty == 4 %}four{% endif %}"><i></i></span></span>{% endif %}<a href="{{ url_for('post', slug=post.meta.slug) }}" title="Read {{ post.meta.title }}">{{ post.meta.title }}</a></li>
 			{% endfor %}
 		</ul>
 		<div style="clear: both;"></div>

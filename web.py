@@ -1,6 +1,6 @@
 import copy, frontmatter, mistune, mdcustom, os
 from skeleton import posts
-from flask import Flask, render_template
+from flask import Flask, render_template, Response
 from flask_frozen import Freezer
 
 

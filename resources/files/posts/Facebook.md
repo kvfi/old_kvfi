@@ -14,6 +14,7 @@ tags:
  - privacy
  - anti-trust
 toc: true
+featured: true
 online: true
 ---
 I don't use Facebook anymore. I was amongst the first 1000 users to join Facebook in 2005 when its co-founder [Dustin Moskovitz](https://en.wikipedia.org/wiki/Dustin_Moskovitz) sent invite-only memberships to students and open source activists in Europe. It was a promising project but "the Facebook" got way out of hand. I stopped using it.

@@ -14,4 +14,5 @@ git commit -m "rebuild pages"
 
 git push -f origin gh-pages
 
+rm -rf build/.git
 rm -rf build/*

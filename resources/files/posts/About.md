@@ -110,7 +110,7 @@ R3dFsA5oz/xJaycUTYhx/MSIKPUiN4pmLYAxX8JK94r4W4VRpVU1DXgT1vrTkco=
 -----END PGP PUBLIC KEY BLOCK-----
 </pre>
 
-#### Morals & Philosophy {#morals}
+<!-- #### Morals & Philosophy {#morals}
 If you can't wait to know more about me, I offer you a large pool of topics disclosing some facets of my morals.
 * [AI (Artificial intelligence)](AI)
 * [Capitalism](Capitalism)
@@ -120,12 +120,12 @@ If you can't wait to know more about me, I offer you a large pool of topics disc
 * [Religion](Religion)
 * [Love](Love)
 * [Nuclear energy](NuclearEnergy)
-* [War](War)
+* [War](War) -->
 
-##### Politics
+<!-- ##### Politics
 * [Africa](Africa)
 * [Disputed territories](DisputedTerritories)
-* [Justice](Justice)
+* [Justice](Justice) -->
 
 [^Kurt Vonnegut]: [Kurt Vonnegut](https://en.wikipedia.org/wiki/Kurt_Vonnegut), [A Man Without a Country](https://en.wikipedia.org/wiki/A_Man_Without_a_Country), 2005, ISBN: 1-58322-713-X
 [^FFM]: FFM is a widely examined theory of five broad dimensions used by some psychologists to describe the human personality and psyche. The five factors have been defined as openness to experience, conscientiousness, extroversion, agreeableness, and neuroticism. Acronyms to aid in remembering the five traits include OCEAN and CANOE. Beneath each proposed global factor, a number of correlated and more specific primary factors are claimed. For example, extroversion is said to include such related qualities as gregariousness, assertiveness, excitement seeking, warmth, activity, and positive emotions &mdash; _Big Five personality traits_ on Wikipedia [Big Five personality traits](https://en.wikipedia.org/wiki/Big‰20Five‰20personality‰20traits)

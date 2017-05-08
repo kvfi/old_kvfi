@@ -31,12 +31,12 @@ online: true
 
 Since underemployment has been conceptualized in so many ways and from diverse economical perspectives[^clogg], no detailed material is ready for use. [Although 25% of the workforce](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2378472) being underemployed (including part-time jobs and temporary employment) seems lifelike to the growth of college graduates struggling to find a job matching their degree, or post-2008 recession laid-off workers failing to rejoin the workforce.
 
-| Concepts of underemployment
-| ------------- |
-| having more formal education that required by the job |
-| constrained to work in a field deviating from formal education |
-| involuntarily engaged in a part-time job, intermittent employment or internship |
-| earnings down 20% or less that the previous job (for new graduates, relative to those licensed in the same major |
+Concepts of Underemployment | 
+--------------------------- |
+having more formal education that required by the job |
+constrained to work in a field deviating from formal education |
+involuntarily engaged in a part-time job, intermittent employment or internship |
+earnings down 20% or less that the previous job (for new graduates, relative to those licensed in the same major |
 
 Not only is underunemployment relative and dependent to the economy but has strong geographical binds. Underemployment is also about skill distribution and _‘human’_ [resource allocation](https://en.wikipedia.org/wiki/Resource_allocation). A society in which assets are inefficiently assigned, income consequently, for a group drops, raises for another. At the microeconomic scale, low [quality of life](https://en.wikipedia.org/wiki/Quality_of_life) (QOL)[^qol], as well as life expectancy, health, physical security, hunger, and homelessness are all by-product of low-income. Career history plays a strong card in someone's proneness to face underemployment. For instance, a recently laid-off person is more likely to undertake any given job[^unemploymenMortageDefault]. But it doesn't end here, being pushed away the formal education area causes a person to lose current industry standards, thus being slurred over and ignored by potential recruiters. Unemployment is also a matter of fear that has deep consequences on what career path students chose for their future[^Zugzwang]. In an ‘artificially’ non-disparate labor market where people opt for a profession somehow matching the need of the economy, we might expect the phenomenon to [replicate](https://en.wikipedia.org/wiki/Catch-22_(logic)) due a surplus switch. Consequently, lower income has significant repercussions on family  behavior: spouse likely to take a second job, resulting in lower quality of life, including the kids who might feel to be put at a disadvantage.
 

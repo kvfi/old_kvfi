@@ -1,17 +1,12 @@
-import os, frontmatter, mistune, mdcustom
-
-renderer = mdcustom.WikiLinkRenderer()
-inline = mdcustom.WikiLinkInlineLexer(renderer)
-inline.enable_wiki_link()
-markdown = mistune.Markdown(renderer, inline=inline)
+import os, frontmatter, markdown, mdcustom
+from skeleton import tools
 
 class Post(object):
-	#dir = "./resources/files/posts/"
+	RESSOURCE_DIR = './resources/files/posts/'
 
-	@staticmethod
-	def get_posts(limit=100):
-		dir = './resources/files/posts/'
-		postlist = os.listdir(dir)[:limit]
+	@classmethod
+	def get_posts(cls, limit=100):
+		postlist = os.listdir(cls.RESSOURCE_DIR)[:limit]
 		posts = []
 		for post in postlist:
 			loader = frontmatter.load(dir + post)
@@ -23,26 +18,25 @@ class Post(object):
 			posts.append(post)
 		return posts
 
-	def get_post(slug):
-		dir = './resources/files/posts/'
-		loader = frontmatter.load(dir + slug + ".md")
-		content = markdown(loader.content)
-		metadata = loader.metadata
-		post = {"meta": metadata, "content": content}
+	@classmethod
+	def get_post(cls, type, slug):
+		loader = frontmatter.load(cls.RESSOURCE_DIR + slug + ".md")
+		post = {"meta": loader.metadata, "content": markdown.markdown(loader.content, ['markdown.extensions.extra'])}
 		return post
 
-	@staticmethod
-	def get_home(limit=50):
-		dir = './resources/files/posts/'
-		postlist = os.listdir(dir)[:limit]
+	@classmethod	
+	def get_home(cls, limit=50):
 		posts = []
-		for post in postlist:
-			loader = frontmatter.load(dir + post)
-			content = loader.content
+		i = 0
+		for post in os.listdir(cls.RESSOURCE_DIR):
+			loader = frontmatter.load(cls.RESSOURCE_DIR + post)
 			metadata = loader.metadata
 			if 'featured' not in metadata:
 				metadata['featured'] = None
-			if metadata['featured'] == True:
-				post = {"meta": metadata, "content": content}
+			elif metadata['featured'] == True:
+				post = {"meta": metadata, "content": markdown.markdown(loader.content, ['markdown.extensions.extra'])}
 				posts.append(post)
+				i += 1
+			if i >= limit:
+				break
 		return posts

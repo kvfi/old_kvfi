@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         concat: {
             js: {
-                src: ['static/src/js/**/*.js'],
+                src: ['src/js/**/*.js'],
                 dest: 'static/dist/js/scripts.js',
             }
         },
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    'static/dist/css/app.css': 'static/src/css/main.scss'
+                    'static/dist/css/app.css': 'src/css/main.scss'
                 }
             }
         },
@@ -34,11 +34,11 @@ module.exports = function(grunt) {
         },
         watch: {
             js: {
-                files: 'static/src/js/**/*.js',
+                files: 'src/js/**/*.js',
                 tasks: ['concat:js', 'uglify'],
             },
             sass: {
-                files: 'static/src/css/**/*.scss',
+                files: 'src/css/**/*.scss',
                 tasks: ['sass', 'cssmin']
             }
            

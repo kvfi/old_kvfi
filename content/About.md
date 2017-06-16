@@ -2,7 +2,7 @@
 layout: page
 title: About myself
 slug: About
-subtitle: Everything important you need to know about the author of this blog
+subtitle: Everything important you need to know about the author of this site
 published: 2008-03-09
 updated: 2016-07-15
 progress: continuous
@@ -20,14 +20,14 @@ online: true
 
 I won't be introducing myself using purposeless information such as where I'm from, where I grew up, what diet I'm on or how many ovum I fertilized. Apart from the unproductive result, I've a leaning for strong privacy due to my views and backslash it could eventually provoke. In _[“The drawbacks of having an opinion”](/post/drawbacks-opinion)_, I explain why I chose anonymity and how it allows me to remain watchful (I also try to show that opinion and conviction can obscure self-determination). Although I give more immunity to personality traits (described bellow).
 
-#### Profile {#profile}
+#### Profile
 > How often do we tell our own life story? How often do we adjust, embellish, make sly cuts? And the longer life goes on, the fewer are those around to challenge our account, to remind us that our life is not our life, merely the story we have told about our life. Told to others, but—mainly—to ourselves. [^The Sense of an Ending]
 
 I'm a mathematician, formerly employed in academia and corporate banking. I consider myself a nomad since I didn't stay in the same place 2 years in a row for a while now. My socialistic ingredients are quiet peculiar for various reasons, mainly because I tend to deny [self-categorization](https://en.wikipedia.org/wiki/Self-categorization_theory) and stay away from any [group homogeneity](https://en.wikipedia.org/wiki/Ingroups_and_outgroups). It's probably the point why I decline to grant people any introduction to myself. I think preferable to people to describe me.
 
 I believe that accurate and serviceable knowledge prevails over any kind of nugatory assumption. So, are considered pure persona and mental traits only, based on [Revised NEO Personality Inventory](https://en.wikipedia.org/wiki/Revised_NEO_Personality_Inventory) which presents factual personality dimensions and facets.
 
-#### Personality {#personality}
+#### Personality
 
 According to the [five factor model (FFM)](https://en.wikipedia.org/wiki/Big_Five_personality_traits), is, as stated by its Wikipedia page[^FFM], I'm a [O76-C52-E31-A63-N11](http://www.outofservice.com/bigfive/results/?oR=0.825&cR=0.611&eR=0.469&aR=0.722&nR=0.281), which boils down to the following:
 
@@ -39,10 +39,10 @@ According to the [five factor model (FFM)](https://en.wikipedia.org/wiki/Big_Fiv
 
 Although I was diagnosed at the age of 4 with Asperger's syndrome, I've never been through any important troubles due to my mental irregularity. Even supposing that I sustain some sort of social malaise and general discomfort when it comes to daily interaction tasks, one can argue that I have a [schizoid personality disorder](https://en.wikipedia.org/wiki/Schizoid_personality_disorder).
 
-#### This website {#website}
+#### This website
 This website is a personal database of thoughts, ideas and notes I'm maintaining for about 12 years now. I use it mainly to share itemized information on various topics and subjects. The website is spit into two separate segments: topics (talking points I feed with information) and **posts** (daily notes, correlative studies, experiments, graphics, etc.). Because I don't use [social network](./Facebook) or any other type of plateform to adverstise myself, it makes following my writings quite a challenge. I address this by sending a monthly [newsletter](./Newsletter), containing both my last writing, [changelogs](./Changelog) and reading list (a inventory of links/books I found of interest).
 
-##### [Epistemic state](#epistemic)
+##### Epistemic state
 On every post, article that is written by me, you may notice the presence of a _meta-tag_ named “epistemic state”. This meta-tag is used to average the level of confidence I have in what I write. It is tracked and allows, both me and my readers, to wary of my beliefs, and monitor my opinion variation. Up to this day here are the _epistemic states_ I've used:
 
 * “believed”: I'm strongly conviced by what I wrote, it translates my conviction and writing ethics. I regard as true the content. When I use the term _correct_, it means that I have the utmost trust and credence in the topic. I call for people to be able to constitute an anti-proof to my claims, submit counterevidence or disprove my assertion.
@@ -52,8 +52,8 @@ On every post, article that is written by me, you may notice the presence of a _
 * “fiction”: Imaginative writing based on unrealistic/quixotic facts. It's a way to let my imagination make its way using a  dreamed-up fantasy.
 * “emotional”: Claims and statements are made with peculiar emotions as foundation. Don't take it thoughtfully.
 
-#### Contact {#contact}
-* Email: <a href="mailto:hey@scif.ml">hey@scif.ml</a>. I don't use social media.
+#### Contact
+* Email: <a href="mailto:ouafi@ouafi.net">ouafi@ouafi.net</a>. I don't use social media.
 * [PGP key](http://pgp.mit.edu/pks/lookup?op=get&search=0x288F609565D98527); fingerprint `65D98527`
 
 <pre>

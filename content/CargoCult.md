@@ -9,6 +9,7 @@ progress: ongoing
 epistemic_state: semi-belived
 difficulty: 1
 category: society
+featured: notable
 tags:
  - cult
 online: false

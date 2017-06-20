@@ -15,4 +15,5 @@ tags:
  - geopolitics
 toc: false
 online: true
+featured: notable
 ---

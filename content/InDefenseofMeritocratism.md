@@ -14,7 +14,7 @@ tags:
  - elitism
  - technocracy
 toc: true
-featured_img: false
+featured: popular
 online: true
 ---
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This essay is not about “sentimental egalitarism”[^sentimental_egalitarism] nor is it an attempt to propound an idyllic world sprinkled with . I strongly believe in complexity of world-building and the [principal–agent problem](https://en.wikipedia.org/wiki/Principal%E2%80%93agent_problem) shortcoming on society. Although I acknowledge

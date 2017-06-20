@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
     grunt.initConfig({
         concat: {
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
             },
             target: {
                 files: {
-                  'static/dist/css/app.css': ['static/dist/css/app.css']
+                    'static/dist/css/app.css': ['static/dist/css/app.css']
                 }
             }
         },
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
                 files: 'src/css/**/*.scss',
                 tasks: ['sass', 'cssmin']
             }
-           
+
         }
     });
 

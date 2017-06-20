@@ -5,33 +5,51 @@
 
 {% block content %}
 
-<div class="post">
-	<article>
-		<div class="article-head">
-			<h1>{{ post.meta.title }}</h1>
-			{% if post.meta.subtitle %}<h2>{{ post.meta.subtitle }}</h2>{% endif %}
-			<div class="meta">category: <span><a href="#" onclick="return false;" title="{{ post.meta.category }}">{{ post.meta.category }}</a> &bull; created <span>{{ post.meta.published|strftime|safe }}</span> {% if post.meta.updated != post.meta.published %} &bull; update: <span>{{ post.meta.updated|strftime|safe }}</span>{% endif %} &bull; progress: <span><a href="#" onclick="return false;">{{ post.meta.progress }}</a></span> &bull; epistemic state: <span><a href="#" onclick="return false;" title="See all post with “{{ post.meta.epistemic_state }}” status">{{ post.meta.epistemic_state }}</a><span class="tooltip"> <span style="cursor:pointer">(?)</span> <div class="tooltip-content"><p class="small">The <em>espitemic status</em> meta-tag matches the way I <strong>personally</strong> feel about what I think. It somehow shows my degree of confidence in the content I write.</a> It also allows me to keep track of my beliefs and see how often I change my opinion towards a particular subject.</p><p class="small"><a href="./About#epistemic">learn more &raquo;</a></p></div></span></span>{% if post.meta.difficulty %} &bull; difficulty: <span class="squares"><span style="margin:0;" class="{% if post.meta.difficulty == 1 %}one{% elif post.meta.difficulty == 2 %}two{% elif post.meta.difficulty == 3 %}three{% elif post.meta.difficulty == 4 %}four{% endif %}{% endif %}"><i></i></span>{% if post.meta.difficulty %}{% if post.meta.difficulty == 1 %}trivial{% elif post.meta.difficulty == 2 %}technical{% elif post.meta.difficulty == 3 %}theoretical{% elif post.meta.difficulty == 4 %}academic{% endif %}</span>{% endif %}</div>
-			{% if post.meta.tags %}<div class="www_tags"><strong>Tags:</strong> {{ post.meta.tags|implode(', ') }}</div>{% endif %}
-			{% if post.meta.hasNotes %}
-			<div class="nav">
-				<ul>
-					<li data-tab="contents">Contents</li>
-					<li data-tab="notes">Notes</li>
-				</ul>
-			</div>
-			{% endif %}
-		</div>
-		<div class="article-body">
-			{% if post.meta.featured_img %}<div class="featured_media"><img src="/static/images/media/IMG_{{ post.meta.slug }}.jpg"></div>{% endif %}
-			{% if post.meta.toc %}
-			<div class="table-of-contents"></div>
-			{% endif %}
-			{{ post.content|safe }}
-			{% if post.meta.slug == 'Théorèmes' %}
-			{% include 'extras/theorems.twig' %}
-			{% endif %}
-			<div style="clear: both;"></div>
-		</div>
-	</article>
-</div>
+    <div class="post">
+        <article>
+            <div class="article-head">
+                <h1>{{ post.meta.title }}</h1>
+                {% if post.meta.subtitle %}<h2>{{ post.meta.subtitle }}</h2>{% endif %}
+                <div class="meta">category: <span><a href="#" onclick="return false;"
+                                                     title="{{ post.meta.category }}">{{ post.meta.category }}</a> &bull; created <span>{{ post.meta.published|strftime|safe }}</span>
+                    {% if post.meta.updated != post.meta.published %} &bull; update:
+                        <span>{{ post.meta.updated|strftime|safe }}</span>{% endif %} &bull; progress: <span><a href="#"
+                                                                     onclick="return false;">{{ post.meta.progress }}</a></span> &bull; epistemic state: <span><a
+                            href="#" onclick="return false;"
+                            title="See all post with “{{ post.meta.epistemic_state }}” status">{{ post.meta.epistemic_state }}</a><span
+                            class="tooltip"> <span style="cursor:pointer">(?)</span> <div class="tooltip-content"><p
+                            class="small">The <em>espitemic status</em> meta-tag matches the way I <strong>personally</strong> feel about what I think. It somehow shows my degree of confidence in the content I write.</a>
+                        It also allows me to keep track of my beliefs and see how often I change my opinion towards a particular subject.</p><p
+                            class="small"><a href="./About#epistemic">learn more &raquo;</a></p></div></span></span>
+                    {% if post.meta.difficulty %} &bull; difficulty: <span class="squares"><span
+                        style="margin:0;" class="{% if post.meta.difficulty == 1 %}one{% elif post.meta.difficulty == 2 %}two{% elif post.meta.difficulty == 3 %}three{% elif post.meta.difficulty == 4 %}four{% endif %}{% endif %}">
+                        <i></i></span>{% if post.meta.difficulty %}{% if post.meta.difficulty == 1 %}trivial
+                    {% elif post.meta.difficulty == 2 %}technical{% elif post.meta.difficulty == 3 %}theoretical
+                    {% elif post.meta.difficulty == 4 %}academic{% endif %}</span>{% endif %}</div>
+                {% if post.meta.tags %}
+                    <div class="www_tags"><strong>Tags:</strong> {{ post.meta.tags|implode(', ') }}</div>{% endif %}
+                {% if post.meta.hasNotes %}
+                    <div class="nav">
+                        <ul>
+                            <li data-tab="contents">Contents</li>
+                            <li data-tab="notes">Notes</li>
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="article-body">
+                {% if post.meta.featured_img %}
+                    <div class="featured_media"><img src="/static/images/media/IMG_{{ post.meta.slug }}.jpg">
+                    </div>{% endif %}
+                {% if post.meta.toc %}
+                    <div class="table-of-contents"></div>
+                {% endif %}
+                {{ post.content|safe }}
+                {% if post.meta.slug == 'Théorèmes' %}
+                    {% include 'extras/theorems.twig' %}
+                {% endif %}
+                <div style="clear: both;"></div>
+            </div>
+        </article>
+    </div>
 {% endblock %}

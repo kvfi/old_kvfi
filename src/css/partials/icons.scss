@@ -1,33 +1,33 @@
 .squares {
-	span {
-		margin-right: 10px;
-		i {
-			display: inline-block;
-			width: 10px;
-			height: 10px;
-			vertical-align: middle;
-			margin-right: 5px;
-			margin-top: -3px;
-		}
-		&.one {
-			i {
-				background-color: rgba(77, 195, 255, 0.8);
-			}
-		}
-		&.two {
-			i {
-				background-color: rgba(204, 204, 0, 0.8);
-			}
-		}
-		&.three {
-			i {
-				background-color: rgba(0, 153, 153, 0.8);
-			}
-		}
-		&.four {
-			i {
-				background-color: rgba(204, 153, 255, 0.8);
-			}
-		}
-	}
+  span {
+    margin-right: 10px;
+    i {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      vertical-align: middle;
+      margin-right: 5px;
+      margin-top: -3px;
+    }
+    &.one {
+      i {
+        background-color: rgba(77, 195, 255, 0.8);
+      }
+    }
+    &.two {
+      i {
+        background-color: rgba(204, 204, 0, 0.8);
+      }
+    }
+    &.three {
+      i {
+        background-color: rgba(0, 153, 153, 0.8);
+      }
+    }
+    &.four {
+      i {
+        background-color: rgba(204, 153, 255, 0.8);
+      }
+    }
+  }
 }

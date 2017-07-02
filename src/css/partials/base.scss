@@ -25,7 +25,7 @@ $fixed-line-height: $base-line-height;
 $header-font-weight: $bold;
 
 body {
-  font: $base-font-size $base-font-family;
+  font: 13px/1.231 'Helvetica Neue',Helvetica,Arial,sans-serif;
   color: $primary-color;
   line-height: $base-line-height;
   text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
@@ -47,8 +47,8 @@ a img, a img:hover {
   border: 0;
 }
 
-p {
-  font-size: $base-font-size;
+p, li {
+  font: 13px/1.231 'Helvetica Neue',Helvetica,Arial,sans-serif;
   line-height: 1.5;
   span.big {
     font-weight: bold;

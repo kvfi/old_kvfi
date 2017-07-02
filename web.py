@@ -1,7 +1,8 @@
+import sys
 import markdown
+
 from flask import Flask, render_template
 from flask_frozen import Freezer
-from markdown.extensions.wikilinks import WikiLinkExtension
 from datetime import datetime
 from skeleton import posts
 
@@ -21,7 +22,7 @@ def datetimeformat(value):
         suffix = "th"
     else:
         suffix = ["st", "nd", "rd"][day % 10 - 1]
-    return date.strftime('%B %d<sup>' + suffix + '</sup> %Y')
+    return date.strftime('%B %e<sup>' + suffix + '</sup> %Y')
 
 
 @app.template_filter('implode')
@@ -45,7 +46,7 @@ def entry(slug):
     return render_template('post.html', headMeta=head_meta, post=post)
 
 
-@app.route("/fr.html", endpoint='home_fr')
+@app.route("/french.html", endpoint='home_fr')
 def home_fr():
     headmeta = {'title': 'Ouafi.net', 'description': ''}
     post = posts.Post.get_home()
@@ -61,5 +62,7 @@ def page_not_found(e):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
-    freezer.freeze()
+    if len(sys.argv) > 1 and sys.argv[1] == "build":
+        freezer.freeze()
+    else:
+        app.run(debug=True)

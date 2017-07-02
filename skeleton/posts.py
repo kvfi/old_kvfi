@@ -50,12 +50,13 @@ class Post(object):
         notable = []
         for post in listdir(cls.RESSOURCE_DIR):
             c = Post.read(post)
-            if 'featured' not in c['meta']:
-                c['meta']['featured'] = None
-            elif c['meta']['featured'] == 'popular':
+            meta = c['meta']
+            if 'featured' not in meta:
+                meta['featured'] = None
+            elif meta['featured'] == 'popular' and meta['online']:
                 p = Post.read(post)
                 popular.append(p)
-            elif c['meta']['featured'] == 'notable':
+            elif meta['featured'] == 'notable' and meta['online']:
                 p = Post.read(post)
                 notable.append(p)
         return {'popular': popular, 'notable': notable}

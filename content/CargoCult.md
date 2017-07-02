@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Cult and Fetishim
-slug: CultAndFetishism
+slug: CargoCult
 subtitle: An exploration of culture, identity and fetishism
 published: 2014-03-02
 updated: 2017-01-06

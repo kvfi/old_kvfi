@@ -5,9 +5,10 @@
 
 .siteinfos {
   margin: 10px 0;
+  padding: 0 0 10px 0;
   border-bottom: 1px solid #777;
   p {
-    font-size: 25px;
+    font-size: 20px;
     a {
       border-bottom: 0;
     }
@@ -16,12 +17,16 @@
       color: #999;
     }
   }
+  p.quote {
+    font-size: 11px;
+    font-style: italic;
+    color: #aaaaaa;
+  }
 }
 
 .index-intro {
   margin: 0 0 30px 0;
   p {
-    font-size: 15px;
     margin-top: 10px;
     &:first-of-type {
       margin-top: 0;
@@ -31,7 +36,7 @@
 
 .home-articles {
   h5 {
-    font-size: 20px;
+    font-size: 16px;
     background-color: #eee;
     margin: 0 0 10px 0;
     padding: 5px 10px;
@@ -40,16 +45,9 @@
     font-style: italic;
     color: #555;
   }
-  h6 {
-    font-size: 30px;
-    font-style: italic;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border-bottom: 3px dashed #ddd;
-  }
   ul li {
     list-style: square inside;
-    font-size: 18px;
+    font-size: 14px;
     padding: 1px 0;
     time {
       float: right;
@@ -76,18 +74,16 @@
         font-size: $base-font-size;
       }
       h1 {
-        font-size: 50px;
-        font-weight: bold;
+        font-size: 30px;
       }
       h2 {
-        font-size: 18px;
+        font-size: 16px;
         color: #999;
         font-style: italic;
         font-weight: normal;
         margin: 0 0 5px 0;
       }
       .meta {
-        font-size: $base-font-size;
         color: #555;
         padding: 0px 0 10px 0;
       }
@@ -115,7 +111,7 @@
         margin-bottom: 20px;
       }
       h4 {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bold;
         margin: 15px 0 0 0;
       }
@@ -163,7 +159,7 @@
         margin: 20px auto;
       }
     }
-    .footnote {
+    .footnotes {
       margin: 50px 0 0 0;
       padding: 0 0 0 50px;
       ol > li {

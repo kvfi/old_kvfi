@@ -1,3 +1,4 @@
+import os
 import sys
 import markdown
 
@@ -11,7 +12,7 @@ app.config.update(dict(PREFERRED_URL_SCHEME='https'))
 
 freezer = Freezer(app)
 
-resources_dir = "resources/files/"
+resources_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), 'resources/files'))
 
 
 @app.template_filter('strftime')
@@ -34,7 +35,7 @@ def implode_list(x, sep):
 def home():
     headmeta = {'title': 'Ouafi.net', 'description': ''}
     post = posts.Post.get_home()
-    with open(resources_dir + 'misc/intro.md', 'r') as content_file:
+    with open(resources_dir + '/' + 'misc/intro.md', 'r') as content_file:
         intro_txt = markdown.markdown(content_file.read())
     return render_template('home.html', headMeta=headmeta, intro_txt=intro_txt, posts=post)
 

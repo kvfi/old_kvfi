@@ -2,6 +2,6 @@
 
 You can learn more about me [here](About.html).
 
-Be advised that I follow [Crocker&apos;s rules](http://www.sl4.org/crocker.html). Anyway, you're most welcome. If you happen to have a question or remark, [contact me](./About.html#contact).
+Be advised that I follow [Crocker's rules](http://www.sl4.org/crocker.html). Anyway, you're most welcome. If you happen to have a question or remark, [contact me](./About.html#contact).
 
 _NB: I DO NOT use social networks, if you want to keep up with the updates, check out the [Changelog](Changelog.html)._

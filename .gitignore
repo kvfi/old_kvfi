@@ -96,6 +96,5 @@ ENV/
 
 .DS_Store
 node_modules
-public/static/dist
 .idea/
 build/

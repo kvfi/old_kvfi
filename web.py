@@ -1,16 +1,16 @@
+import markdown2
 import os
 import sys
-import markdown
 
 from flask import Flask, render_template
-from flask_frozen import Freezer
+from flask_sslify import SSLify
 from datetime import datetime
 from skeleton import posts
 
 app = Flask(__name__, template_folder="templates")
 app.config.update(dict(PREFERRED_URL_SCHEME='https'))
 
-freezer = Freezer(app)
+sslify = SSLify(app, subdomains=True)
 
 resources_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), 'resources/files'))
 
@@ -36,7 +36,7 @@ def home():
     headmeta = {'title': 'Ouafi.net', 'description': ''}
     post = posts.Post.get_home()
     with open(resources_dir + '/' + 'misc/intro.md', 'r') as content_file:
-        intro_txt = markdown.markdown(content_file.read())
+        intro_txt = markdown2.markdown(content_file.read(), extras=["metadata", "header-ids", "footnotes"])
     return render_template('home.html', headMeta=headmeta, intro_txt=intro_txt, posts=post)
 
 
@@ -52,7 +52,7 @@ def home_fr():
     headmeta = {'title': 'Ouafi.net', 'description': ''}
     post = posts.Post.get_home()
     with open(resources_dir + 'misc/intro_fr.md', 'r', encoding='utf8') as content_file:
-        intro_txt = markdown.markdown(content_file.read())
+        intro_txt = markdown2.markdown(content_file.read(), extras=["metadata", "header-ids", "footnotes"])
     return render_template('home.html', headMeta=headmeta, intro_txt=intro_txt, posts=post)
 
 
@@ -64,6 +64,8 @@ def page_not_found(e):
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
-        freezer.freeze()
-    else:
+        exit(0)
+    elif len(sys.argv) > 1 and sys.argv[1] == "debug":
         app.run(debug=True)
+    else:
+        app.run()

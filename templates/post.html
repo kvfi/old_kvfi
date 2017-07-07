@@ -38,10 +38,7 @@
                 {% endif %}
             </div>
             <div class="article-body">
-                {% if post.meta.featured_img %}
-                    <div class="featured_media"><img src="/static/images/media/IMG_{{ post.meta.slug }}.jpg">
-                    </div>{% endif %}
-                {% if post.meta.toc %}
+                {% if post.meta.toc == True %}
                     <div class="table-of-contents"></div>
                 {% endif %}
                 {{ post.content|safe }}

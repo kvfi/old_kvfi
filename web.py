@@ -2,7 +2,7 @@ import markdown2
 import os
 import sys
 
-from flask import Flask, render_template
+from flask import abort, Flask, request, render_template
 from flask_sslify import SSLify
 from datetime import datetime
 from skeleton import posts
@@ -43,8 +43,12 @@ def home():
 @app.route("/<slug>.html", endpoint='post')
 def entry(slug):
     post = posts.Post.get_post(slug)
-    head_meta = {'title': post['meta']['title'], 'description': post['meta']['subtitle']}
-    return render_template('post.html', headMeta=head_meta, post=post)
+    meta = post['meta']
+    head_meta = {'title': meta['title'], 'description': meta['subtitle']}
+    if ('pc' in meta and (meta['pc'] == request.args.get('c'))) or 'pc' not in meta:
+        return render_template('post.html', headMeta=head_meta, post=post)
+    else:
+        abort(404)
 
 
 @app.route("/french.html", endpoint='home_fr')

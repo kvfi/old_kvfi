@@ -7,9 +7,11 @@ class Post(object):
 
     @classmethod
     def read(cls, slug):
-        with open(cls.RESSOURCE_DIR + '/' + slug, encoding='utf8') as content_file:
-            content = markdown2.markdown(content_file.read(), extras=["metadata", "header-ids", "footnotes"])
-        return {'meta': content.metadata, 'content': content}
+        try:
+            with open(cls.RESSOURCE_DIR + '/' + slug, encoding='utf8') as content_file:
+                content = markdown2.markdown(content_file.read(), extras=['metadata', 'header-ids', 'footnotes', 'tables'])
+            return {'meta': content.metadata, 'content': content}
+
 
     @classmethod
     def read_meta(cls, slug):

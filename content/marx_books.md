@@ -1,2 +1,0 @@
-* Manifeste du Parti communiste
-* 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import logging
 import os
 import sys
@@ -46,12 +47,26 @@ app.secret_key = 'tsKxaJzUeC62bY6aFYegJT9VV76sau9G3s2vrscm4FUekvPj3PHUckVHxeTPnp
 
 init_db()
 
+=======
+import markdown2
+import os
+import sys
+
+from flask import abort, Flask, request, render_template
+from flask_sslify import SSLify
+from datetime import datetime
+from skeleton import posts
+
+app = Flask(__name__, template_folder="templates")
+app.config.update(dict(PREFERRED_URL_SCHEME='https'))
+>>>>>>> 347c6c39f442ed216c3deeb6ec4d91503e2c0a81
 
 sslify = SSLify(app, subdomains=True)
 
 resources_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), 'resources/files'))
 
 
+<<<<<<< HEAD
 @app.teardown_appcontext
 def shutdown_session(error=None):
     try:
@@ -66,6 +81,8 @@ def set_domain_session():
     resp.set_cookie('locale', value='en_GB')
 
 
+=======
+>>>>>>> 347c6c39f442ed216c3deeb6ec4d91503e2c0a81
 @app.template_filter('strftime')
 def datetimeformat(value):
     date = datetime.strptime(value, "%Y-%m-%d")
@@ -91,11 +108,16 @@ def home():
     return render_template('home.html', headMeta=headmeta, intro_txt=intro_txt, posts=post)
 
 
+<<<<<<< HEAD
 @app.route("/<slug>", endpoint='post')
+=======
+@app.route("/<slug>.html", endpoint='post')
+>>>>>>> 347c6c39f442ed216c3deeb6ec4d91503e2c0a81
 def entry(slug):
     post = posts.Post.get_post(slug)
     meta = post['meta']
     head_meta = {'title': meta['title'], 'description': meta['subtitle']}
+<<<<<<< HEAD
     item = Entry.query.filter(Entry.path == meta['slug']).first()
     resp = make_response(render_template('post.html', headMeta=head_meta, post=post))
     if item and item.privacy_id:
@@ -106,6 +128,12 @@ def entry(slug):
             abort(404)
     else:
         return resp
+=======
+    if ('pc' in meta and (meta['pc'] == request.args.get('c'))) or 'pc' not in meta:
+        return render_template('post.html', headMeta=head_meta, post=post)
+    else:
+        abort(404)
+>>>>>>> 347c6c39f442ed216c3deeb6ec4d91503e2c0a81
 
 
 @app.route("/french.html", endpoint='home_fr')

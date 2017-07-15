@@ -97,4 +97,8 @@ ENV/
 .DS_Store
 node_modules
 .idea/
+<<<<<<< HEAD
 content/
+=======
+build/
+>>>>>>> 347c6c39f442ed216c3deeb6ec4d91503e2c0a81

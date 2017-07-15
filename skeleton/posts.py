@@ -7,23 +7,11 @@ class Post(object):
 
     @classmethod
     def read(cls, slug):
-<<<<<<< HEAD
-<<<<<<< HEAD
         try:
             with open(cls.RESSOURCE_DIR + '/' + slug, encoding='utf8') as content_file:
                 content = markdown2.markdown(content_file.read(), extras=['metadata', 'header-ids', 'footnotes', 'tables'])
             return {'meta': content.metadata, 'content': content}
 
-=======
-        with open(cls.RESSOURCE_DIR + '/' + slug, encoding='utf8') as content_file:
-            content = markdown2.markdown(content_file.read(), extras=["metadata", "header-ids", "footnotes"])
-        return {'meta': content.metadata, 'content': content}
->>>>>>> 347c6c39f442ed216c3deeb6ec4d91503e2c0a81
-=======
-        with open(cls.RESSOURCE_DIR + '/' + slug, encoding='utf8') as content_file:
-            content = markdown2.markdown(content_file.read(), extras=["metadata", "header-ids", "footnotes"])
-        return {'meta': content.metadata, 'content': content}
->>>>>>> parent of 777d254... Reformat site
 
     @classmethod
     def read_meta(cls, slug):

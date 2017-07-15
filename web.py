@@ -94,18 +94,22 @@ def home():
 @app.route("/<slug>", endpoint='post')
 def entry(slug):
     post = posts.Post.get_post(slug)
-    meta = post['meta']
-    head_meta = {'title': meta['title'], 'description': meta['subtitle']}
-    item = Entry.query.filter(Entry.path == meta['slug']).first()
-    resp = make_response(render_template('post.html', headMeta=head_meta, post=post))
-    if item and item.privacy_id:
-        item_policy = EntryPolicy.query.filter(EntryPolicy.id == item.privacy_id).first()
-        if item and request.args.get("c") == item_policy.code:
-            return resp
+    if post and post['meta']:
+        meta = post['meta']
+        head_meta = {'title': meta['title'], 'description': meta['subtitle']}
+        item = Entry.query.filter(Entry.path == meta['slug']).first()
+        resp = make_response(render_template('post.html', headMeta=head_meta, post=post))
+        if item and item.privacy_id:
+            item_policy = EntryPolicy.query.filter(EntryPolicy.id == item.privacy_id).first()
+            if item and request.args.get("c") == item_policy.code:
+                return resp
+            else:
+                abort(404)
         else:
-            abort(404)
+            return resp
+        abort(404)
     else:
-        return resp
+        abort(404)
 
 
 @app.route("/french.html", endpoint='home_fr')

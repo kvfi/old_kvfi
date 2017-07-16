@@ -12,8 +12,6 @@ from skeleton.database import db_session, init_db
 from skeleton.models import Entry
 from skeleton.models import EntryPolicy
 
-logging.basicConfig(filename='logs/debug.log', level=logging.DEBUG)
-
 app = Flask(__name__, template_folder="templates")
 # app.config.update(dict(PREFERRED_URL_SCHEME='https'))
 app.secret_key = 'tsKxaJzUeC62bY6aFYegJT9VV76sau9G3s2vrscm4FUekvPj3PHUckVHxeTPnp' \

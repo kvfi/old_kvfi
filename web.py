@@ -15,7 +15,7 @@ from skeleton.models import EntryPolicy
 logging.basicConfig(filename='logs/debug.log', level=logging.DEBUG)
 
 app = Flask(__name__, template_folder="templates")
-app.config.update(dict(PREFERRED_URL_SCHEME='https'))
+# app.config.update(dict(PREFERRED_URL_SCHEME='https'))
 app.secret_key = 'tsKxaJzUeC62bY6aFYegJT9VV76sau9G3s2vrscm4FUekvPj3PHUckVHxeTPnp' \
                  'r2cxEx9UDxCSFj8exJVKWLLts35BE2aUbHWJ2QzNfHHPAxD8ahgtrzqRBLQEbUXEPHHrKarLK3vWndS8Hf' \
                  'Qd7fFGTeVABNRa9rbseP7H2NzVwyfa638Ac25evtXV95WSeveBYvZQhF3Axzw4zkLLeBBYbNMzYvwQ' \
@@ -46,8 +46,7 @@ app.secret_key = 'tsKxaJzUeC62bY6aFYegJT9VV76sau9G3s2vrscm4FUekvPj3PHUckVHxeTPnp
 
 init_db()
 
-
-sslify = SSLify(app, subdomains=True)
+# sslify = SSLify(app, subdomains=True)
 
 resources_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), 'resources/files'))
 
